@@ -186,6 +186,13 @@ class Settings(BaseSettings):
     eval_llm_base_url: str | None = None
     eval_llm_model: str | None = None
 
+    # --- QNN review-risk prioritisation (optional research module) ---------------------------
+    qnn_enabled: bool = False
+    qnn_model_path: Path = Path("data/work/qnn/review_risk_model.json")
+    qnn_layers: int = Field(default=2, ge=1, le=8)
+    qnn_low_threshold: float = Field(default=0.35, ge=0, le=1)
+    qnn_high_threshold: float = Field(default=0.65, ge=0, le=1)
+
     # --- REST API (spec 08) -----------------------------------------------------------------
     app_name: str = "MentorMind Know-How API"
     # Spec 08 FR-05: only the UI's origin (Vite dev server by default).
