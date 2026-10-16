@@ -91,9 +91,7 @@ export default function App() {
       {/* ── Enterprise Header ── */}
       <header className="app-header">
         <div className="header-left">
-          <div className="brand-badge" onClick={() => setViewMode("landing")} style={{ cursor: "pointer" }} title="Return to Landing Page">
-            DENSO
-          </div>
+          <div className="brand-badge" onClick={() => setViewMode("landing")} style={{ cursor: "pointer" }} title="Return to Landing Page">MENTORMIND</div>
           <div className="brand-text">
             <span className="brand-name" onClick={() => setViewMode("landing")} style={{ cursor: "pointer" }}>
               MentorMind
