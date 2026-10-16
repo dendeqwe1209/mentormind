@@ -55,7 +55,7 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
       title: "Neo4j Knowledge Graph & 5-Why RCA",
       desc: "Verified tacit knowledge synchronizes into a structured graph database. When MES detects defects, automated 5-Why traces causes in seconds.",
       icon: Database,
-      color: "var(--denso-red)",
+      color: "var(--brand-red)",
       badge: "Graph-RAG",
     },
   ];
@@ -270,7 +270,7 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
           {/* Cell 1: VLM Know-How Extraction (Hero Cell) */}
           <div className="bento-cell bento-hero">
             <div className="bento-tag">
-              <Eye size={12} color="var(--denso-red)" />
+              <Eye size={12} color="var(--brand-red)" />
               VISION-LANGUAGE AI
             </div>
             <h3 className="bento-cell-title">Automated Tacit Know-How Extraction</h3>
@@ -367,7 +367,7 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
         <div className="interactive-card">
           <div className="interactive-card-inner">
             <div className="interactive-badge">
-              <Factory size={14} color="var(--denso-red)" />
+              <Factory size={14} color="var(--brand-red)" />
               FACTORY READY // LIVE TEST ENVIRONMENT
             </div>
 
@@ -384,7 +384,7 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
                 className="workspace-quick-btn"
                 onClick={() => onLaunchWorkspace("review")}
               >
-                <Layers size={18} color="var(--denso-red)" />
+                <Layers size={18} color="var(--brand-red)" />
                 <div className="btn-text-block">
                   <span className="btn-head">01 // Human-in-the-Loop Review</span>
                   <span className="btn-sub">Audit extracted steps &amp; video evidence</span>
