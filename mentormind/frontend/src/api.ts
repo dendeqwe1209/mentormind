@@ -9,6 +9,8 @@ import {
   ProfileDeleteResult,
   ProfilePatchRequest,
   ProfileStatus,
+  QnnRiskResponse,
+  QnnStatusResponse,
   RcaReport,
   ReviewRequest,
   Segment,
@@ -17,7 +19,7 @@ import {
   WorkProfile,
 } from "./types";
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
 
 // An HTTP error from the API; `detail` is FastAPI's `detail` field when the body had one.
 export class ApiError extends Error {
@@ -78,6 +80,12 @@ export const api = {
 
   getProfileDetails: (profileId: string) => {
     return request<{ profile: WorkProfile; reviews: any[] }>(`/profiles/${profileId}`);
+  },
+
+  getQnnStatus: () => request<QnnStatusResponse>("/qnn/status"),
+
+  getQnnRisk: (profileId: string) => {
+    return request<QnnRiskResponse>(`/qnn/profiles/${encodeURIComponent(profileId)}/risk`);
   },
 
   patchProfile: (profileId: string, data: ProfilePatchRequest) => {
