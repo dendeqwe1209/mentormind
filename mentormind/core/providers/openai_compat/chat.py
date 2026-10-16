@@ -86,6 +86,22 @@ class ChatClient:
 
 
 def message_text(body: Mapping[str, Any]) -> str:
+    error = body.get("error")
+    if isinstance(error, Mapping):
+        message = str(error.get("message") or "unknown upstream provider error")
+        raw_code = error.get("code")
+        try:
+            status_code = int(raw_code) if raw_code is not None else None
+        except (TypeError, ValueError):
+            status_code = None
+        metadata = error.get("metadata")
+        error_type = metadata.get("error_type") if isinstance(metadata, Mapping) else None
+        suffix = f" [{error_type}]" if error_type else ""
+        raise ProviderError(
+            f"Upstream provider error{suffix}: {message}",
+            status_code=status_code,
+        )
+
     try:
         content = body["choices"][0]["message"]["content"]
     except (KeyError, IndexError, TypeError) as exc:
