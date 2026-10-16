@@ -24,13 +24,13 @@ jobs:
         run: |
           set -euo pipefail
           git clone --depth 1 https://github.com/Trung1234/mentormind-knowhow-ai.git /tmp/upstream
-          rsync -a --delete             --exclude '.git'             --exclude '.github/workflows/import-upstream.yml'             /tmp/upstream/ ./
+          rsync -a --delete             --exclude '.git'             --exclude '.github/workflows/'             /tmp/upstream/ ./
 
       - name: Commit imported source
         shell: bash
         run: |
           set -euo pipefail
-          rm -f .github/workflows/import-upstream.yml
+          rm -rf .github/workflows
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
