@@ -1,7 +1,4 @@
-"""Root ``knowhow`` CLI (spec 01 FR-02/AC-03): one sub-command group per module.
-
-Each module owns its Typer app; groups whose tasks have not landed yet are empty placeholders.
-"""
+"""Root ``knowhow`` CLI (spec 01 FR-02/AC-03): one sub-command group per module."""
 
 from __future__ import annotations
 
@@ -13,12 +10,11 @@ from mentormind.capture.video.cli import app as video_app
 from mentormind.evaluation.cli import app as eval_app
 from mentormind.knowledge_base.kg.cli import app as kg_app
 from mentormind.processing.vlm.cli import app as vlm_app
+from mentormind.qnn.cli import app as qnn_app
 
 app = typer.Typer(help="Mentor Mind — tích lũy bí quyết chuyên gia cho AI.", no_args_is_help=True)
 
-_PLACEHOLDERS = {
-    "sigma": "Adapter dữ liệu Sigma (spec 07).",
-}
+_PLACEHOLDERS = {"sigma": "Adapter dữ liệu Sigma (spec 07)."}
 
 for _name, _help in _PLACEHOLDERS.items():
     app.add_typer(typer.Typer(help=_help, no_args_is_help=True), name=_name)
@@ -28,7 +24,7 @@ app.add_typer(vlm_app, name="vlm")
 app.add_typer(kg_app, name="kg")
 app.add_typer(agent_app, name="agent")
 app.add_typer(eval_app, name="eval")
-
+app.add_typer(qnn_app, name="qnn")
 
 if __name__ == "__main__":
     app()
