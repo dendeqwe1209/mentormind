@@ -118,7 +118,7 @@ export function ReviewProfilesTab({
   const [passCriteria, setPassCriteria] = useState("");
 
   // Review state
-  const [reviewer,           setReviewer]           = useState("Lead Engineer (DENSO QA)");
+  const [reviewer,           setReviewer]           = useState("Lead Engineer (QA)");
   const [reviewComment,      setReviewComment]      = useState("");
   const [selectedErrorTags,  setSelectedErrorTags]  = useState<ErrorTag[]>([]);
 
@@ -423,7 +423,7 @@ export function ReviewProfilesTab({
             </div>
             Line Inspection Filter
           </div>
-          <span className="badge badge-red">DENSO PACK01 // ST-04</span>
+          <span className="badge badge-red">MENTORMIND PACK01 // ST-04</span>
         </div>
         <div className="filter-bar">
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
@@ -745,7 +745,7 @@ export function ReviewProfilesTab({
                 <div className="data-grid data-grid-2">
                   <div className="form-group" style={{ gridColumn: "1 / -1" }}>
                     <label className="form-label">
-                      <Pencil size={12} color="var(--denso-red)" />
+                      <Pencil size={12} color="var(--brand-red)" />
                       Step Action Name (Must start with active verb)
                     </label>
                     <input
