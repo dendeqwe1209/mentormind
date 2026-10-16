@@ -34,7 +34,7 @@ if [[ "${KNOWHOW_VLM_PROVIDER:-}" == "openrouter" ]]; then
   if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
     OPENROUTER_AUTH_STATUS="$(curl -sS -o /dev/null -w '%{http_code}' \
       -H "Authorization: Bearer ${OPENROUTER_API_KEY}" \
-      https://openrouter.ai/api/v1/auth/key || true)"
+      https://openrouter.ai/api/v1/key || true)"
     echo "[railway] OpenRouter auth probe HTTP ${OPENROUTER_AUTH_STATUS}"
   else
     echo "[railway] OpenRouter auth probe skipped: OPENROUTER_API_KEY is empty"
