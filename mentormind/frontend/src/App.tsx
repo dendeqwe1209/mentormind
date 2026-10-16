@@ -94,7 +94,7 @@ export default function App() {
           <div className="brand-badge" onClick={() => setViewMode("landing")} style={{ cursor: "pointer" }} title="Return to Landing Page">MENTORMIND</div>
           <div className="brand-text">
             <span className="brand-name" onClick={() => setViewMode("landing")} style={{ cursor: "pointer" }}>
-              MentorMind
+              Know-How AI
             </span>
             <span className="brand-badge-version">v1.2 // Production</span>
           </div>
