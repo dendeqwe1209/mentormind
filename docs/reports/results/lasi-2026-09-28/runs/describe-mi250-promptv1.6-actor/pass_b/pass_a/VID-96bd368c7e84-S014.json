@@ -1,0 +1,50 @@
+{
+  "segment_id": "VID-96bd368c7e84-S014",
+  "t_start": 130.0,
+  "t_end": 140.0,
+  "fps": 4.0,
+  "frame_timestamps": [
+    0.0,
+    0.767,
+    1.768,
+    2.269,
+    2.502,
+    2.769,
+    3.27,
+    3.77,
+    4.004,
+    4.271,
+    4.505,
+    4.771,
+    5.005,
+    5.272,
+    5.506,
+    5.772,
+    6.006,
+    6.273,
+    6.506,
+    6.773,
+    7.007,
+    7.274,
+    7.508,
+    7.774,
+    8.008,
+    8.275,
+    8.508,
+    8.775,
+    9.009,
+    9.276,
+    9.776
+  ],
+  "prompt": "Bạn là kỹ sư IE đang ghi lại thao tác trong công đoạn PACK01 (đóng gói, xếp sản phẩm/linh kiện vào hộp).\nCác ảnh sau là khung hình liên tiếp của một đoạn video dài 10.0s, lấy mẫu 4 khung/giây, theo đúng thứ tự thời gian.\nMốc thời gian (giây, tính từ đầu đoạn) của từng ảnh: 0.0, 0.8, 1.8, 2.3, 2.5, 2.8, 3.3, 3.8, 4.0, 4.3, 4.5, 4.8, 5.0, 5.3, 5.5, 5.8, 6.0, 6.3, 6.5, 6.8, 7.0, 7.3, 7.5, 7.8, 8.0, 8.3, 8.5, 8.8, 9.0, 9.3, 9.8.\n\nBước 1 — \"scene\": mô tả ngắn (1-2 câu) những gì thấy trong các ảnh: ai hoặc máy/robot nào, đang làm gì.\nBước 2 — \"steps\": liệt kê CÁC BƯỚC THAO TÁC QUAN SÁT ĐƯỢC của người (công nhân, kỹ sư) hoặc của máy/robot.\nQuy tắc:\n- Chỉ mô tả điều nhìn thấy trong ảnh. Không suy đoán lý do, không thêm bước \"thường có\" trong SOP.\n- Mỗi bước: động từ ở đầu, ngắn gọn, KHÔNG ghi chủ thể (VD \"Đặt linh kiện A vào ngăn trái\"); ai làm thì ghi ở \"actor\".\n- actor: ai/cái gì làm bước đó: \"human\" (người: công nhân, kỹ sư, kỹ thuật viên), \"robot\" (robot có cánh tay, VD SCARA), \"machine\" (máy tự động cố định: băng tải, máy dựng thùng, máy chiết rót); không nhìn rõ thì null.\n- Một thao tác lặp lại nhiều lần chỉ ghi MỘT bước; tối đa 6 bước cho cả đoạn.\n- hand_action: tay nào, động tác gì (nhặt, xoay, ấn, đặt nghiêng...); robot/máy thì tả chuyển động của đầu gắp; objects: vật được thao tác.\n- key_point_observed: chi tiết kỹ thuật NHÌN THẤY được (hướng, vị trí, thứ tự), null nếu không có.\n- t_start_rel, t_end_rel: giây tính từ đầu đoạn (0 đến 10.0), dựa vào mốc thời gian của ảnh.\n- Nếu không chắc, hạ confidence (< 0.5) thay vì bỏ qua hoặc bịa.\n- Cảnh chỉ có người nói chuyện, logo, chữ hoặc bảng số liệu thì không phải thao tác: \"steps\" rỗng.\nTrả về DUY NHẤT một đối tượng JSON với hai khóa \"scene\" và \"steps\", không markdown, không giải thích.\n",
+  "response": {
+    "text": "{\n  \"scene\": \"Một kỹ sư đang nói chuyện trong phòng họp, sau đó cảnh chuyển sang một robot SCARA đang vận hành trên dây chuyền sản xuất trong nhà xưởng, và cuối cùng là các công nhân đang kiểm tra máy móc.\",\n  \"steps\": [\n    {\n      \"step\": \"robot gắp vật thể từ bàn\",\n      \"actor\": \"robot\",\n      \"hand_action\": null,\n      \"objects\": [\n        \"vật thể\"\n      ],\n      \"key_point_observed\": null,\n      \"t_start_rel\": 1.8,\n      \"t_end_rel\": 5.0,\n      \"confidence\": 0.9\n    },\n    {\n      \"step\": \"human đặt vật thể vào vị trí trên băng tải\",\n      \"actor\": \"human\",\n      \"hand_action\": \"đặt\",\n      \"objects\": [\n        \"vật thể\"\n      ],\n      \"key_point_observed\": null,\n      \"t_start_rel\": 6.5,\n      \"t_end_rel\": 7.8,\n      \"confidence\": 0.9\n    }\n  ]\n}",
+    "usage": {
+      "prompt_tokens": 4241,
+      "completion_tokens": 235
+    },
+    "latency_s": 3.6272049020044506,
+    "provider": "local_openai",
+    "model": "Qwen/Qwen3-VL-8B-Instruct"
+  }
+}

@@ -1,0 +1,7 @@
+defect_id,lot_id,process_id,defect_code,description,qty,detected_at
+DEF-001,LOT-PACK01-001,PACK01,D-01,Thiếu linh kiện trong hộp,2,2026-09-20T08:00:00
+DEF-002,LOT-PACK01-002,PACK01,D-02,Sai vị trí ngăn,1,2026-09-21T08:00:00
+DEF-003,LOT-PACK01-003,PACK01,D-03,Trầy bề mặt linh kiện,3,2026-09-22T08:00:00
+DEF-004,LOT-PACK01-004,PACK01,D-04,Móp góc hộp,2,2026-09-23T08:00:00
+DEF-005,LOT-PACK02-001,PACK02,D-05,Sai nhãn lô,1,2026-09-25T08:00:00
+DEF-006,LOT-PACK01-005,PACK01,D-06,Lẫn linh kiện khác mã,1,2026-09-24T08:00:00

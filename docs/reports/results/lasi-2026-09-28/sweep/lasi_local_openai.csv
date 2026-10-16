@@ -1,0 +1,5 @@
+fps,recall,precision,order_accuracy,key_point_recall,tokens_used,latency_s,fps_effective,predicted,truth,recall_essential,recall_time_only,failed_segments,provider,model
+1.0,0.074,0.4,1.0,0.0,26396,39.59,1.0,5,27,0.125,0.259,0,local_openai,Qwen/Qwen3-VL-8B-Instruct
+2.0,0.074,0.182,1.0,0.0,37943,55.31,2.0,11,27,0.125,0.333,0,local_openai,Qwen/Qwen3-VL-8B-Instruct
+4.0,0.074,0.111,1.0,0.0,53417,78.09,4.0,18,27,0.125,0.407,0,local_openai,Qwen/Qwen3-VL-8B-Instruct
+8.0,0.111,0.188,1.0,0.0,72128,78.52,7.94,16,27,0.125,0.444,0,local_openai,Qwen/Qwen3-VL-8B-Instruct

@@ -1,0 +1,26 @@
+{
+  "segment_id": "VID-96bd368c7e84-S007",
+  "t_start": 60.0,
+  "t_end": 70.0,
+  "fps": 4.0,
+  "frame_timestamps": [
+    0.0,
+    0.267,
+    0.501,
+    7.274,
+    7.774,
+    9.009,
+    9.51
+  ],
+  "prompt": "Bạn là kỹ sư IE đang ghi lại thao tác trong công đoạn PACK01 (đóng gói, xếp sản phẩm/linh kiện vào hộp).\nCác ảnh sau là khung hình liên tiếp của một đoạn video dài 10.0s, lấy mẫu 4 khung/giây, theo đúng thứ tự thời gian.\nMốc thời gian (giây, tính từ đầu đoạn) của từng ảnh: 0.0, 0.3, 0.5, 7.3, 7.8, 9.0, 9.5.\n\nBước 1 — \"scene\": mô tả ngắn (1-2 câu) những gì thấy trong các ảnh: ai hoặc máy/robot nào, đang làm gì.\nBước 2 — \"steps\": liệt kê CÁC BƯỚC THAO TÁC QUAN SÁT ĐƯỢC của người (công nhân, kỹ sư) hoặc của máy/robot.\nQuy tắc:\n- Chỉ mô tả điều nhìn thấy trong ảnh. Không suy đoán lý do, không thêm bước \"thường có\" trong SOP.\n- Mỗi bước: động từ ở đầu, ngắn gọn, KHÔNG ghi chủ thể (VD \"Đặt linh kiện A vào ngăn trái\"); ai làm thì ghi ở \"actor\".\n- actor: ai/cái gì làm bước đó: \"human\" (người: công nhân, kỹ sư, kỹ thuật viên), \"robot\" (robot có cánh tay, VD SCARA), \"machine\" (máy tự động cố định: băng tải, máy dựng thùng, máy chiết rót); không nhìn rõ thì null.\n- Một thao tác lặp lại nhiều lần chỉ ghi MỘT bước; tối đa 6 bước cho cả đoạn.\n- hand_action: tay nào, động tác gì (nhặt, xoay, ấn, đặt nghiêng...); robot/máy thì tả chuyển động của đầu gắp; objects: vật được thao tác.\n- key_point_observed: chi tiết kỹ thuật NHÌN THẤY được (hướng, vị trí, thứ tự), null nếu không có.\n- t_start_rel, t_end_rel: giây tính từ đầu đoạn (0 đến 10.0), dựa vào mốc thời gian của ảnh.\n- Nếu không chắc, hạ confidence (< 0.5) thay vì bỏ qua hoặc bịa.\n- Cảnh chỉ có người nói chuyện, logo, chữ hoặc bảng số liệu thì không phải thao tác: \"steps\" rỗng.\nTrả về DUY NHẤT một đối tượng JSON với hai khóa \"scene\" và \"steps\", không markdown, không giải thích.\n",
+  "response": {
+    "text": "{\n  \"scene\": \"Một robot SCARA đang vận hành trong khu vực đóng gói, sau đó cảnh chuyển sang nhóm công nhân mặc đồng phục đang làm việc tại dây chuyền.\",\n  \"steps\": [\n    {\n      \"step\": \"robot gắp linh kiện từ bàn\",\n      \"actor\": \"robot\",\n      \"hand_action\": null,\n      \"objects\": [\n        \"linh kiện\"\n      ],\n      \"key_point_observed\": null,\n      \"t_start_rel\": 0.0,\n      \"t_end_rel\": 0.5,\n      \"confidence\": 0.9\n    },\n    {\n      \"step\": \"human đặt sản phẩm vào hộp\",\n      \"actor\": \"human\",\n      \"hand_action\": \"đặt\",\n      \"objects\": [\n        \"sản phẩm\"\n      ],\n      \"key_point_observed\": null,\n      \"t_start_rel\": 7.3,\n      \"t_end_rel\": 9.5,\n      \"confidence\": 0.8\n    }\n  ]\n}",
+    "usage": {
+      "prompt_tokens": 1385,
+      "completion_tokens": 218
+    },
+    "latency_s": 3.407926217885688,
+    "provider": "local_openai",
+    "model": "Qwen/Qwen3-VL-8B-Instruct"
+  }
+}

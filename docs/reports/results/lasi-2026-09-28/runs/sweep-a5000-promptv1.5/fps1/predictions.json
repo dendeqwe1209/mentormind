@@ -1,0 +1,101 @@
+{
+  "steps": [
+    {
+      "segment_id": "VID-96bd368c7e84-S007",
+      "t_start": 60.0,
+      "t_end": 61.0,
+      "step": "Robot đặt sản phẩm vào hộp.",
+      "hand_action": null,
+      "objects": [
+        "robot",
+        "sản phẩm",
+        "hộp"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 1.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S008",
+      "t_start": 72.0,
+      "t_end": 79.0,
+      "step": "Máy tự động đưa hộp vào vị trí.",
+      "hand_action": null,
+      "objects": [
+        "hộp"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.5,
+      "fps": 1.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "t_start": 86.0,
+      "t_end": 87.0,
+      "step": "Nhặt sản phẩm từ băng chuyền",
+      "hand_action": "tay phải",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 1.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "t_start": 87.0,
+      "t_end": 88.0,
+      "step": "Đặt sản phẩm vào vị trí trên bàn",
+      "hand_action": "tay phải",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 1.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 94.0,
+      "t_end": 99.0,
+      "step": "Robot tự động di chuyển cánh tay để lấy linh kiện từ vị trí trên băng chuyền.",
+      "hand_action": "robot",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": "Robot di chuyển cánh tay xuống để tiếp xúc với linh kiện trên băng chuyền.",
+      "confidence": 0.8,
+      "fps": 1.0,
+      "keyframes": []
+    }
+  ],
+  "failed": [],
+  "scenes": {
+    "VID-96bd368c7e84-S001": "Đoạn video mở đầu bằng logo công ty LASI, sau đó chuyển cảnh quay từ trên cao xuống một nhà xưởng công nghiệp và kết thúc bằng dòng chữ 'Lean Automation Success Case'. Không có người hay máy móc thực hiện thao tác đóng gói.",
+    "VID-96bd368c7e84-S002": "Đoạn video hiển thị các slide giới thiệu về tự động hóa Lean trong ngành công nghiệp thực phẩm, sau đó chuyển sang cảnh phỏng vấn một phụ nữ đang nói chuyện.",
+    "VID-96bd368c7e84-S004": "Người phụ nữ đeo khẩu trang đang nói chuyện, sau đó cảnh chuyển sang công nhân mặc đồng phục màu tím làm việc trên dây chuyền và robot tự động đóng gói sản phẩm.",
+    "VID-96bd368c7e84-S005": "Nhóm người mặc đồ bảo hộ đang nghe một người thuyết trình trong phòng họp, có hình ảnh trình chiếu trên màn hình.",
+    "VID-96bd368c7e84-S006": "Một người phụ nữ đeo khẩu trang đang nói chuyện, sau đó cảnh chuyển sang một hệ thống robot tự động hóa đang vận hành trên dây chuyền sản xuất.",
+    "VID-96bd368c7e84-S007": "Một robot tự động đang thực hiện thao tác đóng gói sản phẩm trên dây chuyền, trong khi các công nhân khác đang làm việc ở khu vực khác của nhà máy.",
+    "VID-96bd368c7e84-S008": "Cảnh đầu tiên cho thấy các công nhân mặc đồng phục đang làm việc tại dây chuyền. Các khung hình sau chuyển sang máy móc tự động hóa đang vận hành trong quá trình đóng gói.",
+    "VID-96bd368c7e84-S009": "Một nhóm công nhân mặc đồng phục tím đang làm việc trên dây chuyền sản xuất trong nhà xưởng, thực hiện các thao tác lắp ráp hoặc đóng gói sản phẩm.",
+    "VID-96bd368c7e84-S010": "Hai công nhân mặc đồng phục tím đang làm việc trên băng chuyền, sau đó chuyển sang cảnh robot tự động thực hiện thao tác đóng gói, cuối cùng là cảnh một người phụ nữ đeo khẩu trang đang phỏng vấn.",
+    "VID-96bd368c7e84-S011": "Một người phụ nữ đeo khẩu trang đang nói chuyện, sau đó là một người đàn ông cũng đeo kính đang nói chuyện trong văn phòng.",
+    "VID-96bd368c7e84-S012": "Video giới thiệu dự án tự động hóa trong ngành thực phẩm, với cảnh quay các công nhân và robot làm việc trên dây chuyền.",
+    "VID-96bd368c7e84-S013": "Một robot công nghiệp đang di chuyển gần một hộp giấy mở, nhưng không có thao tác nào được thực hiện trong các khung hình quan sát. Một người đàn ông xuất hiện ở khung hình cuối cùng.",
+    "VID-96bd368c7e84-S014": "Một kỹ sư đang giải thích về quy trình kiểm tra máy móc, trong khi một robot và các công nhân mặc đồng phục đứng gần khu vực máy móc.",
+    "VID-96bd368c7e84-S015": "Hai công nhân mặc đồ bảo hộ đang đứng cạnh một robot tự động trong khu vực sản xuất. Robot đang vận hành trên dây chuyền.",
+    "VID-96bd368c7e84-S016": "Video trình bày hiệu suất của một robot trong dây chuyền sản xuất, kèm theo hình ảnh mờ của máy móc và một người đàn ông đang nói chuyện.",
+    "VID-96bd368c7e84-S017": "Một người phụ nữ đeo khẩu trang đang nói trong khi các công nhân mặc đồng phục tím làm việc ở dây chuyền sản xuất.",
+    "VID-96bd368c7e84-S018": "Cảnh quay chuyển cảnh từ khu vực sản xuất sang phỏng vấn một người phụ nữ đeo khẩu trang.",
+    "VID-96bd368c7e84-S019": "Một người phụ nữ đeo khẩu trang và kính đang nói chuyện trong một không gian có kệ hàng, với phụ đề tiếng Nhật và tiếng Anh xuất hiện trên màn hình."
+  },
+  "prompt_tokens": 25023,
+  "completion_tokens": 1373,
+  "latency_s": 39.590201162034646,
+  "calls": 20
+}

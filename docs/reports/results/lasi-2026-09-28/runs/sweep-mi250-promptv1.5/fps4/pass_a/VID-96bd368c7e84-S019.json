@@ -1,0 +1,23 @@
+{
+  "segment_id": "VID-96bd368c7e84-S019",
+  "t_start": 180.0,
+  "t_end": 190.0,
+  "fps": 4.0,
+  "frame_timestamps": [
+    0.0,
+    6.006,
+    6.773,
+    7.007
+  ],
+  "prompt": "Bạn là kỹ sư IE đang ghi lại thao tác trong công đoạn PACK01 (đóng gói, xếp sản phẩm/linh kiện vào hộp).\nCác ảnh sau là khung hình liên tiếp của một đoạn video dài 10.0s, lấy mẫu 4 khung/giây, theo đúng thứ tự thời gian.\nMốc thời gian (giây, tính từ đầu đoạn) của từng ảnh: 0.0, 6.0, 6.8, 7.0.\n\nBước 1 — \"scene\": mô tả ngắn (1-2 câu) những gì thấy trong các ảnh: ai hoặc máy/robot nào, đang làm gì.\nBước 2 — \"steps\": liệt kê CÁC BƯỚC THAO TÁC QUAN SÁT ĐƯỢC của người (công nhân, kỹ sư) hoặc của máy/robot.\nQuy tắc:\n- Chỉ mô tả điều nhìn thấy trong ảnh. Không suy đoán lý do, không thêm bước \"thường có\" trong SOP.\n- Mỗi bước: động từ ở đầu, ngắn gọn (VD \"Đặt linh kiện A vào ngăn trái\").\n- Một thao tác lặp lại nhiều lần chỉ ghi MỘT bước; tối đa 6 bước cho cả đoạn.\n- hand_action: ai/tay nào, động tác gì (nhặt, xoay, ấn, đặt nghiêng...); objects: vật được thao tác.\n- key_point_observed: chi tiết kỹ thuật NHÌN THẤY được (hướng, vị trí, thứ tự), null nếu không có.\n- t_start_rel, t_end_rel: giây tính từ đầu đoạn (0 đến 10.0), dựa vào mốc thời gian của ảnh.\n- Nếu không chắc, hạ confidence (< 0.5) thay vì bỏ qua hoặc bịa.\n- Cảnh chỉ có người nói chuyện, logo, chữ hoặc bảng số liệu thì không phải thao tác: \"steps\" rỗng.\nTrả về DUY NHẤT một đối tượng JSON với hai khóa \"scene\" và \"steps\", không markdown, không giải thích.\n",
+  "response": {
+    "text": "{\n  \"scene\": \"Một người phụ nữ đeo khẩu trang và kính đang nói chuyện trong một không gian có kệ hàng, với phụ đề tiếng Nhật và tiếng Anh xuất hiện dưới màn hình.\",\n  \"steps\": []\n}",
+    "usage": {
+      "prompt_tokens": 924,
+      "completion_tokens": 53
+    },
+    "latency_s": 0.9514327051583678,
+    "provider": "local_openai",
+    "model": "Qwen/Qwen3-VL-8B-Instruct"
+  }
+}

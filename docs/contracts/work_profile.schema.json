@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mentormind.local/contracts/work_profile.schema.json",
+  "title": "WorkProfile",
+  "description": "Một bước thao tác trong một công đoạn, kèm bí quyết của chuyên gia. Đơn vị dữ liệu gốc của toàn hệ thống. Version 1.0.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile_id", "process_id", "step_order", "step", "generated_by", "status", "data_classification", "evidence", "confidence", "created_at", "schema_version"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "profile_id": { "type": "string", "pattern": "^WP-[A-Z0-9]{3,}-[0-9]{3}$", "examples": ["WP-PACK01-003"] },
+    "process_id": { "type": "string", "description": "Mã công đoạn, khớp mã công đoạn bên Sigma.", "examples": ["PACK01"] },
+    "step_order": { "type": "integer", "minimum": 1 },
+    "step": { "type": "string", "minLength": 3, "description": "Tên bước ngắn gọn, động từ ở đầu." },
+    "actor": { "enum": ["human", "robot", "machine", null], "description": "Ai/cái gì thực hiện bước: human (người: công nhân, kỹ sư), robot (robot có cánh tay, vd. SCARA), machine (máy tự động cố định: băng tải, máy dựng thùng). null = không rõ." },
+    "hand_action": { "type": ["string", "null"], "description": "Mô tả thao tác tay quan sát được." },
+    "objects": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "key_point": { "type": ["string", "null"], "description": "Điểm then chốt quan sát được hoặc chuyên gia nêu." },
+    "reason": { "type": ["string", "null"], "description": "Lý do đằng sau thao tác. CHỈ điền từ lời chuyên gia." },
+    "reason_source": { "enum": ["expert_verbal", "expert_interview", null] },
+    "exceptions": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case", "handling"],
+        "properties": { "case": { "type": "string" }, "handling": { "type": "string" } }
+      }
+    },
+    "pass_criteria": { "type": ["string", "null"] },
+    "equipment_id": { "type": ["string", "null"] },
+    "part_numbers": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "expert": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": { "expert_id": { "type": "string" }, "display_name": { "type": "string" } }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["video_id"],
+      "properties": {
+        "video_id": { "type": ["string", "null"] },
+        "t_start": { "type": ["number", "null"], "minimum": 0 },
+        "t_end": { "type": ["number", "null"], "minimum": 0 },
+        "segment_ids": { "type": "array", "items": { "type": "string" }, "default": [], "description": "Segment (spec 03) làm căn cứ. Có thể >1 vì lượt C (spec 04) gộp bước giữa các đoạn kề nhau." },
+        "keyframes": { "type": "array", "items": { "type": "string" }, "default": [] },
+        "transcript_excerpt": { "type": ["string", "null"] },
+        "document_refs": { "type": "array", "items": { "type": "string" }, "default": [] }
+      }
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "generated_by": { "enum": ["vlm", "ocr", "human"] },
+    "model_info": {
+      "type": ["object", "null"],
+      "properties": { "provider": { "type": "string" }, "model": { "type": "string" }, "fps": { "type": "number" } }
+    },
+    "data_classification": { "enum": ["public", "synthetic", "factory_confidential"] },
+    "status": { "enum": ["draft", "in_review", "approved", "rejected"] },
+    "review": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "reviewer": { "type": "string" },
+        "reviewed_at": { "type": "string", "format": "date-time" },
+        "comment": { "type": ["string", "null"] },
+        "error_tags": { "type": "array", "items": { "enum": ["missed_step", "hallucinated_step", "wrong_order", "wrong_object", "wrong_action", "other"] }, "default": [] }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "version": { "type": "integer", "minimum": 1, "default": 1 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "generated_by": { "const": "vlm" }, "status": { "const": "draft" } }, "required": ["generated_by", "status"] },
+      "then": { "properties": { "reason": { "const": null }, "reason_source": { "const": null } } },
+      "$comment": "Constitution Điều 3: bản nháp do VLM sinh không được có reason. reason chỉ được thêm ở bước review/transcript với reason_source hợp lệ."
+    },
+    {
+      "if": { "required": ["reason"], "properties": { "reason": { "type": "string" } } },
+      "then": { "required": ["reason_source"], "properties": { "reason_source": { "enum": ["expert_verbal", "expert_interview"] } } }
+    },
+    {
+      "if": { "properties": { "status": { "const": "approved" } } },
+      "then": { "required": ["review"], "properties": { "review": { "type": "object", "required": ["reviewer", "reviewed_at"] } } }
+    }
+  ]
+}

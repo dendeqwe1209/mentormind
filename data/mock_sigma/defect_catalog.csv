@@ -1,0 +1,7 @@
+defect_code,symptom_name,known_root_cause_id,known_root_cause,prevention_profile_id
+D-01,Thiếu linh kiện trong hộp,RC-01,Bỏ sót bước đếm cuối trước khi đóng nắp,WP-PACK01-005
+D-02,Sai vị trí ngăn,RC-02,Nhầm hướng khay chia ngăn,WP-PACK01-002
+D-03,Trầy bề mặt linh kiện,RC-03,Đặt linh kiện nằm ngang thay vì nghiêng,WP-PACK01-003
+D-04,Móp góc hộp,RC-04,Ấn nắp khi linh kiện chưa vào hết ngăn,WP-PACK01-006
+D-05,Sai nhãn lô,RC-05,Dán nhãn trước khi kiểm đếm,WP-PACK02-002
+D-06,Lẫn linh kiện khác mã,RC-06,Để khay linh kiện khác mã chung bàn,

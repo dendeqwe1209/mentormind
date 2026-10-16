@@ -1,0 +1,1692 @@
+[
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-001",
+    "process_id": "PACK01",
+    "step_order": 1,
+    "step": "Nhặt sản phẩm từ băng tải bằng tay phải",
+    "actor": "human",
+    "hand_action": "nhặt bằng tay phải",
+    "objects": [
+      "sản phẩm dạng khối"
+    ],
+    "key_point": "sản phẩm được lấy từ băng tải di chuyển ngang",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 30.5,
+      "t_end": 32.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S004"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-002",
+    "process_id": "PACK01",
+    "step_order": 2,
+    "step": "Đặt sản phẩm vào hộp giấy bằng tay phải",
+    "actor": "human",
+    "hand_action": "đặt bằng tay phải",
+    "objects": [
+      "sản phẩm dạng khối",
+      "hộp giấy"
+    ],
+    "key_point": "hộp giấy mở sẵn trên bàn làm việc",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 32.0,
+      "t_end": 33.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S004"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-003",
+    "process_id": "PACK01",
+    "step_order": 3,
+    "step": "Robot di chuyển cánh tay về phía khay chứa sản phẩm",
+    "actor": "robot",
+    "hand_action": "di chuyển cánh tay về phía trước",
+    "objects": [
+      "khay chứa sản phẩm"
+    ],
+    "key_point": "cánh tay robot có đầu gắp màu đen, di chuyển theo軌道 cố định",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 33.0,
+      "t_end": 34.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S004"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-004",
+    "process_id": "PACK01",
+    "step_order": 4,
+    "step": "Robot gắp sản phẩm từ khay và nâng lên",
+    "actor": "robot",
+    "hand_action": "gắp và nâng sản phẩm",
+    "objects": [
+      "sản phẩm dạng khối"
+    ],
+    "key_point": "đầu gắp kẹp chặt sản phẩm, không rơi",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 34.0,
+      "t_end": 35.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S004"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-005",
+    "process_id": "PACK01",
+    "step_order": 5,
+    "step": "Robot di chuyển sản phẩm đến vị trí hộp và thả xuống",
+    "actor": "robot",
+    "hand_action": "di chuyển ngang và thả sản phẩm",
+    "objects": [
+      "sản phẩm dạng khối",
+      "hộp giấy"
+    ],
+    "key_point": "sản phẩm được thả chính xác vào hộp đang di chuyển trên băng tải",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 35.0,
+      "t_end": 36.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S004"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-006",
+    "process_id": "PACK01",
+    "step_order": 6,
+    "step": "Robot rút cánh tay về vị trí ban đầu",
+    "actor": "robot",
+    "hand_action": "rút cánh tay về sau",
+    "objects": [
+      "khay chứa sản phẩm"
+    ],
+    "key_point": "cánh tay robot trở lại vị trí chờ, đèn xanh nhấp nháy",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 36.5,
+      "t_end": 39.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S004"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-007",
+    "process_id": "PACK01",
+    "step_order": 7,
+    "step": "Di chuyển hộp giấy từ vị trí đầu vào sang băng tải",
+    "actor": "machine",
+    "hand_action": null,
+    "objects": [
+      "hộp giấy"
+    ],
+    "key_point": "Hộp giấy di chuyển theo hướng ngang trên băng tải kim loại",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 51.3,
+      "t_end": 52.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S006"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-008",
+    "process_id": "PACK01",
+    "step_order": 8,
+    "step": "Robot gắp hộp giấy từ băng tải",
+    "actor": "robot",
+    "hand_action": "gắp",
+    "objects": [
+      "hộp giấy"
+    ],
+    "key_point": "Đầu gắp của robot tiếp cận và kẹp lấy hộp giấy ở vị trí trung tâm băng tải",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 54.8,
+      "t_end": 55.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S006"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-009",
+    "process_id": "PACK01",
+    "step_order": 9,
+    "step": "Robot di chuyển hộp giấy đến vị trí xử lý tiếp theo",
+    "actor": "robot",
+    "hand_action": "di chuyển",
+    "objects": [
+      "hộp giấy"
+    ],
+    "key_point": "Robot nâng hộp lên và di chuyển về phía trước, tránh các bộ phận cố định",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 55.5,
+      "t_end": 56.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S006"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-010",
+    "process_id": "PACK01",
+    "step_order": 10,
+    "step": "Robot đặt hộp giấy xuống vị trí mới trên băng tải hoặc khay",
+    "actor": "robot",
+    "hand_action": "thả",
+    "objects": [
+      "hộp giấy"
+    ],
+    "key_point": "Hộp được đặt thẳng đứng, ổn định trên bề mặt kim loại",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 56.8,
+      "t_end": 57.3,
+      "segment_ids": [
+        "VID-96bd368c7e84-S006"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-011",
+    "process_id": "PACK01",
+    "step_order": 11,
+    "step": "Robot quay trở lại vị trí ban đầu",
+    "actor": "robot",
+    "hand_action": "quay trở lại",
+    "objects": [],
+    "key_point": "Tay robot thu gọn và di chuyển về phía sau, chuẩn bị cho chu kỳ tiếp theo",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 57.3,
+      "t_end": 58.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S006"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-012",
+    "process_id": "PACK01",
+    "step_order": 12,
+    "step": "Di chuyển hộp carton đến vị trí lắp ráp",
+    "actor": "machine",
+    "hand_action": null,
+    "objects": [
+      "hộp carton"
+    ],
+    "key_point": "hộp carton được đưa vào khung kim loại định vị",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 75.0,
+      "t_end": 76.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S008"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-013",
+    "process_id": "PACK01",
+    "step_order": 13,
+    "step": "Robot gắp linh kiện từ băng tải",
+    "actor": "robot",
+    "hand_action": "gắp",
+    "objects": [
+      "linh kiện"
+    ],
+    "key_point": "đầu gắp robot di chuyển xuống, kẹp lấy vật thể màu đỏ trên băng tải",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 76.3,
+      "t_end": 77.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S008"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-014",
+    "process_id": "PACK01",
+    "step_order": 14,
+    "step": "Robot đặt linh kiện vào hộp carton",
+    "actor": "robot",
+    "hand_action": "thả",
+    "objects": [
+      "linh kiện",
+      "hộp carton"
+    ],
+    "key_point": "linh kiện được thả thẳng xuống bên trong hộp carton đã định vị",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 77.3,
+      "t_end": 78.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S008"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-015",
+    "process_id": "PACK01",
+    "step_order": 15,
+    "step": "Băng tải di chuyển hộp carton đến vị trí tiếp theo",
+    "actor": "machine",
+    "hand_action": null,
+    "objects": [
+      "hộp carton"
+    ],
+    "key_point": "hộp carton di chuyển ngang qua khung kim loại sau khi được đặt linh kiện",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 78.3,
+      "t_end": 79.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S008"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-016",
+    "process_id": "PACK01",
+    "step_order": 16,
+    "step": "Nhặt vật liệu từ khay",
+    "actor": "human",
+    "hand_action": "tay phải nhặt vật liệu",
+    "objects": [
+      "vật liệu dạng nắp màu cam"
+    ],
+    "key_point": "vật liệu được lấy từ khay nhựa màu xanh lá cây và đỏ",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 83.0,
+      "t_end": 88.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S009"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-017",
+    "process_id": "PACK01",
+    "step_order": 17,
+    "step": "Đặt vật liệu lên băng tải",
+    "actor": "human",
+    "hand_action": "tay phải đặt vật liệu xuống băng tải",
+    "objects": [
+      "vật liệu dạng nắp màu cam"
+    ],
+    "key_point": "vật liệu được đặt thẳng hàng trên băng tải, hướng nhất định",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 83.3,
+      "t_end": 89.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S009"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-018",
+    "process_id": "PACK01",
+    "step_order": 18,
+    "step": "Nhặt linh kiện từ băng tải và đặt vào hộp",
+    "actor": "human",
+    "hand_action": "tay phải nhặt, tay trái hỗ trợ đặt",
+    "objects": [
+      "linh kiện màu cam",
+      "hộp"
+    ],
+    "key_point": "linh kiện được đặt theo hướng nhất định vào ngăn hộp",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 90.0,
+      "t_end": 92.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S010"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-019",
+    "process_id": "PACK01",
+    "step_order": 19,
+    "step": "Robot di chuyển cánh tay để gắp linh kiện từ vị trí nguồn",
+    "actor": "robot",
+    "hand_action": "cánh tay di chuyển lên xuống, gắp vật thể bằng đầu kẹp",
+    "objects": [
+      "linh kiện nhỏ",
+      "kệ chứa"
+    ],
+    "key_point": "đầu gắp robot di chuyển liên tục không dừng giữa các điểm",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 93.3,
+      "t_end": 97.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S010"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-020",
+    "process_id": "PACK01",
+    "step_order": 20,
+    "step": "Robot đặt linh kiện vào khay lắp ráp",
+    "actor": "robot",
+    "hand_action": "đưa đầu gắp xuống, thả linh kiện vào vị trí xác định",
+    "objects": [
+      "linh kiện",
+      "khay lắp ráp"
+    ],
+    "key_point": "vị trí đặt chính xác, không va chạm với cấu trúc xung quanh",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 97.5,
+      "t_end": 99.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S010"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.85,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-021",
+    "process_id": "PACK01",
+    "step_order": 21,
+    "step": "Nhặt sản phẩm từ băng tải bằng tay",
+    "actor": "human",
+    "hand_action": "tay phải nhặt, tay trái hỗ trợ",
+    "objects": [
+      "sản phẩm dạng tôm",
+      "băng tải"
+    ],
+    "key_point": "sản phẩm được xếp thành hàng trên băng tải, công nhân đeo găng tay xanh",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 112.5,
+      "t_end": 113.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S012"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-022",
+    "process_id": "PACK01",
+    "step_order": 22,
+    "step": "Đặt sản phẩm vào hộp nhựa trên băng tải",
+    "actor": "human",
+    "hand_action": "tay phải đặt nhẹ, tay trái giữ hộp",
+    "objects": [
+      "hộp nhựa",
+      "sản phẩm dạng tôm"
+    ],
+    "key_point": "hộp nhựa được sắp xếp theo hàng, mỗi hộp chứa nhiều sản phẩm",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 113.8,
+      "t_end": 114.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S012"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-023",
+    "process_id": "PACK01",
+    "step_order": 23,
+    "step": "Di chuyển hộp đã đóng gói sang vị trí tiếp theo bằng tay",
+    "actor": "human",
+    "hand_action": "tay phải đẩy nhẹ",
+    "objects": [
+      "hộp nhựa đã đóng gói"
+    ],
+    "key_point": "hộp được di chuyển dọc theo băng tải đến khu vực xử lý tiếp theo",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 114.8,
+      "t_end": 115.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S012"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-024",
+    "process_id": "PACK01",
+    "step_order": 24,
+    "step": "Robot gắp sản phẩm từ khay và đặt vào hộp",
+    "actor": "robot",
+    "hand_action": "đầu gắp di chuyển nhanh, hạ xuống để đặt sản phẩm",
+    "objects": [
+      "sản phẩm dạng thịt",
+      "hộp nhựa"
+    ],
+    "key_point": "robot hoạt động liên tục với chu kỳ ngắn, đầu gắp có cấu trúc kẹp hai bên",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 117.0,
+      "t_end": 119.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S012"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-025",
+    "process_id": "PACK01",
+    "step_order": 25,
+    "step": "Di chuyển cánh tay robot từ vị trí ban đầu đến khu vực lấy linh kiện",
+    "actor": "robot",
+    "hand_action": "di chuyển cánh tay",
+    "objects": [
+      "linh kiện",
+      "hộp giấy"
+    ],
+    "key_point": "cánh tay robot di chuyển nhanh, hướng về phía băng tải chứa linh kiện",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 120.0,
+      "t_end": 121.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S013"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-026",
+    "process_id": "PACK01",
+    "step_order": 26,
+    "step": "Gắp linh kiện từ băng tải bằng đầu gắp robot",
+    "actor": "robot",
+    "hand_action": "gắp",
+    "objects": [
+      "linh kiện"
+    ],
+    "key_point": "đầu gắp kẹp chặt linh kiện, không rơi",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 121.5,
+      "t_end": 122.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S013"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-027",
+    "process_id": "PACK01",
+    "step_order": 27,
+    "step": "Di chuyển linh kiện đã gắp đến vị trí hộp giấy",
+    "actor": "robot",
+    "hand_action": "di chuyển cánh tay",
+    "objects": [
+      "linh kiện",
+      "hộp giấy"
+    ],
+    "key_point": "cánh tay robot di chuyển thẳng, tránh va chạm với cấu trúc xung quanh",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 122.5,
+      "t_end": 123.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S013"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-028",
+    "process_id": "PACK01",
+    "step_order": 28,
+    "step": "Thả linh kiện vào bên trong hộp giấy",
+    "actor": "robot",
+    "hand_action": "thả",
+    "objects": [
+      "linh kiện",
+      "hộp giấy"
+    ],
+    "key_point": "linh kiện rơi nhẹ nhàng vào hộp, không bị lệch hướng",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 123.8,
+      "t_end": 125.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S013"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-029",
+    "process_id": "PACK01",
+    "step_order": 29,
+    "step": "Robot di chuyển cánh tay từ vị trí cao xuống thấp, hướng về phía bàn làm việc",
+    "actor": "robot",
+    "hand_action": null,
+    "objects": [
+      "cánh tay robot",
+      "bàn làm việc"
+    ],
+    "key_point": "Robot thực hiện chuyển động Pick & Place theo lộ trình cố định, đầu gắp hướng xuống",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 130.8,
+      "t_end": 133.3,
+      "segment_ids": [
+        "VID-96bd368c7e84-S014"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-030",
+    "process_id": "PACK01",
+    "step_order": 30,
+    "step": "Công nhân dùng tay phải chạm vào phần trên của mũ bảo hộ",
+    "actor": "human",
+    "hand_action": "chạm",
+    "objects": [
+      "mũ bảo hộ"
+    ],
+    "key_point": "Hành động như đang điều chỉnh hoặc che mắt khi quan sát thiết bị",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 135.0,
+      "t_end": 135.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S014"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-031",
+    "process_id": "PACK01",
+    "step_order": 31,
+    "step": "Công nhân đưa tay phải xuống, sau đó di chuyển tay qua khu vực thiết bị kim loại",
+    "actor": "human",
+    "hand_action": "di chuyển tay",
+    "objects": [
+      "thiết bị kim loại"
+    ],
+    "key_point": "Tay di chuyển gần bộ phận điều khiển có nút vàng và đèn báo",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 136.0,
+      "t_end": 137.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S014"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-032",
+    "process_id": "PACK01",
+    "step_order": 32,
+    "step": "Công nhân dùng tay phải nhấn vào nút màu vàng trên thiết bị",
+    "actor": "human",
+    "hand_action": "ấn",
+    "objects": [
+      "nút điều khiển màu vàng"
+    ],
+    "key_point": "Nút được nhấn ở vị trí bên phải thiết bị, đèn báo đỏ bật lên",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 137.5,
+      "t_end": 138.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S014"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-033",
+    "process_id": "PACK01",
+    "step_order": 33,
+    "step": "Công nhân giữ tay phải trên thiết bị, ngón tay đặt gần nút điều khiển",
+    "actor": "human",
+    "hand_action": "giữ",
+    "objects": [
+      "thiết bị điều khiển"
+    ],
+    "key_point": "Tay duy trì vị trí, không thao tác thêm, đèn báo vẫn sáng",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 138.3,
+      "t_end": 139.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S014"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-034",
+    "process_id": "PACK01",
+    "step_order": 34,
+    "step": "Công nhân di chuyển tay phải ra khỏi thiết bị, hướng về phía trước",
+    "actor": "human",
+    "hand_action": "rút tay",
+    "objects": [
+      "thiết bị điều khiển"
+    ],
+    "key_point": "Tay rời khỏi nút điều khiển, không có hành động tiếp theo",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 139.3,
+      "t_end": 139.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S014"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-035",
+    "process_id": "PACK01",
+    "step_order": 35,
+    "step": "Robot di chuyển cánh tay để gắp vật liệu từ băng tải",
+    "actor": "robot",
+    "hand_action": "gắp",
+    "objects": [
+      "vật liệu"
+    ],
+    "key_point": "cánh tay robot di chuyển từ vị trí chờ sang băng tải, đầu gắp hướng xuống",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 140.0,
+      "t_end": 142.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S015"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-036",
+    "process_id": "PACK01",
+    "step_order": 36,
+    "step": "Robot đặt vật liệu vào hộp hoặc khay trên băng tải",
+    "actor": "robot",
+    "hand_action": "đặt",
+    "objects": [
+      "vật liệu"
+    ],
+    "key_point": "đầu gắp hạ xuống, thả vật liệu vào vị trí định sẵn trên khay",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 142.5,
+      "t_end": 144.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S015"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-037",
+    "process_id": "PACK01",
+    "step_order": 37,
+    "step": "Nhặt sản phẩm từ băng tải bằng tay phải",
+    "actor": "human",
+    "hand_action": "tay phải nhặt",
+    "objects": [
+      "sản phẩm dạng khối"
+    ],
+    "key_point": "sản phẩm được lấy từ băng tải di chuyển ngang",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 164.3,
+      "t_end": 165.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S017"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-038",
+    "process_id": "PACK01",
+    "step_order": 38,
+    "step": "Đặt sản phẩm vào hộp màu đỏ trên băng tải",
+    "actor": "human",
+    "hand_action": "tay phải đặt",
+    "objects": [
+      "hộp màu đỏ",
+      "sản phẩm dạng khối"
+    ],
+    "key_point": "hộp màu đỏ nằm cố định trên băng tải, sản phẩm được đặt vào bên trong",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 165.0,
+      "t_end": 165.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S017"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-039",
+    "process_id": "PACK01",
+    "step_order": 39,
+    "step": "Lặp lại thao tác nhặt sản phẩm và đặt vào hộp",
+    "actor": "human",
+    "hand_action": "tay phải nhặt và đặt",
+    "objects": [
+      "sản phẩm dạng khối",
+      "hộp màu đỏ"
+    ],
+    "key_point": "thao tác lặp lại liên tục, sản phẩm được xếp đầy hộp theo thứ tự",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 166.0,
+      "t_end": 169.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S017"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.7,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "openai_compatible",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T14:44:55.314864Z",
+    "version": 1
+  }
+]

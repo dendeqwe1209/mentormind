@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Secrets and settings live in .env (ignored above). .secrets/ is documentation only: how to
+# obtain each vendor's API key. Anything else dropped in there is treated as a secret.
+.secrets/*
+!.secrets/README.md
+
+# Personal guides generated for one developer (not shared).
+guidance/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend build
+mentormind/frontend/dist/
+
+# Data — never commit (constitution Điều 2 / spec 01 FR-06)
+data/raw/
+data/factory/
+data/work/
+
+# Real video/audio never enters git; small public/synthetic samples under data/samples/ may.
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+*.wav
+*.mp3
+!data/samples/**/*.mp4
+!data/samples/**/*.mov
+!data/samples/**/*.mkv
+!data/samples/**/*.webm
+!data/samples/**/*.wav
+!data/samples/**/*.mp3
+
+# Video demo public của đội đi qua Git LFS (xem .gitattributes). Chỉ để video public/synthetic
+# ở đây; video nhà máy vẫn bị chặn bởi data/raw/ và data/factory/ ở trên.
+!data/video/*.mkv
+!data/video/*.mp4
+!data/video/*.mov
+!data/video/*.webm
+
+# Private per-developer Claude Code rules and settings (see CLAUDE.md for the shared ones).
+.claude/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Ag-kit
+.agents/
+

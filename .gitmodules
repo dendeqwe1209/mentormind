@@ -1,0 +1,3 @@
+[submodule "3rdparty/vlm_server"]
+	path = 3rdparty/vlm_server
+	url = https://github.com/osirisQdt2810/mentormind-inference.git

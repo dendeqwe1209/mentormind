@@ -1,0 +1,30 @@
+{
+  "steps": [
+    {
+      "step": "Nhặt linh kiện A",
+      "actor": "human",
+      "hand_action": "tay phải nhặt từ khay",
+      "objects": [
+        "linh kiện A",
+        "khay"
+      ],
+      "key_point_observed": null,
+      "t_start_rel": 0.0,
+      "t_end_rel": 2.5,
+      "confidence": 0.8
+    },
+    {
+      "step": "Đặt linh kiện A vào ngăn trái",
+      "actor": "human",
+      "hand_action": "tay phải xoay 90 độ, đặt nghiêng",
+      "objects": [
+        "linh kiện A",
+        "khay chia ngăn"
+      ],
+      "key_point_observed": "chân linh kiện hướng ra ngoài",
+      "t_start_rel": 2.5,
+      "t_end_rel": 6.0,
+      "confidence": 0.7
+    }
+  ]
+}

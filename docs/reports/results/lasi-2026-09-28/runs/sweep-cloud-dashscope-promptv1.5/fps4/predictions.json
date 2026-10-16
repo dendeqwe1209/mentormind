@@ -1,0 +1,48 @@
+{
+  "steps": [],
+  "failed": [
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "error": "sai schema tại steps/0/objects: Input should be a valid list",
+      "raw_text": "{\n  \"scene\": \"Một robot tự động đang di chuyển và đặt một hộp sản phẩm trên băng chuyền.\",\n  \"steps\": [\n    {\n      \"step\": \"Robot tự động đặt hộp sản phẩm lên băng chuyền.\",\n      \"hand_action\": null,\n      \"objects\": \"hộp sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 0.0,\n      \"t_end_rel\": 10.0\n    }\n  ]\n}"
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S008",
+      "error": "sai schema tại steps/0/objects: Input should be a valid list",
+      "raw_text": "{\n  \"scene\": \"Nhóm công nhân mặc đồng phục đang làm việc ở dây chuyền đóng gói thủ công. Sau đó, cảnh chuyển sang máy tự động hóa đang xếp sản phẩm vào hộp.\",\n  \"steps\": [\n    {\n      \"step\": \"Máy tự động đưa linh kiện vào hộp\",\n      \"hand_action\": null,\n      \"objects\": \"linh kiện, hộp\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 5.0,\n      \"t_end_rel\": 9.8,\n      \"confidence\": 0.9\n    }\n  ]\n}"
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "error": "sai schema tại steps/0/objects: Input should be a valid list",
+      "raw_text": "{\n  \"scene\": \"Nhân viên mặc đồng phục màu tím đang làm việc trên dây chuyền sản xuất, xử lý các sản phẩm trên băng tải.\",\n  \"steps\": [\n    {\n      \"step\": \"Nhân viên nhặt sản phẩm từ băng tải.\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 12.5,\n      \"t_end_rel\": 13.0\n    },\n    {\n      \"step\": \"Nhân viên đặt sản phẩm vào vị trí đã định sẵn trên băng tải.\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 13.0,\n      \"t_end_rel\": 13.3\n    }\n  ]\n}"
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "error": "sai schema tại steps/0/objects: Input should be a valid list",
+      "raw_text": "{\n  \"scene\": \"Hai công nhân mặc đồng phục tím đang xếp linh kiện vào hộp trên băng chuyền. Sau đó, cảnh chuyển sang một robot tự động đang thực hiện thao tác tương tự trong một khu vực kín.\",\n  \"steps\": [\n    {\n      \"step\": \"Đặt linh kiện vào hộp\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"linh kiện, hộp\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 0.0,\n      \"t_end_rel\": 6.0\n    },\n    {\n      \"step\": \"Robot đặt linh kiện vào hộp\",\n      \"hand_action\": \"đầu robot\",\n      \"objects\": \"linh kiện, hộp\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 10.0,\n      \"t_end_rel\": 25.0\n    }\n  ]\n}"
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "error": "sai schema tại steps/0/objects: Input should be a valid list",
+      "raw_text": "{\n  \"scene\": \"Một robot công nghiệp đang di chuyển và đặt linh kiện vào hộp giấy trên dây chuyền sản xuất.\",\n  \"steps\": [\n    {\n      \"step\": \"Robot di chuyển tay tới vị trí hộp giấy.\",\n      \"hand_action\": \"robot\",\n      \"objects\": \"hộp giấy\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 0.0,\n      \"t_end_rel\": 3.8\n    }\n  ]\n}"
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S017",
+      "error": "sai schema tại steps/0/objects: Input should be a valid list",
+      "raw_text": "{\n  \"scene\": \"Hai công nhân mặc đồng phục tím đang làm việc tại dây chuyền sản xuất, xử lý các sản phẩm trên băng tải.\",\n  \"steps\": [\n    {\n      \"step\": \"Nhặt sản phẩm từ băng tải\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 4.3,\n      \"t_end_rel\": 6.8\n    },\n    {\n      \"step\": \"Đặt sản phẩm vào hộp\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 6.8,\n      \"t_end_rel\": 9.8\n    }\n  ]\n}"
+    }
+  ],
+  "scenes": {
+    "VID-96bd368c7e84-S002": "Video hiển thị các slide giới thiệu về tự động hóa lean trong ngành công nghiệp thực phẩm, sau đó là hình ảnh máy móc và một người nói chuyện.",
+    "VID-96bd368c7e84-S004": "Một người mặc áo xanh đang nói chuyện, sau đó là cảnh hai công nhân mặc áo tím làm việc trên dây chuyền, rồi chuyển sang máy robot tự động đóng gói sản phẩm vào hộp, cuối cùng là cảnh một nhóm người trong bộ đồ bảo hộ đang đứng trò chuyện.",
+    "VID-96bd368c7e84-S005": "Nhóm người mặc đồ bảo hộ đang đứng trong một không gian có vẻ là phòng họp hoặc khu vực trưng bày, có hình ảnh và chữ viết trên màn hình chiếu.",
+    "VID-96bd368c7e84-S007": "Một robot tự động đang vận hành trong dây chuyền sản xuất, sau đó cảnh chuyển sang nhóm công nhân mặc đồng phục đang làm việc tại bàn.",
+    "VID-96bd368c7e84-S014": "Một kỹ sư đang nói chuyện trong khi một robot tự động (FANUC) hoạt động ở phía sau, và một công nhân khác đang kiểm tra máy móc.",
+    "VID-96bd368c7e84-S015": "Một công nhân mặc áo tím đang làm việc tại dây chuyền sản xuất có robot, trong khi một người khác đứng phía sau. Sau đó, cảnh chuyển sang một người đàn ông đang ngồi nói chuyện và cuối cùng là các khung hình hiển thị thông tin về hiệu suất robot.",
+    "VID-96bd368c7e84-S018": "Người mặc áo bảo hộ đang làm việc tại dây chuyền sản xuất, có người khác đứng phía sau quay lưng về phía máy quay."
+  },
+  "prompt_tokens": 72317,
+  "completion_tokens": 2253,
+  "latency_s": 41.563588039716706,
+  "calls": 26
+}

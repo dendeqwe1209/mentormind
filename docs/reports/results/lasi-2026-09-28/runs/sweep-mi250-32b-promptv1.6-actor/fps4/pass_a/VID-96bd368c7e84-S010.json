@@ -1,0 +1,48 @@
+{
+  "segment_id": "VID-96bd368c7e84-S010",
+  "t_start": 90.0,
+  "t_end": 100.0,
+  "fps": 4.0,
+  "frame_timestamps": [
+    0.0,
+    0.501,
+    0.767,
+    1.001,
+    1.268,
+    1.502,
+    1.768,
+    2.002,
+    2.502,
+    2.769,
+    3.27,
+    3.504,
+    3.77,
+    4.004,
+    4.271,
+    4.771,
+    5.005,
+    5.272,
+    5.506,
+    5.772,
+    6.006,
+    6.273,
+    6.773,
+    7.274,
+    7.508,
+    8.008,
+    8.275,
+    8.508,
+    9.009
+  ],
+  "prompt": "Bạn là kỹ sư IE đang ghi lại thao tác trong công đoạn PACK01 (đóng gói, xếp sản phẩm/linh kiện vào hộp).\nCác ảnh sau là khung hình liên tiếp của một đoạn video dài 10.0s, lấy mẫu 4 khung/giây, theo đúng thứ tự thời gian.\nMốc thời gian (giây, tính từ đầu đoạn) của từng ảnh: 0.0, 0.5, 0.8, 1.0, 1.3, 1.5, 1.8, 2.0, 2.5, 2.8, 3.3, 3.5, 3.8, 4.0, 4.3, 4.8, 5.0, 5.3, 5.5, 5.8, 6.0, 6.3, 6.8, 7.3, 7.5, 8.0, 8.3, 8.5, 9.0.\n\nBước 1 — \"scene\": mô tả ngắn (1-2 câu) những gì thấy trong các ảnh: ai hoặc máy/robot nào, đang làm gì.\nBước 2 — \"steps\": liệt kê CÁC BƯỚC THAO TÁC QUAN SÁT ĐƯỢC của người (công nhân, kỹ sư) hoặc của máy/robot.\nQuy tắc:\n- Chỉ mô tả điều nhìn thấy trong ảnh. Không suy đoán lý do, không thêm bước \"thường có\" trong SOP.\n- Mỗi bước: động từ ở đầu, ngắn gọn, KHÔNG ghi chủ thể (VD \"Đặt linh kiện A vào ngăn trái\"); ai làm thì ghi ở \"actor\".\n- actor: ai/cái gì làm bước đó: \"human\" (người: công nhân, kỹ sư, kỹ thuật viên), \"robot\" (robot có cánh tay, VD SCARA), \"machine\" (máy tự động cố định: băng tải, máy dựng thùng, máy chiết rót); không nhìn rõ thì null.\n- Một thao tác lặp lại nhiều lần chỉ ghi MỘT bước; tối đa 6 bước cho cả đoạn.\n- hand_action: tay nào, động tác gì (nhặt, xoay, ấn, đặt nghiêng...); robot/máy thì tả chuyển động của đầu gắp; objects: vật được thao tác.\n- key_point_observed: chi tiết kỹ thuật NHÌN THẤY được (hướng, vị trí, thứ tự), null nếu không có.\n- t_start_rel, t_end_rel: giây tính từ đầu đoạn (0 đến 10.0), dựa vào mốc thời gian của ảnh.\n- Nếu không chắc, hạ confidence (< 0.5) thay vì bỏ qua hoặc bịa.\n- Cảnh chỉ có người nói chuyện, logo, chữ hoặc bảng số liệu thì không phải thao tác: \"steps\" rỗng.\nTrả về DUY NHẤT một đối tượng JSON với hai khóa \"scene\" và \"steps\", không markdown, không giải thích.\n",
+  "response": {
+    "text": "{\n  \"scene\": \"Hai công nhân mặc áo tím đang thực hiện thao tác đóng gói trên dây chuyền, sau đó chuyển sang cảnh một robot cánh tay trắng hoạt động liên tục trong buồng kính để lắp ráp hoặc xử lý linh kiện. Cuối đoạn là một người phụ nữ nói chuyện trước kệ hàng.\",\n  \"steps\": [\n    {\n      \"step\": \"Nhặt linh kiện từ băng tải và đặt vào hộp\",\n      \"actor\": \"human\",\n      \"hand_action\": \"tay phải nhặt, tay trái hỗ trợ đặt\",\n      \"objects\": [\"linh kiện màu cam\", \"hộp\"],\n      \"key_point_observed\": \"linh kiện được đặt theo hướng nhất định vào ngăn hộp\",\n      \"t_start_rel\": 0.0,\n      \"t_end_rel\": 2.5,\n      \"confidence\": 0.8\n    },\n    {\n      \"step\": \"Robot di chuyển cánh tay để gắp linh kiện từ vị trí nguồn\",\n      \"actor\": \"robot\",\n      \"hand_action\": \"cánh tay di chuyển lên xuống, gắp vật thể bằng đầu kẹp\",\n      \"objects\": [\"linh kiện nhỏ\", \"kệ chứa\"],\n      \"key_point_observed\": \"đầu gắp robot di chuyển liên tục không dừng giữa các điểm\",\n      \"t_start_rel\": 3.3,\n      \"t_end_rel\": 7.5,\n      \"confidence\": 0.9\n    },\n    {\n      \"step\": \"Robot đặt linh kiện vào khay lắp ráp\",\n      \"actor\": \"robot\",\n      \"hand_action\": \"đưa đầu gắp xuống, thả linh kiện vào vị trí xác định\",\n      \"objects\": [\"linh kiện\", \"khay lắp ráp\"],\n      \"key_point_observed\": \"vị trí đặt chính xác, không va chạm với cấu trúc xung quanh\",\n      \"t_start_rel\": 7.5,\n      \"t_end_rel\": 9.0,\n      \"confidence\": 0.85\n    }\n  ]\n}",
+    "usage": {
+      "prompt_tokens": 4003,
+      "completion_tokens": 447
+    },
+    "latency_s": 17.170735334046185,
+    "provider": "openai_compatible",
+    "model": "Qwen/Qwen3-VL-32B-Instruct"
+  }
+}

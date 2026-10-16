@@ -1,0 +1,7 @@
+# Git LFS — demo video dùng chung cho cả đội (spec 04 §6, T04-6).
+# CHỈ video public/synthetic mới được đặt ở data/video/. Dữ liệu nhà máy (factory_confidential)
+# không bao giờ vào git, kể cả qua LFS (constitution Điều 2, spec 01 FR-06).
+data/video/*.mkv  filter=lfs diff=lfs merge=lfs -text
+data/video/*.mp4  filter=lfs diff=lfs merge=lfs -text
+data/video/*.mov  filter=lfs diff=lfs merge=lfs -text
+data/video/*.webm filter=lfs diff=lfs merge=lfs -text

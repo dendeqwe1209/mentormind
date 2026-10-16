@@ -1,0 +1,668 @@
+{
+  "steps": [
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 30.5,
+      "t_end": 32.8,
+      "step": "Nhặt sản phẩm từ băng tải bằng tay phải",
+      "actor": "human",
+      "hand_action": "nhặt bằng tay phải",
+      "objects": [
+        "sản phẩm dạng khối"
+      ],
+      "key_point_observed": "sản phẩm được lấy từ băng tải di chuyển ngang",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 32.0,
+      "t_end": 33.0,
+      "step": "Đặt sản phẩm vào hộp giấy bằng tay phải",
+      "actor": "human",
+      "hand_action": "đặt bằng tay phải",
+      "objects": [
+        "sản phẩm dạng khối",
+        "hộp giấy"
+      ],
+      "key_point_observed": "hộp giấy mở sẵn trên bàn làm việc",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 33.0,
+      "t_end": 34.0,
+      "step": "Robot di chuyển cánh tay về phía khay chứa sản phẩm",
+      "actor": "robot",
+      "hand_action": "di chuyển cánh tay về phía trước",
+      "objects": [
+        "khay chứa sản phẩm"
+      ],
+      "key_point_observed": "cánh tay robot có đầu gắp màu đen, di chuyển theo軌道 cố định",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 34.0,
+      "t_end": 35.0,
+      "step": "Robot gắp sản phẩm từ khay và nâng lên",
+      "actor": "robot",
+      "hand_action": "gắp và nâng sản phẩm",
+      "objects": [
+        "sản phẩm dạng khối"
+      ],
+      "key_point_observed": "đầu gắp kẹp chặt sản phẩm, không rơi",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 35.0,
+      "t_end": 36.5,
+      "step": "Robot di chuyển sản phẩm đến vị trí hộp và thả xuống",
+      "actor": "robot",
+      "hand_action": "di chuyển ngang và thả sản phẩm",
+      "objects": [
+        "sản phẩm dạng khối",
+        "hộp giấy"
+      ],
+      "key_point_observed": "sản phẩm được thả chính xác vào hộp đang di chuyển trên băng tải",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 36.5,
+      "t_end": 39.5,
+      "step": "Robot rút cánh tay về vị trí ban đầu",
+      "actor": "robot",
+      "hand_action": "rút cánh tay về sau",
+      "objects": [
+        "khay chứa sản phẩm"
+      ],
+      "key_point_observed": "cánh tay robot trở lại vị trí chờ, đèn xanh nhấp nháy",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 51.3,
+      "t_end": 52.5,
+      "step": "Di chuyển hộp giấy từ vị trí đầu vào sang băng tải",
+      "actor": "machine",
+      "hand_action": null,
+      "objects": [
+        "hộp giấy"
+      ],
+      "key_point_observed": "Hộp giấy di chuyển theo hướng ngang trên băng tải kim loại",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 54.8,
+      "t_end": 55.5,
+      "step": "Robot gắp hộp giấy từ băng tải",
+      "actor": "robot",
+      "hand_action": "gắp",
+      "objects": [
+        "hộp giấy"
+      ],
+      "key_point_observed": "Đầu gắp của robot tiếp cận và kẹp lấy hộp giấy ở vị trí trung tâm băng tải",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 55.5,
+      "t_end": 56.8,
+      "step": "Robot di chuyển hộp giấy đến vị trí xử lý tiếp theo",
+      "actor": "robot",
+      "hand_action": "di chuyển",
+      "objects": [
+        "hộp giấy"
+      ],
+      "key_point_observed": "Robot nâng hộp lên và di chuyển về phía trước, tránh các bộ phận cố định",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 56.8,
+      "t_end": 57.3,
+      "step": "Robot đặt hộp giấy xuống vị trí mới trên băng tải hoặc khay",
+      "actor": "robot",
+      "hand_action": "thả",
+      "objects": [
+        "hộp giấy"
+      ],
+      "key_point_observed": "Hộp được đặt thẳng đứng, ổn định trên bề mặt kim loại",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 57.3,
+      "t_end": 58.0,
+      "step": "Robot quay trở lại vị trí ban đầu",
+      "actor": "robot",
+      "hand_action": "quay trở lại",
+      "objects": [],
+      "key_point_observed": "Tay robot thu gọn và di chuyển về phía sau, chuẩn bị cho chu kỳ tiếp theo",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S008",
+      "t_start": 75.0,
+      "t_end": 76.0,
+      "step": "Di chuyển hộp carton đến vị trí lắp ráp",
+      "actor": "machine",
+      "hand_action": null,
+      "objects": [
+        "hộp carton"
+      ],
+      "key_point_observed": "hộp carton được đưa vào khung kim loại định vị",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S008",
+      "t_start": 76.3,
+      "t_end": 77.0,
+      "step": "Robot gắp linh kiện từ băng tải",
+      "actor": "robot",
+      "hand_action": "gắp",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": "đầu gắp robot di chuyển xuống, kẹp lấy vật thể màu đỏ trên băng tải",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S008",
+      "t_start": 77.3,
+      "t_end": 78.0,
+      "step": "Robot đặt linh kiện vào hộp carton",
+      "actor": "robot",
+      "hand_action": "thả",
+      "objects": [
+        "linh kiện",
+        "hộp carton"
+      ],
+      "key_point_observed": "linh kiện được thả thẳng xuống bên trong hộp carton đã định vị",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S008",
+      "t_start": 78.3,
+      "t_end": 79.0,
+      "step": "Băng tải di chuyển hộp carton đến vị trí tiếp theo",
+      "actor": "machine",
+      "hand_action": null,
+      "objects": [
+        "hộp carton"
+      ],
+      "key_point_observed": "hộp carton di chuyển ngang qua khung kim loại sau khi được đặt linh kiện",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "t_start": 83.0,
+      "t_end": 88.5,
+      "step": "Nhặt vật liệu từ khay",
+      "actor": "human",
+      "hand_action": "tay phải nhặt vật liệu",
+      "objects": [
+        "vật liệu dạng nắp màu cam"
+      ],
+      "key_point_observed": "vật liệu được lấy từ khay nhựa màu xanh lá cây và đỏ",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "t_start": 83.3,
+      "t_end": 89.8,
+      "step": "Đặt vật liệu lên băng tải",
+      "actor": "human",
+      "hand_action": "tay phải đặt vật liệu xuống băng tải",
+      "objects": [
+        "vật liệu dạng nắp màu cam"
+      ],
+      "key_point_observed": "vật liệu được đặt thẳng hàng trên băng tải, hướng nhất định",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 90.0,
+      "t_end": 92.5,
+      "step": "Nhặt linh kiện từ băng tải và đặt vào hộp",
+      "actor": "human",
+      "hand_action": "tay phải nhặt, tay trái hỗ trợ đặt",
+      "objects": [
+        "linh kiện màu cam",
+        "hộp"
+      ],
+      "key_point_observed": "linh kiện được đặt theo hướng nhất định vào ngăn hộp",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 93.3,
+      "t_end": 97.5,
+      "step": "Robot di chuyển cánh tay để gắp linh kiện từ vị trí nguồn",
+      "actor": "robot",
+      "hand_action": "cánh tay di chuyển lên xuống, gắp vật thể bằng đầu kẹp",
+      "objects": [
+        "linh kiện nhỏ",
+        "kệ chứa"
+      ],
+      "key_point_observed": "đầu gắp robot di chuyển liên tục không dừng giữa các điểm",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 97.5,
+      "t_end": 99.0,
+      "step": "Robot đặt linh kiện vào khay lắp ráp",
+      "actor": "robot",
+      "hand_action": "đưa đầu gắp xuống, thả linh kiện vào vị trí xác định",
+      "objects": [
+        "linh kiện",
+        "khay lắp ráp"
+      ],
+      "key_point_observed": "vị trí đặt chính xác, không va chạm với cấu trúc xung quanh",
+      "confidence": 0.85,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S012",
+      "t_start": 112.5,
+      "t_end": 113.8,
+      "step": "Nhặt sản phẩm từ băng tải bằng tay",
+      "actor": "human",
+      "hand_action": "tay phải nhặt, tay trái hỗ trợ",
+      "objects": [
+        "sản phẩm dạng tôm",
+        "băng tải"
+      ],
+      "key_point_observed": "sản phẩm được xếp thành hàng trên băng tải, công nhân đeo găng tay xanh",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S012",
+      "t_start": 113.8,
+      "t_end": 114.8,
+      "step": "Đặt sản phẩm vào hộp nhựa trên băng tải",
+      "actor": "human",
+      "hand_action": "tay phải đặt nhẹ, tay trái giữ hộp",
+      "objects": [
+        "hộp nhựa",
+        "sản phẩm dạng tôm"
+      ],
+      "key_point_observed": "hộp nhựa được sắp xếp theo hàng, mỗi hộp chứa nhiều sản phẩm",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S012",
+      "t_start": 114.8,
+      "t_end": 115.5,
+      "step": "Di chuyển hộp đã đóng gói sang vị trí tiếp theo bằng tay",
+      "actor": "human",
+      "hand_action": "tay phải đẩy nhẹ",
+      "objects": [
+        "hộp nhựa đã đóng gói"
+      ],
+      "key_point_observed": "hộp được di chuyển dọc theo băng tải đến khu vực xử lý tiếp theo",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S012",
+      "t_start": 117.0,
+      "t_end": 119.8,
+      "step": "Robot gắp sản phẩm từ khay và đặt vào hộp",
+      "actor": "robot",
+      "hand_action": "đầu gắp di chuyển nhanh, hạ xuống để đặt sản phẩm",
+      "objects": [
+        "sản phẩm dạng thịt",
+        "hộp nhựa"
+      ],
+      "key_point_observed": "robot hoạt động liên tục với chu kỳ ngắn, đầu gắp có cấu trúc kẹp hai bên",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "t_start": 120.0,
+      "t_end": 121.5,
+      "step": "Di chuyển cánh tay robot từ vị trí ban đầu đến khu vực lấy linh kiện",
+      "actor": "robot",
+      "hand_action": "di chuyển cánh tay",
+      "objects": [
+        "linh kiện",
+        "hộp giấy"
+      ],
+      "key_point_observed": "cánh tay robot di chuyển nhanh, hướng về phía băng tải chứa linh kiện",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "t_start": 121.5,
+      "t_end": 122.5,
+      "step": "Gắp linh kiện từ băng tải bằng đầu gắp robot",
+      "actor": "robot",
+      "hand_action": "gắp",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": "đầu gắp kẹp chặt linh kiện, không rơi",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "t_start": 122.5,
+      "t_end": 123.8,
+      "step": "Di chuyển linh kiện đã gắp đến vị trí hộp giấy",
+      "actor": "robot",
+      "hand_action": "di chuyển cánh tay",
+      "objects": [
+        "linh kiện",
+        "hộp giấy"
+      ],
+      "key_point_observed": "cánh tay robot di chuyển thẳng, tránh va chạm với cấu trúc xung quanh",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "t_start": 123.8,
+      "t_end": 125.0,
+      "step": "Thả linh kiện vào bên trong hộp giấy",
+      "actor": "robot",
+      "hand_action": "thả",
+      "objects": [
+        "linh kiện",
+        "hộp giấy"
+      ],
+      "key_point_observed": "linh kiện rơi nhẹ nhàng vào hộp, không bị lệch hướng",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S014",
+      "t_start": 130.8,
+      "t_end": 133.3,
+      "step": "Robot di chuyển cánh tay từ vị trí cao xuống thấp, hướng về phía bàn làm việc",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [
+        "cánh tay robot",
+        "bàn làm việc"
+      ],
+      "key_point_observed": "Robot thực hiện chuyển động Pick & Place theo lộ trình cố định, đầu gắp hướng xuống",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S014",
+      "t_start": 135.0,
+      "t_end": 135.5,
+      "step": "Công nhân dùng tay phải chạm vào phần trên của mũ bảo hộ",
+      "actor": "human",
+      "hand_action": "chạm",
+      "objects": [
+        "mũ bảo hộ"
+      ],
+      "key_point_observed": "Hành động như đang điều chỉnh hoặc che mắt khi quan sát thiết bị",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S014",
+      "t_start": 136.0,
+      "t_end": 137.0,
+      "step": "Công nhân đưa tay phải xuống, sau đó di chuyển tay qua khu vực thiết bị kim loại",
+      "actor": "human",
+      "hand_action": "di chuyển tay",
+      "objects": [
+        "thiết bị kim loại"
+      ],
+      "key_point_observed": "Tay di chuyển gần bộ phận điều khiển có nút vàng và đèn báo",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S014",
+      "t_start": 137.5,
+      "t_end": 138.0,
+      "step": "Công nhân dùng tay phải nhấn vào nút màu vàng trên thiết bị",
+      "actor": "human",
+      "hand_action": "ấn",
+      "objects": [
+        "nút điều khiển màu vàng"
+      ],
+      "key_point_observed": "Nút được nhấn ở vị trí bên phải thiết bị, đèn báo đỏ bật lên",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S014",
+      "t_start": 138.3,
+      "t_end": 139.0,
+      "step": "Công nhân giữ tay phải trên thiết bị, ngón tay đặt gần nút điều khiển",
+      "actor": "human",
+      "hand_action": "giữ",
+      "objects": [
+        "thiết bị điều khiển"
+      ],
+      "key_point_observed": "Tay duy trì vị trí, không thao tác thêm, đèn báo vẫn sáng",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S014",
+      "t_start": 139.3,
+      "t_end": 139.8,
+      "step": "Công nhân di chuyển tay phải ra khỏi thiết bị, hướng về phía trước",
+      "actor": "human",
+      "hand_action": "rút tay",
+      "objects": [
+        "thiết bị điều khiển"
+      ],
+      "key_point_observed": "Tay rời khỏi nút điều khiển, không có hành động tiếp theo",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S015",
+      "t_start": 140.0,
+      "t_end": 142.5,
+      "step": "Robot di chuyển cánh tay để gắp vật liệu từ băng tải",
+      "actor": "robot",
+      "hand_action": "gắp",
+      "objects": [
+        "vật liệu"
+      ],
+      "key_point_observed": "cánh tay robot di chuyển từ vị trí chờ sang băng tải, đầu gắp hướng xuống",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S015",
+      "t_start": 142.5,
+      "t_end": 144.0,
+      "step": "Robot đặt vật liệu vào hộp hoặc khay trên băng tải",
+      "actor": "robot",
+      "hand_action": "đặt",
+      "objects": [
+        "vật liệu"
+      ],
+      "key_point_observed": "đầu gắp hạ xuống, thả vật liệu vào vị trí định sẵn trên khay",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S017",
+      "t_start": 164.3,
+      "t_end": 165.0,
+      "step": "Nhặt sản phẩm từ băng tải bằng tay phải",
+      "actor": "human",
+      "hand_action": "tay phải nhặt",
+      "objects": [
+        "sản phẩm dạng khối"
+      ],
+      "key_point_observed": "sản phẩm được lấy từ băng tải di chuyển ngang",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S017",
+      "t_start": 165.0,
+      "t_end": 165.8,
+      "step": "Đặt sản phẩm vào hộp màu đỏ trên băng tải",
+      "actor": "human",
+      "hand_action": "tay phải đặt",
+      "objects": [
+        "hộp màu đỏ",
+        "sản phẩm dạng khối"
+      ],
+      "key_point_observed": "hộp màu đỏ nằm cố định trên băng tải, sản phẩm được đặt vào bên trong",
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S017",
+      "t_start": 166.0,
+      "t_end": 169.8,
+      "step": "Lặp lại thao tác nhặt sản phẩm và đặt vào hộp",
+      "actor": "human",
+      "hand_action": "tay phải nhặt và đặt",
+      "objects": [
+        "sản phẩm dạng khối",
+        "hộp màu đỏ"
+      ],
+      "key_point_observed": "thao tác lặp lại liên tục, sản phẩm được xếp đầy hộp theo thứ tự",
+      "confidence": 0.7,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    }
+  ],
+  "failed": [],
+  "scenes": {
+    "VID-96bd368c7e84-S001": "Các khung hình hiển thị logo công ty LASI, cảnh quay từ trên cao của khu nhà xưởng và các biển hiệu giới thiệu về 'Lean Automation Success Case' trong ngành thực phẩm. Không có người hay máy móc thực hiện thao tác đóng gói nào.",
+    "VID-96bd368c7e84-S002": "Các khung hình đầu là slide giới thiệu với chữ 'Lean Automation Success Case Food Industry', sau đó chuyển sang hình ảnh mờ của dây chuyền sản xuất với thông số hiệu suất robot, cuối cùng là một người phụ nữ đeo khẩu trang nói chuyện với phụ đề tiếng Nhật và Anh.",
+    "VID-96bd368c7e84-S003": "Cảnh quay mở đầu là một người phụ nữ đang nói chuyện, sau đó chuyển sang dây chuyền sản xuất thực phẩm cho thú cưng với nhiều công nhân mặc đồng phục. Các khung hình tiếp theo cho thấy máy móc tự động hóa đang đóng gói sản phẩm vào lon và di chuyển trên băng tải.",
+    "VID-96bd368c7e84-S004": "Cảnh quay chuyển từ một người phụ nữ đang nói chuyện sang công nhân mặc áo tím làm việc trên dây chuyền, sau đó là robot SCARA hoạt động trong khu vực đóng gói. Cuối cùng là cảnh nhóm người mặc đồ bảo hộ trắng đang thảo luận tại nhà máy.",
+    "VID-96bd368c7e84-S005": "Các nhân viên trong trang phục bảo hộ đang tham gia một buổi giới thiệu hoặc hội thảo về dự án LASI. Cảnh quay chuyển từ ngoài trời sang phòng họp với màn hình chiếu và người thuyết trình.",
+    "VID-96bd368c7e84-S006": "Một hệ thống tự động hóa trong công đoạn đóng gói, bao gồm băng tải và robot cánh tay. Một hộp giấy được đưa vào hệ thống, sau đó một robot cánh tay (có thể là SCARA) thực hiện thao tác trên sản phẩm hoặc hộp.",
+    "VID-96bd368c7e84-S007": "Cảnh đầu tiên là một robot cánh tay đang hoạt động trong khu vực đóng gói. Các cảnh tiếp theo cho thấy một nhóm công nhân mặc đồng phục tím, đội mũ trùm đầu và khẩu trang, đang làm việc tại dây chuyền sản xuất; một người phụ nữ đeo khẩu trang đang nói chuyện trong phòng có kệ hàng ở phía sau.",
+    "VID-96bd368c7e84-S008": "Đoạn video ban đầu cho thấy nhiều công nhân mặc đồng phục tím đang làm việc tại dây chuyền đóng gói. Sau đó, cảnh chuyển sang một hệ thống tự động hóa với robot và máy móc thực hiện việc đóng gói sản phẩm vào thùng carton.",
+    "VID-96bd368c7e84-S009": "Cảnh quay một dây chuyền sản xuất với nhiều công nhân mặc đồng phục tím, đội mũ bảo hộ, đang làm việc tại các bàn làm việc dọc theo băng tải. Các công nhân thực hiện thao tác lấy và đặt vật liệu (có thể là nắp hoặc linh kiện) lên băng tải hoặc vào khay.",
+    "VID-96bd368c7e84-S010": "Hai công nhân mặc áo tím đang thực hiện thao tác đóng gói trên dây chuyền, sau đó chuyển sang cảnh một robot cánh tay trắng hoạt động liên tục trong buồng kính để lắp ráp hoặc xử lý linh kiện. Cuối đoạn là một người phụ nữ nói chuyện trước kệ hàng.",
+    "VID-96bd368c7e84-S011": "Các khung hình hiển thị hai người đang nói chuyện trong bối cảnh phỏng vấn hoặc thuyết trình, không có hoạt động đóng gói hay thao tác vật lý nào được quan sát thấy.",
+    "VID-96bd368c7e84-S012": "Cảnh quay trong nhà máy thực phẩm, có công nhân mặc đồ bảo hộ và robot tự động đang hoạt động. Các khung hình cho thấy quá trình đóng gói sản phẩm (có thể là tôm hoặc thực phẩm chế biến) vào hộp nhựa trên băng tải.",
+    "VID-96bd368c7e84-S013": "Cảnh đầu tiên cho thấy một robot đang hoạt động trong dây chuyền đóng gói, thực hiện thao tác lấy và đặt vật liệu vào hộp giấy. Cảnh sau là một người đàn ông đang nói chuyện, có phụ đề giải thích về thử nghiệm hiệu suất của robot Pick & Place.",
+    "VID-96bd368c7e84-S014": "Cảnh quay trong nhà máy, có robot cánh tay (UR10e) và công nhân mặc đồng phục NKE đang kiểm tra hệ thống. Một số khung hình cho thấy công nhân điều chỉnh thiết bị hoặc quan sát hoạt động của robot.",
+    "VID-96bd368c7e84-S015": "Hai công nhân mặc áo bảo hộ và đội mũ bảo hiểm đang đứng quan sát một robot cánh tay trắng hoạt động trên dây chuyền sản xuất. Sau đó, hình ảnh chuyển sang một người đàn ông trong văn phòng nói về hiệu suất robot, kèm theo các thông số kỹ thuật hiển thị trên màn hình.",
+    "VID-96bd368c7e84-S016": "Các khung hình hiển thị thông tin về hiệu suất robot (95%, chu kỳ 0.5s, năng lực 150%) và các cảnh người nói chuyện trong phòng phỏng vấn, không có thao tác đóng gói thực tế nào được quan sát.",
+    "VID-96bd368c7e84-S017": "Công nhân mặc áo tím đang làm việc trên dây chuyền đóng gói, đặt các sản phẩm vào hộp màu đỏ trên băng tải. Có ít nhất hai công nhân tham gia, thực hiện thao tác liên tục và lặp lại.",
+    "VID-96bd368c7e84-S018": "Cảnh quay ban đầu cho thấy công nhân mặc áo tím đang làm việc tại dây chuyền, có thể là đóng gói sản phẩm trên băng tải. Sau đó chuyển sang cảnh một phụ nữ đeo khẩu trang và kính đang nói chuyện trong phòng phỏng vấn, với kệ hàng ở phía sau.",
+    "VID-96bd368c7e84-S019": "Cảnh quay một người phụ nữ đeo khẩu trang và kính, đang nói chuyện trước kệ hàng. Sau đó chuyển sang logo công ty ASIAN. Không có thao tác đóng gói hoặc hoạt động sản xuất nào được quan sát.",
+    "VID-96bd368c7e84-S020": "Các khung hình hiển thị logo công ty 'ASIAN' và 'LASI', không có người, máy móc hoặc thao tác thực hiện trong quá trình đóng gói."
+  },
+  "prompt_tokens": 52926,
+  "completion_tokens": 5820,
+  "latency_s": 221.08387557719834,
+  "calls": 20
+}

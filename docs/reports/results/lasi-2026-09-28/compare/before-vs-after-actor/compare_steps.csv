@@ -1,0 +1,15 @@
+segment_id,before_actor_step,with_actor_step,before_actor_time,with_actor_time,before_actor_actor,with_actor_actor,before_actor_hand_action,with_actor_hand_action,cosine_bge_m3,lexical_token_set,agree
+VID-96bd368c7e84-S004,Nhân viên đặt sản phẩm vào hộp,Đặt sản phẩm vào hộp,30.5-32.8,34.3-36.5,,robot,"tay phải, đặt",,0.913,100.0,False
+VID-96bd368c7e84-S004,Robot tự động đặt sản phẩm vào hộp,Nhặt sản phẩm từ băng tải,36.5-39.5,30.5-32.8,,human,"động cơ, đặt",,0.531,50.8,False
+VID-96bd368c7e84-S006,Robot đặt hộp vào vị trí trên băng tải.,Đặt hộp vào vị trí trên băng tải,50.0-51.8,50.0-51.3,,machine,robot,,0.89,100.0,True
+VID-96bd368c7e84-S006,Robot di chuyển tay cơ khí xuống để lắp ráp linh kiện vào hộp.,Robot SCARA di chuyển đầu gắp xuống để lấy sản phẩm từ băng tải,55.0-57.3,55.8-56.5,,robot,robot,,0.652,58.1,True
+VID-96bd368c7e84-S007,Robot đặt linh kiện vào hộp.,human đặt sản phẩm vào hộp,60.0-60.5,67.3-69.5,,human,robot,đặt,0.811,60.4,False
+VID-96bd368c7e84-S008,Robot đặt linh kiện vào hộp,Xếp linh kiện vào hộp,75.0-79.8,75.0-79.8,,robot,,,0.856,89.5,True
+VID-96bd368c7e84-S009,Nhặt linh kiện từ băng tải,Nhặt sản phẩm từ băng tải,90.0-90.0,90.0-90.0,,human,tay phải,nhặt,0.906,78.0,True
+VID-96bd368c7e84-S009,Đặt linh kiện vào vị trí trên băng tải,Đặt sản phẩm vào vị trí,90.0-90.0,90.0-90.0,,human,tay phải,đặt,0.755,75.7,True
+VID-96bd368c7e84-S010,Đặt linh kiện vào hộp,Đặt linh kiện vào hộp,90.5-91.0,90.5-91.0,,human,tay phải,đặt,1.0,100.0,True
+VID-96bd368c7e84-S010,Nhặt linh kiện từ băng chuyền,Nhặt linh kiện từ băng tải,90.0-90.5,90.0-90.5,,human,tay phải,nhặt,0.911,91.7,True
+VID-96bd368c7e84-S010,Robot di chuyển cánh tay để lấy linh kiện,Gắp linh kiện từ bàn,100.0-100.0,94.3-95.0,,robot,cánh tay robot,gắp,0.697,62.1,False
+VID-96bd368c7e84-S013,Robot đặt linh kiện vào hộp giấy,Đặt linh kiện vào hộp,122.8-123.3,120.0-123.8,,robot,đặt,,0.829,100.0,True
+VID-96bd368c7e84-S017,Đặt sản phẩm vào hộp,Đặt sản phẩm vào hộp,166.5-168.5,166.5-168.5,,human,tay phải,đặt,1.0,100.0,True
+VID-96bd368c7e84-S017,Nhặt sản phẩm từ băng chuyền,Nhặt sản phẩm từ băng tải,164.3-166.5,164.3-166.5,,human,tay phải,nhặt,0.914,91.3,True

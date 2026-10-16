@@ -1,0 +1,40 @@
+{
+  "segment_id": "VID-96bd368c7e84-S004",
+  "t_start": 30.0,
+  "t_end": 40.0,
+  "fps": 4.0,
+  "frame_timestamps": [
+    0.0,
+    0.501,
+    0.767,
+    1.001,
+    2.002,
+    2.269,
+    2.502,
+    2.769,
+    3.003,
+    3.27,
+    3.504,
+    3.77,
+    4.004,
+    4.271,
+    4.771,
+    5.005,
+    5.272,
+    5.772,
+    6.006,
+    6.506,
+    9.51
+  ],
+  "prompt": "Bạn là kỹ sư IE đang ghi lại thao tác trong công đoạn PACK01 (đóng gói, xếp sản phẩm/linh kiện vào hộp).\nCác ảnh sau là khung hình liên tiếp của một đoạn video dài 10.0s, lấy mẫu 4 khung/giây, theo đúng thứ tự thời gian.\nMốc thời gian (giây, tính từ đầu đoạn) của từng ảnh: 0.0, 0.5, 0.8, 1.0, 2.0, 2.3, 2.5, 2.8, 3.0, 3.3, 3.5, 3.8, 4.0, 4.3, 4.8, 5.0, 5.3, 5.8, 6.0, 6.5, 9.5.\n\nBước 1 — \"scene\": mô tả ngắn (1-2 câu) những gì thấy trong các ảnh: ai hoặc máy/robot nào, đang làm gì.\nBước 2 — \"steps\": liệt kê CÁC BƯỚC THAO TÁC QUAN SÁT ĐƯỢC của người (công nhân, kỹ sư) hoặc của máy/robot.\nQuy tắc:\n- Chỉ mô tả điều nhìn thấy trong ảnh. Không suy đoán lý do, không thêm bước \"thường có\" trong SOP.\n- Mỗi bước: động từ ở đầu, ngắn gọn (VD \"Đặt linh kiện A vào ngăn trái\").\n- Một thao tác lặp lại nhiều lần chỉ ghi MỘT bước; tối đa 6 bước cho cả đoạn.\n- hand_action: ai/tay nào, động tác gì (nhặt, xoay, ấn, đặt nghiêng...); objects: vật được thao tác.\n- key_point_observed: chi tiết kỹ thuật NHÌN THẤY được (hướng, vị trí, thứ tự), null nếu không có.\n- t_start_rel, t_end_rel: giây tính từ đầu đoạn (0 đến 10.0), dựa vào mốc thời gian của ảnh.\n- Nếu không chắc, hạ confidence (< 0.5) thay vì bỏ qua hoặc bịa.\n- Cảnh chỉ có người nói chuyện, logo, chữ hoặc bảng số liệu thì không phải thao tác: \"steps\" rỗng.\nTrả về DUY NHẤT một đối tượng JSON với hai khóa \"scene\" và \"steps\", không markdown, không giải thích.\n",
+  "response": {
+    "text": "{\n  \"scene\": \"Một người mặc áo xanh đang nói chuyện, sau đó là cảnh hai công nhân mặc áo tím làm việc trên dây chuyền, rồi chuyển sang máy robot tự động đóng gói sản phẩm vào hộp, cuối cùng là cảnh một nhóm người trong bộ đồ bảo hộ đang đứng trò chuyện.\",\n  \"steps\": []\n}",
+    "usage": {
+      "prompt_tokens": 2950,
+      "completion_tokens": 73
+    },
+    "latency_s": 1.5039386418648064,
+    "provider": "qwen_api",
+    "model": "qwen3-vl-8b-instruct"
+  }
+}

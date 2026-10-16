@@ -1,0 +1,34 @@
+{
+  "threshold_cosine": 0.65,
+  "segments": 20,
+  "scene_cosine_mean": 0.8591148211405828,
+  "steps_selfhost": 17,
+  "steps_cloud": 9,
+  "cloud_steps_lost_no_text": 0,
+  "cloud_failed_in_pipeline": 6,
+  "agreed_step_pairs": 9,
+  "agreement_selfhost_pct": 0.5294117647058824,
+  "agreement_cloud_pct": 1.0,
+  "soft_semantic_f1": 0.7828624204760856,
+  "segments_both_empty": 12,
+  "vs_truth": {
+    "selfhost": {
+      "steps": 17,
+      "semantic_recall": 0.18518518518518517,
+      "semantic_precision": 0.29411764705882354,
+      "lexical_recall": 0.037037037037037035,
+      "time_recall": 0.4444444444444444
+    },
+    "cloud": {
+      "steps": 9,
+      "semantic_recall": 0.14814814814814814,
+      "semantic_precision": 0.4444444444444444,
+      "lexical_recall": 0.07407407407407407,
+      "time_recall": 0.4074074074074074
+    }
+  },
+  "tokens": {
+    "selfhost": 53325,
+    "cloud": 74570
+  }
+}

@@ -1,0 +1,604 @@
+[
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-001",
+    "process_id": "PACK01",
+    "step_order": 1,
+    "step": "Nhận sản phẩm từ băng tải",
+    "actor": "human",
+    "hand_action": null,
+    "objects": [],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 30.5,
+      "t_end": 32.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S004"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.828,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-002",
+    "process_id": "PACK01",
+    "step_order": 2,
+    "step": "Gắp linh kiện từ băng tải",
+    "actor": "robot",
+    "hand_action": null,
+    "objects": [
+      "linh kiện"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 60.0,
+      "t_end": 60.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S007"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.825,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-003",
+    "process_id": "PACK01",
+    "step_order": 3,
+    "step": "Đặt sản phẩm vào hộp",
+    "actor": "robot",
+    "hand_action": null,
+    "objects": [
+      "sản phẩm",
+      "hộp"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 75.0,
+      "t_end": 79.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S008"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-004",
+    "process_id": "PACK01",
+    "step_order": 4,
+    "step": "Đặt sản phẩm vào vị trí",
+    "actor": "human",
+    "hand_action": "đặt",
+    "objects": [
+      "sản phẩm"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 90.0,
+      "t_end": 90.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S009"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-005",
+    "process_id": "PACK01",
+    "step_order": 5,
+    "step": "Nhặt sản phẩm từ băng tải",
+    "actor": "human",
+    "hand_action": "nhặt",
+    "objects": [
+      "sản phẩm"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 90.0,
+      "t_end": 90.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S009"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-006",
+    "process_id": "PACK01",
+    "step_order": 6,
+    "step": "Nhặt linh kiện từ băng tải",
+    "actor": "human",
+    "hand_action": "nhặt",
+    "objects": [
+      "linh kiện"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 90.0,
+      "t_end": 90.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S010"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-007",
+    "process_id": "PACK01",
+    "step_order": 7,
+    "step": "Đặt linh kiện vào hộp",
+    "actor": "human",
+    "hand_action": "đặt",
+    "objects": [
+      "linh kiện"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 90.5,
+      "t_end": 91.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S010"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-008",
+    "process_id": "PACK01",
+    "step_order": 8,
+    "step": "Gắp linh kiện từ bàn",
+    "actor": "robot",
+    "hand_action": "gắp",
+    "objects": [
+      "linh kiện"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 94.3,
+      "t_end": 95.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S010"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.711,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-009",
+    "process_id": "PACK01",
+    "step_order": 9,
+    "step": "Đặt linh kiện vào hộp",
+    "actor": "robot",
+    "hand_action": null,
+    "objects": [
+      "linh kiện",
+      "hộp giấy"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 120.0,
+      "t_end": 123.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S013"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-010",
+    "process_id": "PACK01",
+    "step_order": 10,
+    "step": "Gắp vật thể từ bàn",
+    "actor": "robot",
+    "hand_action": null,
+    "objects": [
+      "vật thể"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 131.8,
+      "t_end": 135.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S014"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-011",
+    "process_id": "PACK01",
+    "step_order": 11,
+    "step": "Đặt vật thể vào vị trí trên băng tải",
+    "actor": "human",
+    "hand_action": "đặt",
+    "objects": [
+      "vật thể"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 136.3,
+      "t_end": 137.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S014"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-012",
+    "process_id": "PACK01",
+    "step_order": 12,
+    "step": "Gắp linh kiện từ bàn",
+    "actor": "robot",
+    "hand_action": null,
+    "objects": [
+      "linh kiện"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 140.0,
+      "t_end": 142.5,
+      "segment_ids": [
+        "VID-96bd368c7e84-S015"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-013",
+    "process_id": "PACK01",
+    "step_order": 13,
+    "step": "Nhặt sản phẩm từ băng tải",
+    "actor": "human",
+    "hand_action": "nhặt",
+    "objects": [
+      "sản phẩm"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 164.3,
+      "t_end": 165.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S017"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-014",
+    "process_id": "PACK01",
+    "step_order": 14,
+    "step": "Đặt sản phẩm vào hộp",
+    "actor": "human",
+    "hand_action": "đặt",
+    "objects": [
+      "sản phẩm"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 165.8,
+      "t_end": 167.8,
+      "segment_ids": [
+        "VID-96bd368c7e84-S017"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 4.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T12:53:41.234377Z",
+    "version": 1
+  }
+]

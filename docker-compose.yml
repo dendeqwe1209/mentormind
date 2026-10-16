@@ -1,0 +1,129 @@
+# Mentor Mind — development environment (spec 01 FR-05, task D3).
+#
+#   docker compose up -d --build               mentormind (dev) + vlm-server (Ollama, Qwen3-VL-8B Q4)
+#   docker compose --profile lite up -d        + PostgreSQL/pgvector + Neo4j (= make up)
+#   docker compose exec mentormind bash        then: uv run knowhow vlm ping
+# vlm-server = mentormind-inference's Ollama image (tag kept: vlm-engine:ollama) (3rdparty/vlm_server/docker/Dockerfile.ollama): it pulls
+# qwen3-vl:8b on first start; VLM_SERVER_IMAGE_MIN_TOKENS sets the token floor of one image.
+# Without Docker (macOS too): bash 3rdparty/vlm_server/scripts/serve-ollama.sh
+#
+# Overrides live in infra/docker/ and are added with -f (or `make up PLATFORM=<name>`):
+#   infra/docker/docker-compose.rocm.yml     AMD GPU, e.g. one MI250 GCD   (PLATFORM=rocm)
+#   infra/docker/docker-compose.cdi.yml      GPU through CDI instead of the nvidia runtime
+#   infra/docker/docker-compose.devbox.yml   host network, for a rootless Docker whose bridge
+#                                            has no route out (both together: PLATFORM=devbox)
+# Every service has a memory limit; the lite demo stack (mentormind + postgres + neo4j) stays
+# within 4 GB (spec 01 AC-07). All ports are published on the host's loopback only.
+name: mentormind
+
+services:
+  mentormind:
+    build:
+      context: .
+      dockerfile: infra/docker/mentormind.Dockerfile
+      # Build steps use the host network: works everywhere, and rootless Docker needs it.
+      network: host
+    image: mentormind-dev:latest
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      # The code only calls the VLM over HTTP: the vlm-server container by default.
+      KNOWHOW_VLM_PROVIDER: ${KNOWHOW_VLM_PROVIDER:-local_openai}
+      KNOWHOW_VLM_BASE_URL: ${KNOWHOW_VLM_BASE_URL:-http://vlm-server:11434/v1}
+      KNOWHOW_NEO4J_URI: bolt://neo4j:7687
+      KNOWHOW_NEO4J_PASSWORD: ${KNOWHOW_NEO4J_PASSWORD:-change-me}
+      KNOWHOW_PG_DSN: postgresql://knowhow:${KNOWHOW_PG_PASSWORD:-change-me}@postgres:5432/knowhow
+    # The repo is bind-mounted, so the app also reads /workspace/.env itself; this makes the same
+    # variables visible to anything started inside the container.
+    env_file:
+      - path: .env
+        required: false
+    # Rootful Docker: DEV_UID=$(id -u) DEV_GID=$(id -g) keeps files you create yours.
+    user: "${DEV_UID:-0}:${DEV_GID:-0}"
+    depends_on:
+      postgres:
+        condition: service_healthy
+        required: false
+      neo4j:
+        condition: service_healthy
+        required: false
+    mem_limit: 1g
+    stdin_open: true
+    tty: true
+
+  vlm-server:
+    build:
+      context: 3rdparty/vlm_server
+      dockerfile: docker/Dockerfile.ollama
+      network: host
+      args:
+        BASE: ollama/ollama:0.35.1
+    image: vlm-engine:ollama
+    environment:
+      VLM_SERVER_OLLAMA_MODEL: ${VLM_SERVER_OLLAMA_MODEL:-qwen3-vl:8b}
+      # Prompt + answer per request: 64 frames at 512 tokens (~35k) + the thinking answer fit.
+      VLM_SERVER_CONTEXT_LENGTH: ${VLM_SERVER_CONTEXT_LENGTH:-98304}
+      # Tokens one image costs at least (Ollama alone: 1024; a 448x252 frame is 112 at its size).
+      VLM_SERVER_IMAGE_MIN_TOKENS: ${VLM_SERVER_IMAGE_MIN_TOKENS:-512}
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "127.0.0.1:${VLM_SERVER_PORT:-11434}:11434"
+    # The Q4 weights (6 GB) are memory-mapped while loading; this is host RAM, not VRAM.
+    mem_limit: ${VLM_SERVER_MEM_LIMIT:-16g}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["${VLM_GPU:-0}"]
+              capabilities: [gpu]
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    profiles: [lite]
+    environment:
+      POSTGRES_USER: knowhow
+      POSTGRES_PASSWORD: ${KNOWHOW_PG_PASSWORD:-change-me}
+      POSTGRES_DB: knowhow
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "127.0.0.1:${KNOWHOW_PG_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U knowhow -d knowhow"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+    mem_limit: 1g
+
+  neo4j:
+    image: neo4j:5
+    profiles: [lite]
+    environment:
+      NEO4J_AUTH: neo4j/${KNOWHOW_NEO4J_PASSWORD:-change-me}
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*
+      # spec 01 FR-05b: small heap and page cache so the stack fits a dev machine.
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+      NEO4J_server_memory_pagecache_size: 512M
+    volumes:
+      - neo4jdata:/data
+    ports:
+      - "127.0.0.1:${KNOWHOW_NEO4J_HTTP_PORT:-7474}:7474"
+      - "127.0.0.1:${KNOWHOW_NEO4J_BOLT_PORT:-7687}:7687"
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p \"$${NEO4J_AUTH#neo4j/}\" 'RETURN 1' >/dev/null 2>&1"]
+      interval: 5s
+      timeout: 10s
+      retries: 24
+      start_period: 20s
+    mem_limit: 2g
+
+volumes:
+  pgdata:
+  neo4jdata:
+  ollama:

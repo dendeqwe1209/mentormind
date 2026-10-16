@@ -1,0 +1,10 @@
+segment_id,selfhost_step,cloud_step,selfhost_time,cloud_time,cosine_bge_m3,lexical_token_set,agree
+VID-96bd368c7e84-S006,Robot đặt hộp vào vị trí trên băng tải.,Robot tự động đặt hộp sản phẩm lên băng chuyền.,50.0-51.8,50.0-60.0,0.864,64.3,True
+VID-96bd368c7e84-S008,Robot đặt linh kiện vào hộp,Máy tự động đưa linh kiện vào hộp,75.0-79.8,75.0-79.8,0.873,77.3,True
+VID-96bd368c7e84-S009,Nhặt linh kiện từ băng tải,Nhân viên nhặt sản phẩm từ băng tải.,90.0-90.0,90.0-90.0,0.838,76.2,True
+VID-96bd368c7e84-S009,Đặt linh kiện vào vị trí trên băng tải,Nhân viên đặt sản phẩm vào vị trí đã định sẵn trên băng tải.,90.0-90.0,90.0-90.0,0.834,84.8,True
+VID-96bd368c7e84-S010,Đặt linh kiện vào hộp,Đặt linh kiện vào hộp,90.5-91.0,90.0-96.0,1.0,100.0,True
+VID-96bd368c7e84-S010,Robot di chuyển cánh tay để lấy linh kiện,Robot đặt linh kiện vào hộp,100.0-100.0,100.0-100.0,0.793,71.4,True
+VID-96bd368c7e84-S013,Robot di chuyển đến vị trí hộp giấy,Robot di chuyển tay tới vị trí hộp giấy.,120.0-120.8,120.0-123.8,0.97,93.9,True
+VID-96bd368c7e84-S017,Đặt sản phẩm vào hộp,Đặt sản phẩm vào hộp,166.5-168.5,166.8-169.8,1.0,100.0,True
+VID-96bd368c7e84-S017,Nhặt sản phẩm từ băng chuyền,Nhặt sản phẩm từ băng tải,164.3-166.5,164.3-166.8,0.914,91.3,True

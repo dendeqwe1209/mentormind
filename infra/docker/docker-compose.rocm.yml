@@ -1,0 +1,25 @@
+# AMD GPU (ROCm) for `vlm-server` (Ollama), e.g. ONE GCD of an MI250:
+#   VLM_GPU=4 make up PLATFORM=rocm
+#   VLM_GPU=4 docker compose -f docker-compose.yml -f infra/docker/docker-compose.rocm.yml up -d --build
+# Paths stay relative to the repo root: Compose resolves them against the project directory,
+# which is the directory of the FIRST -f file (docker-compose.yml).
+services:
+  vlm-server:
+    build:
+      args:
+        BASE: ollama/ollama:0.35.1-rocm
+    image: vlm-engine:ollama-rocm
+    environment:
+      # All /dev/dri nodes are passed through; exactly this GCD is made visible to Ollama.
+      ROCR_VISIBLE_DEVICES: "${VLM_GPU:-0}"
+    # deploy.resources asks for an "nvidia" driver; ROCm uses plain device nodes instead.
+    deploy: !reset {}
+    devices:
+      - /dev/kfd
+      - /dev/dri
+    # group_add takes GIDs as the HOST numbers them. Check yours with: getent group video render
+    group_add:
+      - "${DRI_VIDEO_GID:-44}"
+      - "${DRI_RENDER_GID:-109}"
+    security_opt:
+      - seccomp=unconfined

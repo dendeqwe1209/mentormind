@@ -1,0 +1,274 @@
+{
+  "steps": [
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 30.5,
+      "t_end": 32.8,
+      "step": "Nhân viên đặt sản phẩm vào hộp",
+      "hand_action": "tay phải, đặt",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 36.5,
+      "t_end": 39.5,
+      "step": "Robot tự động đặt sản phẩm vào hộp",
+      "hand_action": "động cơ, đặt",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 50.0,
+      "t_end": 51.8,
+      "step": "Robot đặt hộp vào vị trí trên băng tải.",
+      "hand_action": "robot",
+      "objects": [
+        "hộp"
+      ],
+      "key_point_observed": "Hộp được đặt thẳng đứng trên băng tải.",
+      "confidence": 0.95,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 52.3,
+      "t_end": 54.8,
+      "step": "Robot xoay hộp để định vị chính xác.",
+      "hand_action": "robot",
+      "objects": [
+        "hộp"
+      ],
+      "key_point_observed": "Hộp bị nghiêng và xoay theo hướng của robot.",
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 55.0,
+      "t_end": 57.3,
+      "step": "Robot di chuyển tay cơ khí xuống để lắp ráp linh kiện vào hộp.",
+      "hand_action": "robot",
+      "objects": [
+        "linh kiện",
+        "hộp"
+      ],
+      "key_point_observed": "Tay robot di chuyển từ trên xuống, gần như chạm vào hộp.",
+      "confidence": 0.85,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S007",
+      "t_start": 60.0,
+      "t_end": 60.5,
+      "step": "Robot đặt linh kiện vào hộp.",
+      "hand_action": "robot",
+      "objects": [
+        "linh kiện",
+        "hộp"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S008",
+      "t_start": 75.0,
+      "t_end": 79.8,
+      "step": "Robot đặt linh kiện vào hộp",
+      "hand_action": null,
+      "objects": [
+        "linh kiện",
+        "hộp"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "t_start": 90.0,
+      "t_end": 90.0,
+      "step": "Nhặt linh kiện từ băng tải",
+      "hand_action": "tay phải",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "t_start": 90.0,
+      "t_end": 90.0,
+      "step": "Đặt linh kiện vào vị trí trên băng tải",
+      "hand_action": "tay phải",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 90.0,
+      "t_end": 90.5,
+      "step": "Nhặt linh kiện từ băng chuyền",
+      "hand_action": "tay phải",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 90.5,
+      "t_end": 91.0,
+      "step": "Đặt linh kiện vào hộp",
+      "hand_action": "tay phải",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 100.0,
+      "t_end": 100.0,
+      "step": "Robot di chuyển cánh tay để lấy linh kiện",
+      "hand_action": "cánh tay robot",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "t_start": 120.0,
+      "t_end": 120.8,
+      "step": "Robot di chuyển đến vị trí hộp giấy",
+      "hand_action": null,
+      "objects": [
+        "robot",
+        "hộp giấy"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "t_start": 121.0,
+      "t_end": 122.5,
+      "step": "Robot nhặt linh kiện từ vị trí nguồn",
+      "hand_action": "nhặt",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "t_start": 122.8,
+      "t_end": 123.3,
+      "step": "Robot đặt linh kiện vào hộp giấy",
+      "hand_action": "đặt",
+      "objects": [
+        "linh kiện",
+        "hộp giấy"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S017",
+      "t_start": 164.3,
+      "t_end": 166.5,
+      "step": "Nhặt sản phẩm từ băng chuyền",
+      "hand_action": "tay phải",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S017",
+      "t_start": 166.5,
+      "t_end": 168.5,
+      "step": "Đặt sản phẩm vào hộp",
+      "hand_action": "tay phải",
+      "objects": [
+        "sản phẩm",
+        "hộp"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": []
+    }
+  ],
+  "failed": [],
+  "scenes": {
+    "VID-96bd368c7e84-S001": "Đoạn video là giới thiệu về một trường hợp thành công trong tự động hóa lean cho ngành công nghiệp thực phẩm, với các cảnh quay từ trên cao của nhà xưởng và logo công ty.",
+    "VID-96bd368c7e84-S002": "Đoạn video hiển thị các slide giới thiệu về tự động hóa lean trong ngành công nghiệp thực phẩm, sau đó chuyển sang cảnh một robot đang vận hành trên dây chuyền sản xuất với các chỉ số hiệu suất được hiển thị.",
+    "VID-96bd368c7e84-S003": "Đoạn video là phỏng vấn người phụ nữ đang nói về hoạt động kinh doanh của công ty, xen kẽ với cảnh quay dây chuyền sản xuất thực phẩm cho thú cưng trong nhà máy.",
+    "VID-96bd368c7e84-S004": "Một người phụ nữ đeo khẩu trang đang nói chuyện trong khi các công nhân mặc đồng phục màu tím làm việc trên dây chuyền. Một robot tự động cũng được quay ở một khu vực khác của nhà máy.",
+    "VID-96bd368c7e84-S005": "Nhóm người mặc đồ bảo hộ đang tham dự một buổi thuyết trình trong phòng họp, có hình ảnh và chữ trên màn chiếu.",
+    "VID-96bd368c7e84-S006": "Một robot công nghiệp màu trắng đang vận hành trong dây chuyền tự động hóa, thực hiện các thao tác lắp ráp hoặc đóng gói sản phẩm trên một bàn làm việc có lưới kim loại.",
+    "VID-96bd368c7e84-S007": "Một robot tự động đang thực hiện công đoạn đóng gói sản phẩm trên dây chuyền, trong khi các công nhân khác đang làm việc ở khu vực khác của nhà máy.",
+    "VID-96bd368c7e84-S008": "Đoạn video đầu tiên cho thấy các công nhân trong trang phục bảo hộ đang làm việc tại dây chuyền. Đoạn video sau đó chuyển sang máy tự động hóa đang vận hành để đóng gói sản phẩm vào hộp.",
+    "VID-96bd368c7e84-S009": "Nhóm công nhân mặc đồng phục tím đang làm việc trên dây chuyền sản xuất, xử lý các linh kiện trên băng tải.",
+    "VID-96bd368c7e84-S010": "Hai công nhân mặc đồng phục tím đang làm việc trên băng chuyền, sau đó cảnh chuyển sang robot tự động đang vận hành trong một khung kính.",
+    "VID-96bd368c7e84-S011": "Hai người đang nói chuyện trong phòng họp, có phụ đề tiếng Nhật và tiếng Anh.",
+    "VID-96bd368c7e84-S012": "Video giới thiệu dự án tự động hóa của Asian Alliance trong ngành thực phẩm, với cảnh quay các công nhân và máy móc hoạt động trong dây chuyền sản xuất.",
+    "VID-96bd368c7e84-S013": "Một robot công nghiệp đang di chuyển và đặt linh kiện vào một hộp giấy trên dây chuyền sản xuất. Sau đó, cảnh chuyển sang một người đàn ông đang nói chuyện trong phòng phỏng vấn.",
+    "VID-96bd368c7e84-S014": "Một kỹ sư đang nói chuyện trong phòng họp, sau đó cảnh chuyển sang một nhà máy với robot và công nhân đang làm việc tại dây chuyền sản xuất.",
+    "VID-96bd368c7e84-S015": "Hai công nhân trong bộ đồ bảo hộ đang đứng cạnh một robot tự động ở dây chuyền sản xuất, quan sát hoạt động của robot. Sau đó, cảnh chuyển sang một người đàn ông đang nói chuyện và các khung hình hiển thị thông số hiệu suất của robot.",
+    "VID-96bd368c7e84-S016": "Video trình bày hiệu suất của robot trong dây chuyền sản xuất, kèm theo các cảnh phỏng vấn người nói chuyện về lợi ích của tự động hóa.",
+    "VID-96bd368c7e84-S017": "Hai công nhân mặc đồng phục tím đang làm việc tại dây chuyền sản xuất, xử lý các sản phẩm trên băng chuyền.",
+    "VID-96bd368c7e84-S018": "Người mặc đồng phục màu tím đang làm việc tại dây chuyền sản xuất, sau đó cảnh chuyển sang một người phụ nữ đeo khẩu trang đang nói chuyện.",
+    "VID-96bd368c7e84-S019": "Một người phụ nữ đeo khẩu trang và kính đang nói chuyện trong một không gian có kệ hàng, với phụ đề tiếng Nhật và tiếng Anh xuất hiện dưới màn hình."
+  },
+  "prompt_tokens": 50846,
+  "completion_tokens": 2479,
+  "latency_s": 48.86113313026726,
+  "calls": 20
+}

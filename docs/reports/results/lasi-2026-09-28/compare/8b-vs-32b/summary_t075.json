@@ -1,0 +1,34 @@
+{
+  "threshold_cosine": 0.75,
+  "segments": 20,
+  "scene_cosine_mean": 0.7895535111427308,
+  "steps_qwen8b": 20,
+  "steps_qwen32b": 39,
+  "qwen32b_steps_lost_no_text": 0,
+  "qwen32b_failed_in_pipeline": 0,
+  "agreed_step_pairs": 10,
+  "agreement_qwen8b_pct": 0.5,
+  "agreement_qwen32b_pct": 0.2564102564102564,
+  "soft_semantic_f1": 0.6867093223272405,
+  "segments_both_empty": 9,
+  "vs_truth": {
+    "qwen8b": {
+      "steps": 20,
+      "semantic_recall": 0.14814814814814814,
+      "semantic_precision": 0.15,
+      "lexical_recall": 0.1111111111111111,
+      "time_recall": 0.6296296296296297
+    },
+    "qwen32b": {
+      "steps": 39,
+      "semantic_recall": 0.14814814814814814,
+      "semantic_precision": 0.07692307692307693,
+      "lexical_recall": 0.1111111111111111,
+      "time_recall": 0.8148148148148148
+    }
+  },
+  "tokens": {
+    "qwen8b": 55782,
+    "qwen32b": 58746
+  }
+}

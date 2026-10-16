@@ -1,0 +1,133 @@
+[project]
+name = "mentormind-knowhow-ai"
+version = "0.1.0"
+description = "Mentor Mind — accumulate master know-how for AI to learn (Denso Hackathon)."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "typer>=0.12",
+    "jsonschema>=4.22",
+    "rfc3339-validator>=0.1.4",
+    "httpx>=0.27",
+    "python-dotenv>=1.0",
+]
+
+# spec 01 FR-02: one extra per module. Each spec's owner adds the dependencies its tasks need.
+[project.optional-dependencies]
+# spec 02: Docling is the main extractor. mmore (the degraded PDF fallback) is NOT an extra: its
+# `process` extra pins numpy<2 / pillow 10 and would downgrade the VLM stack, so install it in a
+# separate venv and point `MmoreFastExtractor(binary=...)` at it (docs/plans/02-spike-notes.md).
+ingest = ["docling>=2.132", "psycopg[binary]>=3.2", "transformers>=4.44", "torch>=2.2"]
+# spec 03 (CPU only): faster-whisper = ASR backend `faster_whisper` (spec 03 FR-07, core.providers.asr),
+# scenedetect = `scene` cuts, mediapipe = `hand_activity` (Tasks API: hand_landmarker.task, downloaded
+# once). scenedetect without its [opencv] extra and mediapipe without opencv-contrib-python (see
+# [tool.uv] below): cv2 comes from opencv-python-headless (extra vlm). mediapipe < 1: the 1.0.0/1.0.1
+# macOS wheels abort the process when a HandLandmarker opens ("Check failed: service_ Service is
+# unavailable" from a Metal helper, even with the CPU delegate); 0.10.33+ run on the CPU with numpy 2.
+video = ["faster-whisper>=1.1", "scenedetect>=0.7", "mediapipe>=0.10.33,<1"]
+vlm = [
+    "pillow>=10.3",
+    "opencv-python-headless>=4.9",
+    "numpy>=1.26",
+    "rapidfuzz>=3.9",
+]
+kg = [
+    "neo4j>=5.26,<6",
+    "psycopg[binary]>=3.2,<4",
+    "rapidfuzz>=3.9",
+]
+kg-semantic = ["sentence-transformers>=3,<6"]
+api = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "python-multipart>=0.0.9",
+]
+ui = []
+# ragas pinned exactly: its metric API changes between minor versions. langchain < 1 because
+# ragas 0.4.3 imports modules that langchain-community 0.4 removed.
+eval = [
+    "ragas==0.4.3",
+    "langchain>=0.3,<1",
+    "langchain-core>=0.3,<1",
+    "langchain-community>=0.3,<0.4",
+    "langchain-openai>=0.3,<1",
+    "sentence-transformers>=3,<6",
+]
+dev = [
+    "pytest>=8.2",
+    "ruff>=0.6",
+    "mypy>=1.10",
+    "types-jsonschema>=4.22",
+    "pyyaml>=6.0",
+    "types-PyYAML>=6.0",
+]
+
+[project.scripts]
+knowhow = "mentormind.core.cli:app"
+
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mentormind"]
+exclude = ["mentormind/frontend"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+# 3rdparty/* are separate uv projects with their own config. Markdown is excluded because ruff
+# would otherwise reformat the illustrative code blocks inside the specs. docs/reports/results/
+# holds snapshots of one-off analysis scripts next to the results they produced.
+extend-exclude = ["mentormind/frontend", "3rdparty", "data", "docs/reports/results", "*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+# Vietnamese user-facing text legitimately contains characters ruff flags as ambiguous.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["mentormind"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["mentormind", "tests"]
+exclude = ["mentormind/frontend/"]
+plugins = ["pydantic.mypy"]
+disallow_untyped_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+
+# Optional extra (kg-semantic): installed in CI via --all-extras, often absent locally.
+[[tool.mypy.overrides]]
+module = ["sentence_transformers", "sentence_transformers.*"]
+ignore_missing_imports = true
+
+# Extra video (spec 03): libraries without type information.
+[[tool.mypy.overrides]]
+module = ["faster_whisper", "faster_whisper.*", "scenedetect", "scenedetect.*", "mediapipe", "mediapipe.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "integration: requires external services such as PostgreSQL/pgvector or Neo4j 5; skipped when unavailable",
+]
+
+
+[tool.uv]
+# mediapipe (extra video) requires opencv-contrib-python: one more wheel shipping the same `cv2`
+# module as opencv-python-headless (extra vlm) and opencv-python (rapidocr, scenedetect), whose files
+# overwrite each other on install (a version skew between them breaks `import cv2`). mediapipe only
+# needs `import cv2` for its drawing utils, which those wheels already provide, so the contrib wheel
+# is never installed (an override with a marker that never matches drops the requirement).
+override-dependencies = ["opencv-contrib-python; sys_platform == 'never'"]

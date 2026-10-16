@@ -1,0 +1,214 @@
+[
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-001",
+    "process_id": "PACK01",
+    "step_order": 1,
+    "step": "Robot đặt sản phẩm vào hộp.",
+    "hand_action": null,
+    "objects": [
+      "robot",
+      "sản phẩm",
+      "hộp"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 60.0,
+      "t_end": 61.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S007"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 1.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T06:54:47.086752Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-002",
+    "process_id": "PACK01",
+    "step_order": 2,
+    "step": "Máy tự động đưa hộp vào vị trí.",
+    "hand_action": null,
+    "objects": [
+      "hộp"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 72.0,
+      "t_end": 79.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S008"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.5,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 1.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T06:54:47.086752Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-003",
+    "process_id": "PACK01",
+    "step_order": 3,
+    "step": "Nhặt sản phẩm từ băng chuyền",
+    "hand_action": "tay phải",
+    "objects": [
+      "sản phẩm"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 86.0,
+      "t_end": 87.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S009"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 1.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T06:54:47.086752Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-004",
+    "process_id": "PACK01",
+    "step_order": 4,
+    "step": "Đặt sản phẩm vào vị trí trên bàn",
+    "hand_action": "tay phải",
+    "objects": [
+      "sản phẩm"
+    ],
+    "key_point": null,
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 87.0,
+      "t_end": 88.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S009"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.9,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 1.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T06:54:47.086752Z",
+    "version": 1
+  },
+  {
+    "schema_version": "1.0",
+    "profile_id": "WP-PACK01-005",
+    "process_id": "PACK01",
+    "step_order": 5,
+    "step": "Robot tự động di chuyển cánh tay để lấy linh kiện từ vị trí trên băng chuyền.",
+    "hand_action": "robot",
+    "objects": [
+      "linh kiện"
+    ],
+    "key_point": "Robot di chuyển cánh tay xuống để tiếp xúc với linh kiện trên băng chuyền.",
+    "reason": null,
+    "reason_source": null,
+    "exceptions": [],
+    "pass_criteria": null,
+    "equipment_id": null,
+    "part_numbers": [],
+    "expert": null,
+    "evidence": {
+      "video_id": "VID-96bd368c7e84",
+      "t_start": 94.0,
+      "t_end": 99.0,
+      "segment_ids": [
+        "VID-96bd368c7e84-S010"
+      ],
+      "keyframes": [],
+      "transcript_excerpt": null,
+      "document_refs": []
+    },
+    "confidence": 0.8,
+    "generated_by": "vlm",
+    "model_info": {
+      "provider": "local_openai",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "fps": 1.0
+    },
+    "data_classification": "public",
+    "status": "draft",
+    "review": null,
+    "created_at": "2026-09-28T06:54:47.086752Z",
+    "version": 1
+  }
+]

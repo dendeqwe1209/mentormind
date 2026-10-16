@@ -1,0 +1,25 @@
+# Rootless Docker (the shared GPU box): the bridge network has no route to the internet, so every
+# service joins the host network and they talk over 127.0.0.1. Combine with the CDI override:
+#   make up PLATFORM=devbox   (= -f docker-compose.yml -f infra/docker/docker-compose.cdi.yml
+#                                 -f infra/docker/docker-compose.devbox.yml)
+services:
+  mentormind:
+    network_mode: host
+    environment:
+      KNOWHOW_VLM_BASE_URL: ${KNOWHOW_VLM_BASE_URL:-http://127.0.0.1:11434/v1}
+      KNOWHOW_NEO4J_URI: bolt://127.0.0.1:${KNOWHOW_NEO4J_BOLT_PORT:-7687}
+      KNOWHOW_PG_DSN: postgresql://knowhow:${KNOWHOW_PG_PASSWORD:-change-me}@127.0.0.1:${KNOWHOW_PG_PORT:-5432}/knowhow
+
+  vlm-server:
+    network_mode: host
+    ports: !reset []
+    environment:
+      OLLAMA_HOST: 127.0.0.1:${VLM_SERVER_PORT:-11434}
+
+  postgres:
+    network_mode: host
+    ports: !reset []
+
+  neo4j:
+    network_mode: host
+    ports: !reset []

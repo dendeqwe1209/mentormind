@@ -1,0 +1,7 @@
+# GPU through CDI instead of the nvidia runtime (e.g. rootless Docker on the shared dev box):
+#   docker compose -f docker-compose.yml -f infra/docker/docker-compose.cdi.yml up -d
+services:
+  vlm-server:
+    deploy: !reset {}
+    devices:
+      - "nvidia.com/gpu=${VLM_GPU:-0}"

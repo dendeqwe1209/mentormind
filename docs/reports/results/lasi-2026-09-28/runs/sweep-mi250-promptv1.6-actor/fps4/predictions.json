@@ -1,0 +1,349 @@
+{
+  "steps": [
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 30.5,
+      "t_end": 32.8,
+      "step": "Nhặt sản phẩm từ băng tải",
+      "actor": "human",
+      "hand_action": null,
+      "objects": [],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S004",
+      "t_start": 34.3,
+      "t_end": 36.5,
+      "step": "Đặt sản phẩm vào hộp",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 50.0,
+      "t_end": 51.3,
+      "step": "Đặt hộp vào vị trí trên băng tải",
+      "actor": "machine",
+      "hand_action": null,
+      "objects": [
+        "hộp"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S006",
+      "t_start": 55.8,
+      "t_end": 56.5,
+      "step": "Robot SCARA di chuyển đầu gắp xuống để lấy sản phẩm từ băng tải",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S007",
+      "t_start": 60.0,
+      "t_end": 60.5,
+      "step": "robot gắp linh kiện từ bàn",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S007",
+      "t_start": 67.3,
+      "t_end": 69.5,
+      "step": "human đặt sản phẩm vào hộp",
+      "actor": "human",
+      "hand_action": "đặt",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S008",
+      "t_start": 75.0,
+      "t_end": 79.8,
+      "step": "Xếp linh kiện vào hộp",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [
+        "linh kiện",
+        "hộp"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "t_start": 90.0,
+      "t_end": 90.0,
+      "step": "Nhặt sản phẩm từ băng tải",
+      "actor": "human",
+      "hand_action": "nhặt",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S009",
+      "t_start": 90.0,
+      "t_end": 90.0,
+      "step": "Đặt sản phẩm vào vị trí",
+      "actor": "human",
+      "hand_action": "đặt",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 90.0,
+      "t_end": 90.5,
+      "step": "Nhặt linh kiện từ băng tải",
+      "actor": "human",
+      "hand_action": "nhặt",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 90.5,
+      "t_end": 91.0,
+      "step": "Đặt linh kiện vào hộp",
+      "actor": "human",
+      "hand_action": "đặt",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 94.3,
+      "t_end": 95.0,
+      "step": "Gắp linh kiện từ bàn",
+      "actor": "robot",
+      "hand_action": "gắp",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S010",
+      "t_start": 95.0,
+      "t_end": 96.0,
+      "step": "Đặt linh kiện vào vị trí trên bàn",
+      "actor": "robot",
+      "hand_action": "đặt",
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.8,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S013",
+      "t_start": 120.0,
+      "t_end": 123.8,
+      "step": "Đặt linh kiện vào hộp",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [
+        "linh kiện",
+        "hộp giấy"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S014",
+      "t_start": 131.8,
+      "t_end": 135.0,
+      "step": "robot gắp vật thể từ bàn",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [
+        "vật thể"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S014",
+      "t_start": 136.3,
+      "t_end": 137.8,
+      "step": "human đặt vật thể vào vị trí trên băng tải",
+      "actor": "human",
+      "hand_action": "đặt",
+      "objects": [
+        "vật thể"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S015",
+      "t_start": 140.0,
+      "t_end": 142.5,
+      "step": "robot gắp linh kiện từ băng tải",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S015",
+      "t_start": 142.5,
+      "t_end": 144.0,
+      "step": "robot đặt linh kiện vào vị trí trên bàn lắp ráp",
+      "actor": "robot",
+      "hand_action": null,
+      "objects": [
+        "linh kiện"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S017",
+      "t_start": 164.3,
+      "t_end": 166.5,
+      "step": "Nhặt sản phẩm từ băng tải",
+      "actor": "human",
+      "hand_action": "nhặt",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    },
+    {
+      "segment_id": "VID-96bd368c7e84-S017",
+      "t_start": 166.5,
+      "t_end": 168.5,
+      "step": "Đặt sản phẩm vào hộp",
+      "actor": "human",
+      "hand_action": "đặt",
+      "objects": [
+        "sản phẩm"
+      ],
+      "key_point_observed": null,
+      "confidence": 0.9,
+      "fps": 4.0,
+      "keyframes": [],
+      "segment_ids": []
+    }
+  ],
+  "failed": [],
+  "scenes": {
+    "VID-96bd368c7e84-S001": "Đoạn video là giới thiệu về một trường hợp thành công trong tự động hóa lean cho ngành công nghiệp thực phẩm, với các cảnh quay từ trên cao của nhà xưởng và logo công ty.",
+    "VID-96bd368c7e84-S002": "Đoạn video đầu tiên hiển thị tiêu đề 'Lean Automation Success Case Food Industry'. Sau đó, cảnh chuyển sang một dây chuyền sản xuất tự động với robot đang vận hành, kèm theo các chỉ số hiệu suất. Cuối cùng, xuất hiện hình ảnh một người phụ nữ đeo khẩu trang và dòng chữ giới thiệu về công ty.",
+    "VID-96bd368c7e84-S003": "Đoạn video là phỏng vấn người phụ nữ trong văn phòng, sau đó chuyển sang cảnh nhà máy sản xuất thực phẩm cho thú cưng với công nhân đang làm việc và máy móc tự động đóng gói sản phẩm.",
+    "VID-96bd368c7e84-S004": "Một người phụ nữ đeo khẩu trang đang nói chuyện trong khi các công nhân mặc đồng phục màu tím làm việc trên dây chuyền. Sau đó, một robot SCARA tự động thực hiện thao tác đóng gói sản phẩm vào hộp. Cuối cùng, một nhóm người mặc đồ bảo hộ đang thảo luận ngoài nhà xưởng.",
+    "VID-96bd368c7e84-S005": "Nhóm người mặc đồ bảo hộ đang tham dự một buổi thuyết trình trong phòng họp, có hình ảnh và chữ trên màn hình chiếu.",
+    "VID-96bd368c7e84-S006": "Một người phụ nữ đeo khẩu trang đang nói chuyện, sau đó cảnh chuyển sang một hệ thống máy móc tự động với robot SCARA đang vận hành trên băng tải.",
+    "VID-96bd368c7e84-S007": "Một robot SCARA đang vận hành trong khu vực đóng gói, sau đó cảnh chuyển sang nhóm công nhân mặc đồng phục đang làm việc tại dây chuyền.",
+    "VID-96bd368c7e84-S008": "Đoạn video đầu tiên cho thấy nhóm công nhân mặc đồng phục đang làm việc tại dây chuyền đóng gói. Đoạn sau mô tả một máy tự động (robot) đang thực hiện thao tác xếp linh kiện vào hộp trên băng tải.",
+    "VID-96bd368c7e84-S009": "Nhóm công nhân mặc đồng phục tím đang làm việc trên dây chuyền sản xuất, xử lý các sản phẩm trên băng tải.",
+    "VID-96bd368c7e84-S010": "Hai công nhân mặc đồng phục tím đang xếp linh kiện từ băng tải vào hộp. Sau đó, cảnh chuyển sang một robot SCARA màu trắng đang tự động lắp ráp linh kiện trên bàn làm việc. Cuối cùng là cảnh một kỹ sư nữ đeo khẩu trang đang phỏng vấn.",
+    "VID-96bd368c7e84-S011": "Hai người đang nói chuyện trong phòng họp, có phụ đề tiếng Nhật và tiếng Anh.",
+    "VID-96bd368c7e84-S012": "Video giới thiệu dự án tự động hóa trong ngành thực phẩm, với cảnh quay các công nhân làm việc trên dây chuyền và máy móc tự động đóng gói sản phẩm.",
+    "VID-96bd368c7e84-S013": "Một robot SCARA đang di chuyển tay gắp để đặt linh kiện vào hộp giấy trên băng tải. Sau đó, cảnh chuyển sang một người đàn ông đang nói chuyện trong phòng họp.",
+    "VID-96bd368c7e84-S014": "Một kỹ sư đang nói chuyện trong phòng họp, sau đó cảnh chuyển sang một robot SCARA đang vận hành trên dây chuyền sản xuất trong nhà xưởng, và cuối cùng là các công nhân đang kiểm tra máy móc.",
+    "VID-96bd368c7e84-S015": "Hai công nhân mặc đồ bảo hộ đang đứng cạnh một robot SCARA trong khu vực sản xuất. Robot đang thực hiện thao tác lắp ráp linh kiện trên băng tải. Sau đó, cảnh chuyển sang một người đàn ông đang nói chuyện và cuối cùng là màn hình hiển thị các chỉ số hiệu suất của robot.",
+    "VID-96bd368c7e84-S016": "Video trình bày hiệu suất của một robot trong dây chuyền sản xuất, với các khung hình hiển thị thông số kỹ thuật và phỏng vấn người nói chuyện.",
+    "VID-96bd368c7e84-S017": "Hai công nhân mặc đồng phục tím đang làm việc tại dây chuyền sản xuất, nhặt và sắp xếp các sản phẩm từ băng tải.",
+    "VID-96bd368c7e84-S018": "Người mặc áo bảo hộ đang làm việc ở dây chuyền sản xuất, sau đó cảnh chuyển sang một người phụ nữ đeo khẩu trang đang nói chuyện.",
+    "VID-96bd368c7e84-S019": "Một người phụ nữ đeo khẩu trang và kính đang nói chuyện trong một không gian có kệ hàng, với phụ đề tiếng Nhật và tiếng Anh xuất hiện trên màn hình.",
+    "VID-96bd368c7e84-S020": "Chỉ có logo công ty và nền trắng, không có người hay máy móc nào xuất hiện trong khung hình."
+  },
+  "prompt_tokens": 52926,
+  "completion_tokens": 2856,
+  "latency_s": 52.810545788379386,
+  "calls": 20
+}

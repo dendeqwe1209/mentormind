@@ -1,0 +1,36 @@
+{
+  "segment_id": "VID-96bd368c7e84-S001",
+  "t_start": 0.0,
+  "t_end": 10.0,
+  "fps": 4.0,
+  "frame_timestamps": [
+    0.0,
+    0.767,
+    3.003,
+    3.27,
+    5.272,
+    5.772,
+    7.274,
+    7.508,
+    7.774,
+    8.008,
+    8.275,
+    8.508,
+    8.775,
+    9.009,
+    9.276,
+    9.51,
+    9.776
+  ],
+  "prompt": "Bạn là kỹ sư IE đang ghi lại thao tác trong công đoạn PACK01 (đóng gói, xếp sản phẩm/linh kiện vào hộp).\nCác ảnh sau là khung hình liên tiếp của một đoạn video dài 10.0s, lấy mẫu 4 khung/giây, theo đúng thứ tự thời gian.\nMốc thời gian (giây, tính từ đầu đoạn) của từng ảnh: 0.0, 0.8, 3.0, 3.3, 5.3, 5.8, 7.3, 7.5, 7.8, 8.0, 8.3, 8.5, 8.8, 9.0, 9.3, 9.5, 9.8.\n\nBước 1 — \"scene\": mô tả ngắn (1-2 câu) những gì thấy trong các ảnh: ai hoặc máy/robot nào, đang làm gì.\nBước 2 — \"steps\": liệt kê CÁC BƯỚC THAO TÁC QUAN SÁT ĐƯỢC của người (công nhân, kỹ sư) hoặc của máy/robot.\nQuy tắc:\n- Chỉ mô tả điều nhìn thấy trong ảnh. Không suy đoán lý do, không thêm bước \"thường có\" trong SOP.\n- Mỗi bước: động từ ở đầu, ngắn gọn (VD \"Đặt linh kiện A vào ngăn trái\").\n- Một thao tác lặp lại nhiều lần chỉ ghi MỘT bước; tối đa 6 bước cho cả đoạn.\n- hand_action: ai/tay nào, động tác gì (nhặt, xoay, ấn, đặt nghiêng...); objects: vật được thao tác.\n- key_point_observed: chi tiết kỹ thuật NHÌN THẤY được (hướng, vị trí, thứ tự), null nếu không có.\n- t_start_rel, t_end_rel: giây tính từ đầu đoạn (0 đến 10.0), dựa vào mốc thời gian của ảnh.\n- Nếu không chắc, hạ confidence (< 0.5) thay vì bỏ qua hoặc bịa.\n- Cảnh chỉ có người nói chuyện, logo, chữ hoặc bảng số liệu thì không phải thao tác: \"steps\" rỗng.\nTrả về DUY NHẤT một đối tượng JSON với hai khóa \"scene\" và \"steps\", không markdown, không giải thích.\n",
+  "response": {
+    "text": "{\n  \"scene\": \"Đoạn video là giới thiệu về một trường hợp thành công trong tự động hóa lean cho ngành công nghiệp thực phẩm, với các cảnh quay từ trên cao của nhà xưởng và logo công ty.\",\n  \"steps\": []\n}",
+    "usage": {
+      "prompt_tokens": 2471,
+      "completion_tokens": 56
+    },
+    "latency_s": 1.4112554138991982,
+    "provider": "local_openai",
+    "model": "Qwen/Qwen3-VL-8B-Instruct"
+  }
+}

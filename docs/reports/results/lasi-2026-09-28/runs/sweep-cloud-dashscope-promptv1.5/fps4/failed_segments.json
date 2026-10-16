@@ -1,0 +1,32 @@
+[
+  {
+    "segment_id": "VID-96bd368c7e84-S006",
+    "error": "sai schema tại steps/0/objects: Input should be a valid list",
+    "raw_text": "{\n  \"scene\": \"Một robot tự động đang di chuyển và đặt một hộp sản phẩm trên băng chuyền.\",\n  \"steps\": [\n    {\n      \"step\": \"Robot tự động đặt hộp sản phẩm lên băng chuyền.\",\n      \"hand_action\": null,\n      \"objects\": \"hộp sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 0.0,\n      \"t_end_rel\": 10.0\n    }\n  ]\n}"
+  },
+  {
+    "segment_id": "VID-96bd368c7e84-S008",
+    "error": "sai schema tại steps/0/objects: Input should be a valid list",
+    "raw_text": "{\n  \"scene\": \"Nhóm công nhân mặc đồng phục đang làm việc ở dây chuyền đóng gói thủ công. Sau đó, cảnh chuyển sang máy tự động hóa đang xếp sản phẩm vào hộp.\",\n  \"steps\": [\n    {\n      \"step\": \"Máy tự động đưa linh kiện vào hộp\",\n      \"hand_action\": null,\n      \"objects\": \"linh kiện, hộp\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 5.0,\n      \"t_end_rel\": 9.8,\n      \"confidence\": 0.9\n    }\n  ]\n}"
+  },
+  {
+    "segment_id": "VID-96bd368c7e84-S009",
+    "error": "sai schema tại steps/0/objects: Input should be a valid list",
+    "raw_text": "{\n  \"scene\": \"Nhân viên mặc đồng phục màu tím đang làm việc trên dây chuyền sản xuất, xử lý các sản phẩm trên băng tải.\",\n  \"steps\": [\n    {\n      \"step\": \"Nhân viên nhặt sản phẩm từ băng tải.\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 12.5,\n      \"t_end_rel\": 13.0\n    },\n    {\n      \"step\": \"Nhân viên đặt sản phẩm vào vị trí đã định sẵn trên băng tải.\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 13.0,\n      \"t_end_rel\": 13.3\n    }\n  ]\n}"
+  },
+  {
+    "segment_id": "VID-96bd368c7e84-S010",
+    "error": "sai schema tại steps/0/objects: Input should be a valid list",
+    "raw_text": "{\n  \"scene\": \"Hai công nhân mặc đồng phục tím đang xếp linh kiện vào hộp trên băng chuyền. Sau đó, cảnh chuyển sang một robot tự động đang thực hiện thao tác tương tự trong một khu vực kín.\",\n  \"steps\": [\n    {\n      \"step\": \"Đặt linh kiện vào hộp\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"linh kiện, hộp\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 0.0,\n      \"t_end_rel\": 6.0\n    },\n    {\n      \"step\": \"Robot đặt linh kiện vào hộp\",\n      \"hand_action\": \"đầu robot\",\n      \"objects\": \"linh kiện, hộp\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 10.0,\n      \"t_end_rel\": 25.0\n    }\n  ]\n}"
+  },
+  {
+    "segment_id": "VID-96bd368c7e84-S013",
+    "error": "sai schema tại steps/0/objects: Input should be a valid list",
+    "raw_text": "{\n  \"scene\": \"Một robot công nghiệp đang di chuyển và đặt linh kiện vào hộp giấy trên dây chuyền sản xuất.\",\n  \"steps\": [\n    {\n      \"step\": \"Robot di chuyển tay tới vị trí hộp giấy.\",\n      \"hand_action\": \"robot\",\n      \"objects\": \"hộp giấy\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 0.0,\n      \"t_end_rel\": 3.8\n    }\n  ]\n}"
+  },
+  {
+    "segment_id": "VID-96bd368c7e84-S017",
+    "error": "sai schema tại steps/0/objects: Input should be a valid list",
+    "raw_text": "{\n  \"scene\": \"Hai công nhân mặc đồng phục tím đang làm việc tại dây chuyền sản xuất, xử lý các sản phẩm trên băng tải.\",\n  \"steps\": [\n    {\n      \"step\": \"Nhặt sản phẩm từ băng tải\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 4.3,\n      \"t_end_rel\": 6.8\n    },\n    {\n      \"step\": \"Đặt sản phẩm vào hộp\",\n      \"hand_action\": \"tay phải\",\n      \"objects\": \"sản phẩm\",\n      \"key_point_observed\": null,\n      \"t_start_rel\": 6.8,\n      \"t_end_rel\": 9.8\n    }\n  ]\n}"
+  }
+]

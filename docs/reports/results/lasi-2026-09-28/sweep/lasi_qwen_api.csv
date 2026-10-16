@@ -1,0 +1,2 @@
+fps,recall,precision,order_accuracy,key_point_recall,tokens_used,latency_s,fps_effective,predicted,truth,recall_essential,recall_time_only,failed_segments,provider,model
+4.0,0.0,0.0,,0.0,74570,41.56,4.0,0,27,0.0,0.0,6,qwen_api,qwen3-vl-8b-instruct

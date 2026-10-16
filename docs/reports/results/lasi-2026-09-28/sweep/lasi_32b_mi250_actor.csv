@@ -1,0 +1,2 @@
+fps,recall,precision,order_accuracy,key_point_recall,tokens_used,latency_s,fps_effective,predicted,truth,recall_essential,recall_time_only,actor_accuracy,failed_segments,provider,model
+4.0,0.074,0.051,1.0,0.0,58746,221.08,4.0,39,27,0.125,0.778,0.857,0,openai_compatible,Qwen/Qwen3-VL-32B-Instruct

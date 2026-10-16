@@ -1,0 +1,31 @@
+{
+ "text": "QUY TRÌNH THAO TÁC CHUẨN (SOP)\nPACK01 - ĐÓNG GÓI LINH KIỆN\nSYNTHETIC DEMO DATA - KHÔNG PHẢI QUY TRÌNH CHÍNH THỨC CỦA DENSO\nMã tài liệu\nSOP-PACK01-DEMO-001\nPhiên bản\n1.0\nCông đoạn\nĐóng gói linh kiện\nMã công đoạn\nPACK01\nLoại dữ liệu\nSynthetic / Demo\nNgôn ngữ\nTiếng Việt\nMục đích\nDùng để test\nOCR/RAG/WorkProfile/Expert Review\ntrong MentorMind\nNgày tạo\n2026-09-28\n1. Mục đích\nChuẩn hóa thao tác đóng gói linh kiện trong kịch bản demo MentorMind, đồng thời cung cấp nguồn tài liệu có cấu\ntrúc để hệ thống có thể trích xuất bước thao tác, điểm kiểm soát, lý do, tiêu chí đạt và xử lý bất thường.\n2. Phạm vi áp dụng\nÁp dụng cho kịch bản demo PACK01. Linh kiện được kiểm tra ngoại quan, đặt đúng chiều vào khay/hộp, xác nhận\nsố lượng và trạng thái trước khi đóng hộp.\n3. Đầu vào / đầu ra\nLoại\nNội dung\nĐầu vào\nLinh kiện cần đóng gói; hộp/khay đóng gói; nhãn lot; tài liệu hướng dẫn; thông tin lot/part trên hệ thống.\nĐầu ra\nHộp linh kiện đã đóng gói đúng số lượng, đúng chiều, không có lỗi ngoại quan rõ ràng; có thể truy vết\ntheo lot.\n4. Dụng cụ / điều kiện\n• Khay hoặc hộp đóng gói sạch, không rách/móp.\n• Khu vực thao tác đủ ánh sáng.\n• Găng tay sạch nếu linh kiện yêu cầu kiểm soát bề mặt.\n• Mã lot/part phải đọc được và khớp với lệnh thao tác.\n• Không tiếp tục thao tác nếu phát hiện tình trạng bất thường chưa được quy định.\n5. Quy trình thao tác\nBước\nThao tác\nĐiểm kiểm soát chính\nLý do / ý nghĩa\nTiêu chí đạt\n1\nXác nhận lot và part trước\nkhi bắt đầu.\nĐối chiếu lot ID, part code và\nnhãn hộp.\nNgăn đóng nhầm part hoặc\nnhầm lot.\nThông tin trên hệ thống và\nnhãn khớp nhau.\n2\nKiểm tra nhanh tình trạng\nhộp/khay.\nHộp sạch, không móp; vị trí\nchứa linh kiện không bị cản\ntrở.\nTránh làm hư hỏng linh kiện\nhoặc tạo lỗi trong quá trình\nđóng gói.\nKhay/hộp đủ điều kiện sử\ndụng.\n3\nLấy từng linh kiện và kiểm\ntra ngoại quan.\nQuan sát connector/pin, bề\nmặt, biến dạng, nứt, bẩn\nhoặc dị vật.\nPhát hiện lỗi trước khi linh\nkiện được đưa vào hộp.\nKhông thấy bất thường\nbằng quan sát trực tiếp.\n4\nXác định đúng chiều đặt\nlinh kiện.\nCăn theo đặc điểm định\nhướng hoặc ký hiệu trên linh\nkiện/khay.\nTránh va chạm và đảm bảo bố\ntrí đồng nhất.\nLinh kiện đúng chiều quy\nđịnh.\n5\nĐặt linh kiện vào vị trí\ntương ứng trong\nhộp/khay.\nĐặt nhẹ, không ép; không để\nlinh kiện chồng lên nhau.\nGiảm nguy cơ cong pin, xước\nhoặc biến dạng.\nLinh kiện nằm ổn định tại\nđúng vị trí.Bước\nThao tác\nĐiểm kiểm soát chính\nLý do / ý nghĩa\nTiêu chí đạt\n6\nLặp lại đến khi đủ số\nlượng yêu cầu.\nĐếm số lượng và kiểm tra vị\ntrí trống/bị lặp.\nNgăn thiếu hoặc thừa linh\nkiện.\nSố lượng khớp lệnh đóng\ngói.\n7\nKiểm tra cuối trước khi\nđóng hộp.\nKiểm tra chiều, số lượng,\nngoại quan và nhãn lot.\nLà điểm xác nhận cuối trước\nkhi hoàn tất.\nKhông có lỗi quan sát\nđược; thông tin truy vết\nđầy đủ.\n8\nĐóng hộp và chuyển sang\nbước tiếp theo.\nHộp được đóng đúng cách,\nnhãn còn đọc được.\nBảo đảm trạng thái đóng gói\nổn định và truy vết được.\nHộp hoàn chỉnh, sẵn sàng\nchuyển công đoạn.6. Xử lý bất thường\nTình huống\nHành động yêu cầu\nKhông được làm\nConnector/pin cong, biến dạng\nhoặc có dấu hiệu hư hỏng\nDừng đóng gói linh kiện đó; tách riêng; đánh dấu\ntình trạng; chuyển người phụ trách/QC xác nhận\ntheo quy trình hiện hành.\nKhông tự uốn/chỉnh pin nếu chưa có\nhướng dẫn được phê duyệt; không\ntiếp tục đóng gói như hàng đạt.\nKhông xác định được lot/part\nTạm dừng thao tác; kiểm tra lại nhãn và thông tin\nhệ thống; báo người phụ trách nếu vẫn không xác\nđịnh được.\nKhông phỏng đoán part/lot.\nHộp/khay móp, bẩn hoặc không\nphù hợp\nĐổi vật tư đóng gói đạt yêu cầu trước khi tiếp tục.\nKhông dùng hộp/khay lỗi để 'tạm'\nđóng gói.\nThiếu thông tin hoặc chưa có rule\nxử lý\nGhi nhận tình huống và yêu cầu chuyên gia/QC xác\nnhận trước khi tiếp tục.\nKhông để AI hoặc người thao tác tự\nsuy diễn nguyên nhân/hướng xử lý.\n7. Kiểm tra chất lượng cuối\nMột hộp được coi là đạt trong kịch bản demo khi thỏa toàn bộ điều kiện sau:\n• Đúng part và đúng lot.\n• Đúng số lượng yêu cầu.\n• Linh kiện được đặt đúng chiều và đúng vị trí.\n• Không có dấu hiệu ngoại quan bất thường rõ ràng.\n• Nhãn/truy vết còn đọc được.\n• Không tồn tại exception chưa được xử lý/xác nhận.\n8. Dữ liệu MentorMind cần trích xuất từ SOP này\nField\nVí dụ trích xuất\nprocess\nPACK01 - Đóng gói linh kiện\nstep\nKiểm tra ngoại quan linh kiện trước khi đặt vào hộp\nkey_point\nKiểm tra connector/pin, bề mặt và biến dạng\nreason\nPhát hiện lỗi trước khi đóng gói\nexception\nConnector/pin cong hoặc biến dạng\naction_on_exception\nDừng đóng gói, tách riêng, chuyển người phụ trách/QC xác nhận\npass_criteria\nĐúng part/lot/số lượng/chiều; không có lỗi quan sát được\nprovenance\nSOP-PACK01-DEMO-001, section 5-7\n9. Lưu ý sử dụng\nTài liệu này được tạo riêng cho mục đích demo/test kỹ thuật MentorMind. Nội dung không đại diện cho quy\ntrình vận hành thực tế của DENSO và không được dùng làm hướng dẫn sản xuất thật.\nKhi DENSO cung cấp dữ liệu/Work Instruction/SOP chính thức ở vòng sau, tài liệu demo này phải được thay thế\nbằng nguồn được phê duyệt và giữ đầy đủ provenance/version.\n10. Revision History\nVersion\nDate\nChange\n1.0\n2026-09-28\nInitial synthetic demo SOP for MentorMind PACK01 flow.",
+ "modalities": [],
+ "metadata": {
+  "file_path": "data/demo/packing/packing_sop.pdf",
+  "processed_at": "2026-10-01T17:13:56.136688",
+  "processor_type": "PDFProcessor",
+  "paragraph_starts": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    2340,
+    1,
+    0
+   ],
+   [
+    2915,
+    2,
+    0
+   ],
+   [
+    5049,
+    -1,
+    -1
+   ]
+  ]
+ }
+}

@@ -1,0 +1,18 @@
+segment_id,qwen8b_step,qwen32b_step,qwen8b_time,qwen32b_time,qwen8b_actor,qwen32b_actor,qwen8b_hand_action,qwen32b_hand_action,cosine_bge_m3,lexical_token_set,agree
+VID-96bd368c7e84-S004,Nhặt sản phẩm từ băng tải,Nhặt sản phẩm từ băng tải bằng tay phải,30.5-32.8,30.5-32.8,human,human,,nhặt bằng tay phải,0.871,100.0,True
+VID-96bd368c7e84-S004,Đặt sản phẩm vào hộp,Đặt sản phẩm vào hộp giấy bằng tay phải,34.3-36.5,32.0-33.0,robot,human,,đặt bằng tay phải,0.808,100.0,False
+VID-96bd368c7e84-S006,Đặt hộp vào vị trí trên băng tải,Di chuyển hộp giấy từ vị trí đầu vào sang băng tải,50.0-51.3,51.3-52.5,machine,machine,,,0.848,83.6,True
+VID-96bd368c7e84-S006,Robot SCARA di chuyển đầu gắp xuống để lấy sản phẩm từ băng tải,Robot gắp hộp giấy từ băng tải,55.8-56.5,54.8-55.5,robot,robot,,gắp,0.733,82.4,True
+VID-96bd368c7e84-S008,Xếp linh kiện vào hộp,Robot đặt linh kiện vào hộp carton,75.0-79.8,77.3-78.0,robot,robot,,thả,0.795,89.5,True
+VID-96bd368c7e84-S009,Nhặt sản phẩm từ băng tải,Đặt vật liệu lên băng tải,90.0-90.0,83.3-89.8,human,human,nhặt,tay phải đặt vật liệu xuống băng tải,0.832,52.0,True
+VID-96bd368c7e84-S009,Đặt sản phẩm vào vị trí,Nhặt vật liệu từ khay,90.0-90.0,83.0-88.5,human,human,đặt,tay phải nhặt vật liệu,0.669,36.4,False
+VID-96bd368c7e84-S010,Nhặt linh kiện từ băng tải,Nhặt linh kiện từ băng tải và đặt vào hộp,90.0-90.5,90.0-92.5,human,human,nhặt,"tay phải nhặt, tay trái hỗ trợ đặt",0.88,100.0,True
+VID-96bd368c7e84-S010,Đặt linh kiện vào hộp,Robot đặt linh kiện vào khay lắp ráp,90.5-91.0,97.5-99.0,human,robot,đặt,"đưa đầu gắp xuống, thả linh kiện vào vị trí xác định",0.753,89.5,False
+VID-96bd368c7e84-S010,Gắp linh kiện từ bàn,Robot di chuyển cánh tay để gắp linh kiện từ vị trí nguồn,94.3-95.0,93.3-97.5,robot,robot,gắp,"cánh tay di chuyển lên xuống, gắp vật thể bằng đầu kẹp",0.723,88.9,True
+VID-96bd368c7e84-S013,Đặt linh kiện vào hộp,Thả linh kiện vào bên trong hộp giấy,120.0-123.8,123.8-125.0,robot,robot,,thả,0.89,89.5,True
+VID-96bd368c7e84-S014,robot gắp vật thể từ bàn,"Robot di chuyển cánh tay từ vị trí cao xuống thấp, hướng về phía bàn làm việc",131.8-135.0,130.8-133.3,robot,robot,,,0.706,66.7,True
+VID-96bd368c7e84-S014,human đặt vật thể vào vị trí trên băng tải,"Công nhân đưa tay phải xuống, sau đó di chuyển tay qua khu vực thiết bị kim loại",136.3-137.8,136.0-137.0,human,human,đặt,di chuyển tay,0.658,37.6,True
+VID-96bd368c7e84-S015,robot gắp linh kiện từ băng tải,Robot di chuyển cánh tay để gắp vật liệu từ băng tải,140.0-142.5,140.0-142.5,robot,robot,,gắp,0.902,80.8,True
+VID-96bd368c7e84-S015,robot đặt linh kiện vào vị trí trên bàn lắp ráp,Robot đặt vật liệu vào hộp hoặc khay trên băng tải,142.5-144.0,142.5-144.0,robot,robot,,đặt,0.775,61.9,True
+VID-96bd368c7e84-S017,Nhặt sản phẩm từ băng tải,Nhặt sản phẩm từ băng tải bằng tay phải,164.3-166.5,164.3-165.0,human,human,nhặt,tay phải nhặt,0.871,100.0,True
+VID-96bd368c7e84-S017,Đặt sản phẩm vào hộp,Lặp lại thao tác nhặt sản phẩm và đặt vào hộp,166.5-168.5,166.0-169.8,human,human,đặt,tay phải nhặt và đặt,0.83,100.0,True

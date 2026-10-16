@@ -1,0 +1,19 @@
+# Keep the build context small and secret-free: the dev container bind-mounts the repo anyway.
+.git
+.venv
+**/__pycache__
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.secrets
+.env
+guidance
+data
+3rdparty
+mentormind/frontend/node_modules
+*.mp4
+*.mkv
+*.mov
+*.webm
+*.wav
+*.mp3
