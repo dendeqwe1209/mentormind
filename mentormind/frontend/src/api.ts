@@ -67,6 +67,46 @@ async function requestForm<T>(path: string, body: FormData): Promise<T> {
   return res.json() as Promise<T>;
 }
 
+const wait = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+async function uploadChunkWithRetry(
+  uploadId: string,
+  offset: number,
+  chunk: Blob,
+  maxAttempts = 4,
+): Promise<{ received: number }> {
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      const res = await fetch(
+        `${BASE_URL}/videos/uploads/${encodeURIComponent(uploadId)}/chunk?offset=${offset}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/octet-stream" },
+          body: chunk,
+        },
+      );
+      if (!res.ok) {
+        const apiError = await toApiError(res);
+        // Retry only transient server/proxy failures. Validation/auth errors should surface immediately.
+        if (![408, 425, 429, 500, 502, 503, 504].includes(apiError.status)) throw apiError;
+        lastError = apiError;
+      } else {
+        return (await res.json()) as { received: number };
+      }
+    } catch (err) {
+      if (err instanceof ApiError && ![408, 425, 429, 500, 502, 503, 504].includes(err.status)) {
+        throw err;
+      }
+      lastError = err;
+    }
+    if (attempt < maxAttempts) await wait(700 * attempt);
+  }
+  throw lastError instanceof Error
+    ? lastError
+    : new Error("Kết nối upload bị gián đoạn sau nhiều lần thử.");
+}
+
 export const api = {
   getHealth: () => request<{ status: string; neo4j: string; postgres: string }>("/health"),
 
@@ -159,16 +199,7 @@ export const api = {
     while (offset < file.size) {
       const end = Math.min(offset + init.chunk_size, file.size);
       const chunk = file.slice(offset, end);
-      const res = await fetch(
-        `${BASE_URL}/videos/uploads/${encodeURIComponent(init.upload_id)}/chunk?offset=${offset}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/octet-stream" },
-          body: chunk,
-        },
-      );
-      if (!res.ok) throw await toApiError(res);
-      const progress = (await res.json()) as { received: number };
+      const progress = await uploadChunkWithRetry(init.upload_id, offset, chunk);
       if (progress.received <= offset) {
         throw new Error("Máy chủ không tiến thêm dữ liệu upload; vui lòng thử lại.");
       }
