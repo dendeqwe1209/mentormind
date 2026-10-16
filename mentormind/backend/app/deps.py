@@ -14,6 +14,17 @@ LoaderOpener = Callable[[], AbstractContextManager[KnowledgeGraphLoader]]
 VectorStoreOpener = Callable[[], VectorStore]
 
 
+class _NoopKnowledgeLoader:
+    """Demo-mode loader used when external graph/vector services are intentionally disabled."""
+
+    def load_profiles(self, profiles):
+        return None
+
+    def unload_profile(self, profile_id: str):
+        return None
+
+
+
 @lru_cache
 def get_profile_store() -> ProfileStore:
     settings = get_settings()
@@ -22,6 +33,10 @@ def get_profile_store() -> ProfileStore:
 
 @contextmanager
 def open_knowledge_loader() -> Iterator[KnowledgeGraphLoader]:
+    settings = get_settings()
+    if not settings.knowledge_sync_enabled:
+        yield _NoopKnowledgeLoader()  # type: ignore[misc]
+        return
     graph = Neo4jGraph()
     try:
         yield KnowledgeGraphLoader(graph, get_vector_store())
