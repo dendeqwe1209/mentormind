@@ -52,7 +52,7 @@ UPLOAD_ID = re.compile(r"[0-9a-f]{32}")
 WINDOW_S = 10.0
 DEFAULT_PROCESS_ID = "PACK01"
 _CHUNK = 1 << 20
-_UPLOAD_CHUNK_SIZE = 4 << 20
+_UPLOAD_CHUNK_SIZE = 1 << 20
 
 
 class ProcessVideoRequest(BaseModel):
