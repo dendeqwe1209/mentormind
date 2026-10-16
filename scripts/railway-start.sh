@@ -6,6 +6,14 @@ WORK_DIR="${KNOWHOW_WORK_DIR:-/app/data/work}"
 PROFILE_DB="${KNOWHOW_PROFILE_DB:-${WORK_DIR}/profiles.sqlite}"
 mkdir -p "$WORK_DIR" "$(dirname "$PROFILE_DB")"
 
+CONTRACT_PATH="/app/docs/contracts/work_profile.schema.json"
+if [[ ! -f "$CONTRACT_PATH" ]]; then
+  echo "[railway] Missing WorkProfile contract: $CONTRACT_PATH" >&2
+  exit 1
+fi
+echo "[railway] WorkProfile contract ready."
+
+
 # Safe diagnostics: never print the secret value.
 echo "[railway] Provider auth diagnostics..."
 python - <<'PY'
