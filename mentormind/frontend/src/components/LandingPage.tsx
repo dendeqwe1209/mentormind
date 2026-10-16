@@ -69,9 +69,9 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
       <nav className="landing-nav">
         <div className="landing-nav-inner">
           <div className="header-left">
-            <div className="brand-badge">DENSO</div>
+            <div className="brand-badge">MENTORMIND</div>
             <div className="brand-text">
-              <span className="brand-name">MentorMind</span>
+              <span className="brand-name">Know-How AI</span>
               <span className="brand-badge-version">v1.2 // Production</span>
             </div>
           </div>
@@ -112,7 +112,7 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
           <div className="hero-content">
             <div className="hero-tag">
               <span className="hero-tag-dot" />
-              DENSO INDUSTRY 4.0 // COGNITIVE MANUFACTURING
+              INDUSTRIAL KNOW-HOW AI // COGNITIVE MANUFACTURING
             </div>
 
             <h1 className="hero-title">
@@ -170,7 +170,7 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
                 </div>
                 <div className="terminal-title">
                   <Terminal size={12} color="var(--accent-cyan)" />
-                  DENSO VISION TERMINAL // PACK01-ST04
+                  MENTORMIND VISION TERMINAL // PACK01-ST04
                 </div>
                 <span className="badge badge-green">LIVE STREAM</span>
               </div>
@@ -252,7 +252,7 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
           <div className="stat-card">
             <div className="stat-num text-purple">14 Stations</div>
             <div className="stat-label">Production Line Ready</div>
-            <div className="stat-sub">Tested on DENSO PACK01 &amp; ASSY02 assembly cells</div>
+            <div className="stat-sub">Configured for PACK01 &amp; ASSY02 demo assembly cells</div>
           </div>
         </div>
       </section>
@@ -424,9 +424,9 @@ export function LandingPage({ onLaunchWorkspace, theme, onToggleTheme }: Landing
       <footer className="landing-footer">
         <div className="landing-footer-inner">
           <div className="footer-left">
-            <div className="brand-badge">DENSO</div>
-            <span className="footer-brand-name">MentorMind Industrial AI</span>
-            <span className="footer-hackathon-tag">DENSO Factory Hacks 2026</span>
+            <div className="brand-badge">MENTORMIND</div>
+            <span className="footer-brand-name">Industrial Know-How AI</span>
+            <span className="footer-hackathon-tag">Independent Research Prototype</span>
           </div>
 
           <div className="footer-center">
