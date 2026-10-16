@@ -26,6 +26,7 @@ RUN uv sync --frozen --no-install-project \
     --extra api --extra kg --extra video --extra vlm
 
 COPY mentormind ./mentormind
+COPY docs/contracts ./docs/contracts
 COPY infra ./infra
 COPY data/mock_sigma ./data/mock_sigma
 COPY data/demo ./data/demo
