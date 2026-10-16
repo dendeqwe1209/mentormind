@@ -232,3 +232,31 @@ export interface DocumentDeleteResult {
   chunk_file_removed: boolean;
   uploads_removed: number;
 }
+
+
+export type QnnRiskLevel = "low" | "medium" | "high" | "unavailable";
+
+export interface QnnRiskResponse {
+  profile_id: string;
+  enabled: boolean;
+  trained: boolean;
+  available: boolean;
+  score?: number | null;
+  level: QnnRiskLevel;
+  backend: string;
+  n_qubits: number;
+  features: Record<string, number>;
+  reason?: string | null;
+}
+
+export interface QnnStatusResponse {
+  enabled: boolean;
+  trained: boolean;
+  backend: string;
+  n_qubits: number;
+  samples_total: number;
+  samples_labeled: number;
+  samples_risky: number;
+  samples_clean: number;
+  model_path: string;
+}
