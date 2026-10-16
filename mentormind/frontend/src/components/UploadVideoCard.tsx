@@ -208,7 +208,7 @@ export function UploadVideoCard({ onReview }: { onReview: (videoId: string, proc
         <div className="card-header">
           <div className="card-title">
             <div className="card-icon ci-red">
-              <Clapperboard size={14} color="var(--denso-red)" />
+              <Clapperboard size={14} color="var(--brand-red)" />
             </div>
             Tải video thao tác
           </div>
@@ -219,7 +219,7 @@ export function UploadVideoCard({ onReview }: { onReview: (videoId: string, proc
           <div className="data-grid data-grid-2" style={{ marginBottom: "1.1rem" }}>
             <div className="form-group" style={{ gridColumn: "1 / -1" }}>
               <label className="form-label" htmlFor="input-video">
-                <Clapperboard size={12} color="var(--denso-red)" />
+                <Clapperboard size={12} color="var(--brand-red)" />
                 Tệp video
               </label>
               {/* Hidden: the native button's text follows the browser language, ours is Vietnamese. */}
