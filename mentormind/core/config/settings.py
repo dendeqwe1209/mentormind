@@ -35,7 +35,9 @@ class Settings(BaseSettings):
     neo4j_user: str = "neo4j"
     neo4j_password: SecretStr = SecretStr("change-me")
     vector_backend: Literal["pgvector", "memory"] = "pgvector"
-    # False = Human Review persists to SQLite without Neo4j/pgvector (single-service demo mode).\n    knowledge_sync_enabled: bool = True\n    pg_dsn: str = "postgresql://knowhow:change-me@localhost:5432/knowhow"
+    # False = Human Review persists to SQLite without Neo4j/pgvector (single-service demo mode).
+    knowledge_sync_enabled: bool = True
+    pg_dsn: str = "postgresql://knowhow:change-me@localhost:5432/knowhow"
     vector_table: str = "knowhow_chunks"
     embed_dim: int = 1024
     embed_model: str = "BAAI/bge-m3"
