@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from mentormind.backend.app.deletion import ProfileStoreBusyError, delete_profiles, published
 from mentormind.backend.app.deps import LoaderOpener, get_knowledge_loader, get_loader_opener, get_profile_store
 from mentormind.backend.app.video_jobs import busy_message, running_videos
+from mentormind.core.config import get_settings
 from mentormind.core.schemas import (
     ProfileDeleteRequest,
     ProfileDeleteResult,
@@ -16,6 +17,7 @@ from mentormind.core.schemas import (
 )
 from mentormind.knowledge_base.kg.loader import KnowledgeGraphLoader
 from mentormind.knowledge_base.store.profile_store import ProfileStore
+from mentormind.qnn.snapshot_store import ReviewRiskDatasetStore
 
 router = APIRouter(prefix="/profiles", tags=["profiles"])
 
@@ -135,6 +137,11 @@ def review_profile(
             detail=f"WorkProfile {profile_id} không tồn tại",
         )
 
+    # Snapshot only AI/evidence-side features before the reviewer outcome is committed.
+    qnn_dataset = ReviewRiskDatasetStore(store.db_path) if get_settings().qnn_enabled else None
+    if qnn_dataset is not None:
+        qnn_dataset.ensure_snapshot(existing)
+
     def publish(profile: WorkProfile) -> None:
         if review_req.action == ReviewAction.APPROVE:
             loader.load_profiles([profile])
@@ -156,4 +163,6 @@ def review_profile(
             detail=str(e),
         )
 
+    if qnn_dataset is not None:
+        qnn_dataset.finalize_review(existing, review_req)
     return updated
