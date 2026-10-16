@@ -139,12 +139,46 @@ export const api = {
     return requestForm<{ job_id: string }>("/ingest/documents", form);
   },
 
-  uploadVideo: (file: File, processId: string, classification: DataClassification) => {
-    const form = new FormData();
-    form.append("file", file);
-    form.append("process_id", processId);
-    form.append("classification", classification);
-    return requestForm<VideoAsset>("/videos", form);
+  uploadVideo: async (file: File, processId: string, classification: DataClassification) => {
+    // Railway may time out one long multipart request. Upload small chunks instead; the backend
+    // assembles them on the persistent volume and only then probes/hash-validates the video.
+    const init = await request<{ upload_id: string; chunk_size: number; next_offset: number }>(
+      "/videos/uploads/init",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          filename: file.name,
+          process_id: processId,
+          classification,
+          size: file.size,
+        }),
+      },
+    );
+
+    let offset = init.next_offset ?? 0;
+    while (offset < file.size) {
+      const end = Math.min(offset + init.chunk_size, file.size);
+      const chunk = file.slice(offset, end);
+      const res = await fetch(
+        `${BASE_URL}/videos/uploads/${encodeURIComponent(init.upload_id)}/chunk?offset=${offset}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/octet-stream" },
+          body: chunk,
+        },
+      );
+      if (!res.ok) throw await toApiError(res);
+      const progress = (await res.json()) as { received: number };
+      if (progress.received <= offset) {
+        throw new Error("Máy chủ không tiến thêm dữ liệu upload; vui lòng thử lại.");
+      }
+      offset = progress.received;
+    }
+
+    return request<VideoAsset>(`/videos/uploads/${encodeURIComponent(init.upload_id)}/finalize`, {
+      method: "POST",
+      body: JSON.stringify({}),
+    });
   },
 
   processVideo: (videoId: string, method: CutMethod | null) => {
