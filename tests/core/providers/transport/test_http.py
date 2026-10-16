@@ -80,3 +80,30 @@ def test_basic_auth_in_the_base_url_is_sent_but_never_shown_in_errors() -> None:
         client.post_json("https://admin:s3cret@tunnel.example/v1/chat/completions", {})
     assert seen == ["Basic YWRtaW46czNjcmV0"]  # base64("admin:s3cret")
     assert "s3cret" not in str(caught.value) and "https://tunnel.example/v1/chat/completions" in str(caught.value)
+
+
+
+def test_successful_non_json_response_is_retried() -> None:
+    client, sleeps = client_for(
+        [
+            httpx.Response(200, text="", headers={"content-type": "text/plain"}),
+            httpx.Response(200, json={"ok": True}),
+        ]
+    )
+    assert client.post_json(URL, {}) == {"ok": True}
+    assert sleeps == [1.0]
+
+
+def test_non_json_error_includes_content_type_and_empty_body_marker() -> None:
+    client = HttpxClient(
+        retry=RetryPolicy(max_retries=0),
+        transport=httpx.MockTransport(
+            lambda request: httpx.Response(
+                200,
+                text="",
+                headers={"content-type": "text/plain"},
+            )
+        ),
+    )
+    with pytest.raises(ProviderError, match=r"content-type=text/plain.*<empty body>"):
+        client.post_json(URL, {})
