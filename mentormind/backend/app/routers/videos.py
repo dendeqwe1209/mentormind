@@ -3,6 +3,7 @@
 Cutting, keyframes, clips and the transcript are spec 03's ``VideoCapturePipeline``.
 """
 
+import json
 import re
 import shutil
 import threading
@@ -12,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, TypeVar
 
-from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPException, UploadFile, status
+from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPException, Query, Request, UploadFile, status
 from pydantic import BaseModel, Field
 
 from mentormind.backend.app.deletion import ProfileStoreBusyError, delete_profiles
@@ -47,15 +48,133 @@ VIDEO_ID = re.compile(r"VID-[0-9a-f]{12}")
 #: Any video id a profile may carry that is also a plain folder name (no ``.``, ``/``): safe to delete.
 #: A leading ``_`` is reserved for the server's own folders (``_incoming`` = uploads in progress).
 FOLDER_NAME = re.compile(r"[A-Za-z0-9-][A-Za-z0-9_-]*")
+UPLOAD_ID = re.compile(r"[0-9a-f]{32}")
 WINDOW_S = 10.0
 DEFAULT_PROCESS_ID = "PACK01"
 _CHUNK = 1 << 20
+_UPLOAD_CHUNK_SIZE = 4 << 20
 
 
 class ProcessVideoRequest(BaseModel):
     #: Spec 03 FR-03: hand_activity | scene | fixed_window; None = KNOWHOW_VIDEO_METHOD.
     method: str | None = None
     fps: float | None = Field(default=None, gt=0)
+
+
+class VideoUploadInitRequest(BaseModel):
+    filename: str
+    process_id: str
+    classification: DataClassification
+    size: int = Field(gt=0)
+
+
+class VideoUploadInitResponse(BaseModel):
+    upload_id: str
+    chunk_size: int
+    next_offset: int = 0
+
+
+class VideoUploadChunkResponse(BaseModel):
+    received: int
+
+
+@router.post("/uploads/init", response_model=VideoUploadInitResponse)
+def init_video_upload(req: VideoUploadInitRequest) -> VideoUploadInitResponse:
+    """Start a chunked upload so slow/large videos do not hit Railway's per-request timeout."""
+
+    name = upload_name(req.filename)
+    suffix = Path(name).suffix.lower()
+    if suffix not in VIDEO_SUFFIXES:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+            detail=f"Định dạng video không hỗ trợ: {suffix or '(không có đuôi)'}. Nhận: {' '.join(VIDEO_SUFFIXES)}.",
+        )
+    process_id = req.process_id.strip()
+    if not process_id:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail="Thiếu mã công đoạn.")
+
+    incoming = get_settings().work_dir / "video" / "_incoming"
+    incoming.mkdir(parents=True, exist_ok=True)
+    upload_id = uuid.uuid4().hex
+    meta = {
+        "filename": name,
+        "suffix": suffix,
+        "process_id": process_id,
+        "classification": req.classification.value,
+        "size": req.size,
+    }
+    (incoming / f"{upload_id}.json").write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
+    (incoming / f"{upload_id}.part").touch()
+    return VideoUploadInitResponse(upload_id=upload_id, chunk_size=_UPLOAD_CHUNK_SIZE)
+
+
+@router.put("/uploads/{upload_id}/chunk", response_model=VideoUploadChunkResponse)
+async def upload_video_chunk(
+    upload_id: str,
+    request: Request,
+    offset: int = Query(..., ge=0),
+) -> VideoUploadChunkResponse:
+    """Append one small raw chunk. Requests stay short even on a slow connection."""
+
+    meta_path, part = _chunk_upload_paths(upload_id)
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    expected_size = int(meta["size"])
+    data = await request.body()
+    if not data:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail="Chunk rỗng.")
+    if len(data) > _UPLOAD_CHUNK_SIZE:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=f"Chunk quá lớn; tối đa {_UPLOAD_CHUNK_SIZE} byte.",
+        )
+    if offset + len(data) > expected_size:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail=f"Chunk vượt kích thước tệp đã khai báo ({expected_size} byte).",
+        )
+
+    current = part.stat().st_size if part.exists() else 0
+    # Idempotent retry: if the client did not receive the previous response, accept the same chunk again.
+    if offset < current and current >= offset + len(data):
+        with part.open("rb") as handle:
+            handle.seek(offset)
+            if handle.read(len(data)) == data:
+                return VideoUploadChunkResponse(received=current)
+    if offset != current:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail={"message": "Sai offset upload.", "expected_offset": current},
+        )
+
+    with part.open("ab") as out:
+        out.write(data)
+    return VideoUploadChunkResponse(received=current + len(data))
+
+
+@router.post("/uploads/{upload_id}/finalize", response_model=VideoAsset)
+def finalize_video_upload(upload_id: str) -> VideoAsset:
+    """Validate and promote a completed chunk upload to the normal video folder."""
+
+    meta_path, part = _chunk_upload_paths(upload_id)
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    expected_size = int(meta["size"])
+    received = part.stat().st_size if part.exists() else 0
+    if received != expected_size:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail={"message": "Upload chưa đủ dữ liệu.", "received": received, "expected": expected_size},
+        )
+
+    try:
+        return _finish_uploaded_video(
+            part,
+            suffix=str(meta["suffix"]),
+            process_id=str(meta["process_id"]),
+            classification=DataClassification(str(meta["classification"])),
+        )
+    finally:
+        meta_path.unlink(missing_ok=True)
+        part.unlink(missing_ok=True)
 
 
 @router.post("", response_model=VideoAsset)
@@ -65,7 +184,10 @@ async def upload_video(
     # Mandatory like for documents (spec 02 FR-01b): a factory video must never default to a weaker label.
     classification: DataClassification = Form(...),
 ) -> VideoAsset:
-    from mentormind.capture.video.probe import probe_video, video_id_for
+    """Legacy one-request upload kept for API compatibility.
+
+    The web UI uses /uploads/* chunking because Railway can terminate a long single upload request.
+    """
 
     suffix = Path(upload_name(file.filename)).suffix.lower()
     if suffix not in VIDEO_SUFFIXES:
@@ -77,21 +199,44 @@ async def upload_video(
     if not process_id:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail="Thiếu mã công đoạn.")
 
-    videos = get_settings().work_dir / "video"
-    incoming = videos / "_incoming"
+    incoming = get_settings().work_dir / "video" / "_incoming"
     incoming.mkdir(parents=True, exist_ok=True)
-    part = incoming / f"{uuid.uuid4().hex}{suffix}"
+    part = incoming / f"{uuid.uuid4().hex}.part"
     try:
         with part.open("wb") as out:
             while chunk := await file.read(_CHUNK):
                 out.write(chunk)
-        video_id = video_id_for(part)  # same id as `knowhow vlm describe` (spec 03 §3)
-        folder = videos / video_id
-        folder.mkdir(parents=True, exist_ok=True)
-        source = folder / f"source{suffix}"
-        part.replace(source)
+        return _finish_uploaded_video(part, suffix=suffix, process_id=process_id, classification=classification)
     finally:
         part.unlink(missing_ok=True)
+
+
+def _chunk_upload_paths(upload_id: str) -> tuple[Path, Path]:
+    if not UPLOAD_ID.fullmatch(upload_id):
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Upload không tồn tại.")
+    incoming = get_settings().work_dir / "video" / "_incoming"
+    meta = incoming / f"{upload_id}.json"
+    part = incoming / f"{upload_id}.part"
+    if not meta.is_file() or not part.is_file():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Upload không tồn tại hoặc đã hoàn tất.")
+    return meta, part
+
+
+def _finish_uploaded_video(
+    part: Path,
+    *,
+    suffix: str,
+    process_id: str,
+    classification: DataClassification,
+) -> VideoAsset:
+    from mentormind.capture.video.probe import probe_video, video_id_for
+
+    videos = get_settings().work_dir / "video"
+    video_id = video_id_for(part)
+    folder = videos / video_id
+    folder.mkdir(parents=True, exist_ok=True)
+    source = folder / f"source{suffix}"
+    part.replace(source)
     try:
         asset = probe_video(source, process_id=process_id, classification=classification, video_id=video_id)
     except ValueError as exc:
