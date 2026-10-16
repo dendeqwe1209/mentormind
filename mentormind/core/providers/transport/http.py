@@ -51,8 +51,11 @@ def _decode_object(response: httpx.Response) -> dict[str, Any]:
     try:
         body = response.json()
     except ValueError as exc:
+        content_type = response.headers.get("content-type", "unknown")
+        preview = response.text[:300] or "<empty body>"
         raise ProviderError(
-            f"Non-JSON response from {redact_url(response.request.url)}: {response.text[:300]}",
+            f"Non-JSON response from {redact_url(response.request.url)} "
+            f"(HTTP {response.status_code}, content-type={content_type}): {preview}",
             status_code=response.status_code,
         ) from exc
     if not isinstance(body, dict):
@@ -138,7 +141,18 @@ class HttpxClient:
                     ) from exc
             else:
                 if response.is_success:
-                    return _decode_object(response)
+                    try:
+                        return _decode_object(response)
+                    except ProviderError as exc:
+                        # Some routed/free inference backends occasionally return a transient
+                        # empty/HTML/SSE 2xx response. A chat-completions call must return one
+                        # JSON object, so retry malformed successes with the same bounded policy
+                        # used for 429/5xx instead of failing the whole video job immediately.
+                        last_error = exc
+                        if attempt < self._retry.max_retries:
+                            self._sleep(self._retry.delay_for(attempt))
+                            continue
+                        raise last_error
                 last_error = ProviderError(
                     f"{method} {shown} -> HTTP {response.status_code}: {response.text[:500]}",
                     status_code=response.status_code,
