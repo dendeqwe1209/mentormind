@@ -53,6 +53,8 @@ class ChatClient:
             **self._extra_body,
             "model": self.endpoint.model,
             "messages": messages,
+            # Be explicit: MentorMind expects one JSON chat-completions response, not SSE.
+            "stream": False,
         }
         if temperature is not None:
             payload["temperature"] = temperature
@@ -77,7 +79,10 @@ class ChatClient:
 
     def _headers(self) -> dict[str, str]:
         key = self.endpoint.api_key
-        return {"Authorization": f"Bearer {key}"} if key else {}
+        headers = {"Accept": "application/json"}
+        if key:
+            headers["Authorization"] = f"Bearer {key}"
+        return headers
 
 
 def message_text(body: Mapping[str, Any]) -> str:
