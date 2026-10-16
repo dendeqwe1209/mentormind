@@ -8,7 +8,11 @@
 .secrets
 .env
 guidance
-data
+data/*
+!data/mock_sigma/
+!data/mock_sigma/**
+!data/demo/
+!data/demo/**
 3rdparty
 mentormind/frontend/node_modules
 *.mp4
