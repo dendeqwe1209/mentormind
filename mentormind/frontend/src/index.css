@@ -27,11 +27,11 @@
   --text-faint:        #94a3b8;
   --text-tech:         #0284c7;
 
-  --denso-red:         #e60012;
-  --denso-red-hover:   #cc0010;
-  --denso-red-subtle:  #fee2e2;
-  --denso-red-glow:    rgba(230, 0, 18, 0.22);
-  --denso-red-border:  rgba(230, 0, 18, 0.35);
+  --brand-red:         #e60012;
+  --brand-red-hover:   #cc0010;
+  --brand-red-subtle:  #fee2e2;
+  --brand-red-glow:    rgba(230, 0, 18, 0.22);
+  --brand-red-border:  rgba(230, 0, 18, 0.35);
 
   --accent-cyan:       #0284c7;
   --accent-cyan-subtle:#e0f2fe;
@@ -93,11 +93,11 @@
   --text-faint:        #5f7699;
   --text-tech:         #38bdf8;
 
-  --denso-red:         #e60012;
-  --denso-red-hover:   #ff2233;
-  --denso-red-subtle:  rgba(230, 0, 18, 0.16);
-  --denso-red-glow:    rgba(230, 0, 18, 0.4);
-  --denso-red-border:  rgba(230, 0, 18, 0.45);
+  --brand-red:         #e60012;
+  --brand-red-hover:   #ff2233;
+  --brand-red-subtle:  rgba(230, 0, 18, 0.16);
+  --brand-red-glow:    rgba(230, 0, 18, 0.4);
+  --brand-red-border:  rgba(230, 0, 18, 0.45);
 
   --accent-cyan:       #00d4ff;
   --accent-cyan-subtle:rgba(0, 212, 255, 0.12);
@@ -162,7 +162,7 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--denso-red) 0%, #ff5260 20%, var(--accent-cyan) 60%, transparent 100%);
+  background: linear-gradient(90deg, var(--brand-red) 0%, #ff5260 20%, var(--accent-cyan) 60%, transparent 100%);
   z-index: 10;
 }
 
@@ -193,9 +193,9 @@ body {
   gap: 0.95rem;
 }
 
-/* DENSO Industrial Brand Emblem */
+/* MentorMind Brand Emblem */
 .brand-badge {
-  background: linear-gradient(135deg, var(--denso-red) 0%, #aa000d 100%);
+  background: linear-gradient(135deg, var(--brand-red) 0%, #aa000d 100%);
   color: #ffffff;
   font-family: var(--font-display);
   font-weight: 700;
@@ -203,7 +203,7 @@ body {
   letter-spacing: 0.12em;
   padding: 0.3rem 0.85rem;
   border-radius: var(--r-xs);
-  box-shadow: 0 0 14px var(--denso-red-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+  box-shadow: 0 0 14px var(--brand-red-glow), inset 0 1px 0 rgba(255,255,255,0.25);
   user-select: none;
   display: flex;
   align-items: center;
@@ -374,13 +374,13 @@ body {
   background: rgba(0, 0, 0, 0.02);
 }
 .tab-btn.active {
-  color: var(--denso-red);
-  border-bottom-color: var(--denso-red);
-  background: var(--denso-red-subtle);
-  box-shadow: inset 0 -2px 0 var(--denso-red);
+  color: var(--brand-red);
+  border-bottom-color: var(--brand-red);
+  background: var(--brand-red-subtle);
+  box-shadow: inset 0 -2px 0 var(--brand-red);
 }
 .tab-btn.active svg {
-  color: var(--denso-red);
+  color: var(--brand-red);
 }
 
 /* === MAIN CONTENT === */
@@ -419,7 +419,7 @@ body {
   border-color: var(--border-strong);
 }
 .card:hover::before {
-  background: linear-gradient(90deg, transparent, var(--denso-red), transparent);
+  background: linear-gradient(90deg, transparent, var(--brand-red), transparent);
 }
 
 /* Card Header — Machined Control Panel Style */
@@ -463,7 +463,7 @@ body {
   border: 1px solid var(--border-tech);
 }
 
-.ci-red     { background: var(--denso-red-subtle);   color: var(--denso-red);    border-color: var(--denso-red-border); }
+.ci-red     { background: var(--brand-red-subtle);   color: var(--brand-red);    border-color: var(--brand-red-border); }
 .ci-cyan    { background: var(--accent-cyan-subtle); color: var(--accent-cyan);  border-color: rgba(2, 132, 199, 0.3); }
 .ci-blue    { background: var(--accent-cyan-subtle); color: var(--accent-cyan);  border-color: rgba(2, 132, 199, 0.3); }
 .ci-green   { background: var(--status-success-bg);  color: var(--status-success);border-color: var(--status-success-border); }
@@ -500,14 +500,14 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, #ff2233 0%, var(--denso-red) 100%);
+  background: linear-gradient(180deg, #ff2233 0%, var(--brand-red) 100%);
   color: #ffffff;
-  border-color: var(--denso-red);
-  box-shadow: 0 2px 8px var(--denso-red-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+  border-color: var(--brand-red);
+  box-shadow: 0 2px 8px var(--brand-red-glow), inset 0 1px 0 rgba(255,255,255,0.25);
 }
 .btn-primary:hover:not(:disabled) {
   background: linear-gradient(180deg, #ff3b4b 0%, #cc0010 100%);
-  box-shadow: 0 4px 14px var(--denso-red-glow);
+  box-shadow: 0 4px 14px var(--brand-red-glow);
 }
 
 .btn-success {
@@ -653,7 +653,7 @@ body {
 .badge-approved { background: var(--status-success-bg);  color: var(--status-success-text); border-color: var(--status-success-border); }
 .badge-rejected { background: var(--status-danger-bg);   color: var(--status-danger-text);  border-color: var(--status-danger-border); }
 .badge-cyan     { background: var(--accent-cyan-subtle); color: var(--accent-cyan);        border-color: rgba(2, 132, 199, 0.3); }
-.badge-red      { background: var(--denso-red-subtle);   color: var(--denso-red);          border-color: var(--denso-red-border); }
+.badge-red      { background: var(--brand-red-subtle);   color: var(--brand-red);          border-color: var(--brand-red-border); }
 .badge-green    { background: var(--status-success-bg);  color: var(--status-success-text);border-color: var(--status-success-border); }
 .badge-muted    { background: var(--bg-subtle);          color: var(--text-muted);         border-color: var(--border-subtle); }
 
@@ -713,8 +713,8 @@ body {
 }
 .profile-item.selected {
   background: var(--bg-subtle);
-  border-color: var(--denso-red);
-  box-shadow: inset 3px 0 0 var(--denso-red);
+  border-color: var(--brand-red);
+  box-shadow: inset 3px 0 0 var(--brand-red);
 }
 
 .profile-step-num {
@@ -728,7 +728,7 @@ body {
   line-height: 1;
 }
 .profile-item.selected .profile-step-num {
-  color: var(--denso-red);
+  color: var(--brand-red);
 }
 
 .profile-info {
@@ -1034,8 +1034,8 @@ body {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 800;
-  color: var(--denso-red);
-  background: var(--denso-red-subtle);
+  color: var(--brand-red);
+  background: var(--brand-red-subtle);
   padding: 0.1rem 0.45rem;
   border-radius: 4px;
   flex-shrink: 0;
@@ -1076,7 +1076,7 @@ body {
   width: 18px;
   height: 18px;
   border: 2px solid var(--border-subtle);
-  border-top-color: var(--denso-red);
+  border-top-color: var(--brand-red);
   border-radius: 50%;
   animation: spin 0.65s linear infinite;
 }
@@ -1190,7 +1190,7 @@ body {
   font-size: 0.8rem;
   color: var(--text-secondary);
 }
-.profile-check { width: 18px; height: 18px; flex-shrink: 0; cursor: pointer; accent-color: var(--denso-red); }
+.profile-check { width: 18px; height: 18px; flex-shrink: 0; cursor: pointer; accent-color: var(--brand-red); }
 
 /* === SCROLLBARS === */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -1265,7 +1265,7 @@ body {
   transition: color 140ms ease;
 }
 .landing-nav-link:hover {
-  color: var(--denso-red);
+  color: var(--brand-red);
 }
 
 /* ── Hero Section ── */
@@ -1291,9 +1291,9 @@ body {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--denso-red);
-  background: var(--denso-red-subtle);
-  border: 1px solid var(--denso-red-border);
+  color: var(--brand-red);
+  background: var(--brand-red-subtle);
+  border: 1px solid var(--brand-red-border);
   padding: 0.25rem 0.75rem;
   border-radius: var(--r-full);
   margin-bottom: 1.25rem;
@@ -1303,8 +1303,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--denso-red);
-  box-shadow: 0 0 8px var(--denso-red-glow);
+  background: var(--brand-red);
+  box-shadow: 0 0 8px var(--brand-red-glow);
   animation: led-pulse 2s infinite;
 }
 
@@ -1319,7 +1319,7 @@ body {
 }
 
 .text-gradient-red {
-  background: linear-gradient(135deg, #ff2233 0%, var(--denso-red) 100%);
+  background: linear-gradient(135deg, #ff2233 0%, var(--brand-red) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1574,7 +1574,7 @@ body {
   line-height: 1;
   margin-bottom: 0.4rem;
 }
-.text-red    { color: var(--denso-red); }
+.text-red    { color: var(--brand-red); }
 .text-green  { color: var(--status-success); }
 .text-purple { color: #8b5cf6; }
 
@@ -1722,7 +1722,7 @@ body {
   transition: all 180ms ease;
 }
 .workflow-card:hover, .workflow-card.active {
-  border-color: var(--denso-red);
+  border-color: var(--brand-red);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(230, 0, 18, 0.12);
 }
@@ -1741,7 +1741,7 @@ body {
   color: var(--text-muted);
 }
 .workflow-card.active .workflow-num {
-  color: var(--denso-red);
+  color: var(--brand-red);
 }
 
 .workflow-icon-wrap {
@@ -1799,9 +1799,9 @@ body {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--denso-red);
-  background: var(--denso-red-subtle);
-  border: 1px solid var(--denso-red-border);
+  color: var(--brand-red);
+  background: var(--brand-red-subtle);
+  border: 1px solid var(--brand-red-border);
   padding: 0.25rem 0.85rem;
   border-radius: var(--r-full);
   margin-bottom: 1.25rem;
@@ -1846,12 +1846,12 @@ body {
   box-shadow: var(--card-shadow);
 }
 .workspace-quick-btn:hover {
-  border-color: var(--denso-red);
+  border-color: var(--brand-red);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 .workspace-quick-btn:hover .btn-arrow {
-  color: var(--denso-red);
+  color: var(--brand-red);
   transform: translateX(3px);
 }
 
