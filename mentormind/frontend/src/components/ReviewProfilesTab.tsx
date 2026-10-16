@@ -6,6 +6,7 @@ import {
   ProfileDeleteResult,
   ProfilePatchRequest,
   ProfileStatus,
+  QnnRiskResponse,
   ReasonSource,
   ReviewRequest,
   Segment,
@@ -43,6 +44,11 @@ function statusBadge(s: ProfileStatus) {
 }
 
 const formatTime = (t?: number | null) => (t == null ? "—" : `${t.toFixed(1)}s`);
+
+const qnnRiskColor = (level?: string) =>
+  level === "high" ? "var(--status-danger)" :
+  level === "medium" ? "var(--status-warning)" :
+  level === "low" ? "var(--status-success)" : "var(--text-muted)";
 
 // What the open confirmation dialog would delete (spec 08 §3: every delete asks first).
 // For a video, `steps` counts all its steps (filters ignored); null when they could not be listed.
@@ -93,6 +99,8 @@ export function ReviewProfilesTab({
   const [selectedVideo,   setSelectedVideo]   = useState<string>(initialVideoId ?? "");
   // Segments per video (GET /videos/{id}/segments) for the clip player; null = none saved for that video.
   const [segments,        setSegments]        = useState<Record<string, Segment[] | null>>({});
+  const [qnnRisk,         setQnnRisk]         = useState<QnnRiskResponse | null>(null);
+  const [qnnLoading,      setQnnLoading]      = useState(false);
   const [loading,         setLoading]         = useState(false);
   // The action whose request is in flight: approve syncs Neo4j + pgvector (~5 s), so show it.
   const [pending,         setPending]         = useState<"approve" | "reject" | "save" | "delete-step" | "delete-steps" | "delete-video" | null>(null);
@@ -183,6 +191,22 @@ export function ReviewProfilesTab({
       .then((list) => setSegments((prev) => ({ ...prev, [selectedVideoId]: list })))
       .catch(() => setSegments((prev) => ({ ...prev, [selectedVideoId]: null })));
   }, [selectedVideoId]);
+
+  useEffect(() => {
+    const profileId = selectedProfile?.profile_id;
+    if (!profileId) {
+      setQnnRisk(null);
+      return;
+    }
+    let cancelled = false;
+    setQnnLoading(true);
+    api
+      .getQnnRisk(profileId)
+      .then((risk) => { if (!cancelled) setQnnRisk(risk); })
+      .catch(() => { if (!cancelled) setQnnRisk(null); })
+      .finally(() => { if (!cancelled) setQnnLoading(false); });
+    return () => { cancelled = true; };
+  }, [selectedProfile?.profile_id, selectedProfile?.version, selectedProfile?.status]);
 
   const selectProfile = (p: WorkProfile, keepMessage = false) => {
     setSelectedProfile(p);
@@ -592,16 +616,47 @@ export function ReviewProfilesTab({
                   </p>
                 </div>
 
-                <div style={{ textAlign: "right", flexShrink: 0 }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: "0.68rem", fontWeight: 700, color: "var(--text-muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "0.2rem" }}>
-                    Vision AI Confidence
-                  </div>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: "1.45rem", fontWeight: 700, color: selectedProfile.confidence >= 0.9 ? "var(--status-success)" : "var(--status-warning)" }}>
-                    {(selectedProfile.confidence * 100).toFixed(1)}%
-                  </div>
-                  <div className="confidence-wrap" style={{ marginTop: "0.25rem" }}>
-                    <div className="confidence-track" style={{ width: 110 }}>
-                      <div className="confidence-fill" style={{ width: `${selectedProfile.confidence * 100}%` }} />
+                <div style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start", flexShrink: 0 }}>
+                  {qnnRisk?.enabled && (
+                    <div style={{ textAlign: "right", minWidth: 135 }} title="QNN review-risk prioritisation; this is not model accuracy.">
+                      <div style={{ fontFamily: "var(--font-display)", fontSize: "0.68rem", fontWeight: 700, color: "var(--text-muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "0.2rem" }}>
+                        QNN Review Risk
+                      </div>
+                      {qnnLoading ? (
+                        <div style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)", fontSize: "0.76rem" }}>SCORING…</div>
+                      ) : qnnRisk.available && qnnRisk.score != null ? (
+                        <>
+                          <div style={{ fontFamily: "var(--font-display)", fontSize: "1.45rem", fontWeight: 700, color: qnnRiskColor(qnnRisk.level) }}>
+                            {(qnnRisk.score * 100).toFixed(1)}%
+                          </div>
+                          <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", fontWeight: 700, color: qnnRiskColor(qnnRisk.level), textTransform: "uppercase" }}>
+                            {qnnRisk.level} priority · {qnnRisk.n_qubits}Q
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div style={{ fontFamily: "var(--font-display)", fontSize: "0.9rem", fontWeight: 700, color: "var(--text-muted)" }}>
+                            {qnnRisk.trained ? "UNAVAILABLE" : "COLLECTING DATA"}
+                          </div>
+                          <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.62rem", color: "var(--text-muted)", maxWidth: 160 }}>
+                            {qnnRisk.trained ? "Check QNN dependencies/model" : "Train after review labels exist"}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  )}
+
+                  <div style={{ textAlign: "right" }}>
+                    <div style={{ fontFamily: "var(--font-display)", fontSize: "0.68rem", fontWeight: 700, color: "var(--text-muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "0.2rem" }}>
+                      Vision AI Confidence
+                    </div>
+                    <div style={{ fontFamily: "var(--font-display)", fontSize: "1.45rem", fontWeight: 700, color: selectedProfile.confidence >= 0.9 ? "var(--status-success)" : "var(--status-warning)" }}>
+                      {(selectedProfile.confidence * 100).toFixed(1)}%
+                    </div>
+                    <div className="confidence-wrap" style={{ marginTop: "0.25rem" }}>
+                      <div className="confidence-track" style={{ width: 110 }}>
+                        <div className="confidence-fill" style={{ width: `${selectedProfile.confidence * 100}%` }} />
+                      </div>
                     </div>
                   </div>
                 </div>
