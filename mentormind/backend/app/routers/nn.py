@@ -54,7 +54,8 @@ def nn_status() -> NnStatusResponse:
     )
     if response.trained:
         try:
-            response.validation_metrics = ModelArtifact.load(settings.nn_model_path).validation_metrics
+            artifact = ModelArtifact.load(settings.nn_model_path)
+            response.validation_metrics = artifact.validation_metrics
         except ModelUnavailableError:
             response.trained = False
     return response
@@ -76,7 +77,9 @@ def nn_risk(profile_id: str, store: ProfileStore = Depends(get_profile_store)) -
         response.reason = "Classical NN đang tắt."
         return response
     if not settings.nn_model_path.is_file():
-        response.reason = "Chưa có model. Tiếp tục thu thập reviews có nhãn rồi train bằng knowhow nn train."
+        response.reason = (
+            "Chưa có model. Thu thập reviews có nhãn rồi train bằng knowhow nn train."
+        )
         return response
     try:
         artifact = ModelArtifact.load(settings.nn_model_path)
