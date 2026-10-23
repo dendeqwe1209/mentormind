@@ -6,7 +6,7 @@ import {
   ProfileDeleteResult,
   ProfilePatchRequest,
   ProfileStatus,
-  QnnRiskResponse,
+  NnRiskResponse,
   ReasonSource,
   ReviewRequest,
   Segment,
@@ -45,7 +45,7 @@ function statusBadge(s: ProfileStatus) {
 
 const formatTime = (t?: number | null) => (t == null ? "—" : `${t.toFixed(1)}s`);
 
-const qnnRiskColor = (level?: string) =>
+const nnRiskColor = (level?: string) =>
   level === "high" ? "var(--status-danger)" :
   level === "medium" ? "var(--status-warning)" :
   level === "low" ? "var(--status-success)" : "var(--text-muted)";
@@ -99,8 +99,8 @@ export function ReviewProfilesTab({
   const [selectedVideo,   setSelectedVideo]   = useState<string>(initialVideoId ?? "");
   // Segments per video (GET /videos/{id}/segments) for the clip player; null = none saved for that video.
   const [segments,        setSegments]        = useState<Record<string, Segment[] | null>>({});
-  const [qnnRisk,         setQnnRisk]         = useState<QnnRiskResponse | null>(null);
-  const [qnnLoading,      setQnnLoading]      = useState(false);
+  const [nnRisk,         setNnRisk]         = useState<NnRiskResponse | null>(null);
+  const [nnLoading,      setNnLoading]      = useState(false);
   const [loading,         setLoading]         = useState(false);
   // The action whose request is in flight: approve syncs Neo4j + pgvector (~5 s), so show it.
   const [pending,         setPending]         = useState<"approve" | "reject" | "save" | "delete-step" | "delete-steps" | "delete-video" | null>(null);
@@ -195,16 +195,16 @@ export function ReviewProfilesTab({
   useEffect(() => {
     const profileId = selectedProfile?.profile_id;
     if (!profileId) {
-      setQnnRisk(null);
+      setNnRisk(null);
       return;
     }
     let cancelled = false;
-    setQnnLoading(true);
+    setNnLoading(true);
     api
-      .getQnnRisk(profileId)
-      .then((risk) => { if (!cancelled) setQnnRisk(risk); })
-      .catch(() => { if (!cancelled) setQnnRisk(null); })
-      .finally(() => { if (!cancelled) setQnnLoading(false); });
+      .getNnRisk(profileId)
+      .then((risk) => { if (!cancelled) setNnRisk(risk); })
+      .catch(() => { if (!cancelled) setNnRisk(null); })
+      .finally(() => { if (!cancelled) setNnLoading(false); });
     return () => { cancelled = true; };
   }, [selectedProfile?.profile_id, selectedProfile?.version, selectedProfile?.status]);
 
@@ -617,29 +617,29 @@ export function ReviewProfilesTab({
                 </div>
 
                 <div style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start", flexShrink: 0 }}>
-                  {qnnRisk?.enabled && (
-                    <div style={{ textAlign: "right", minWidth: 135 }} title="QNN review-risk prioritisation; this is not model accuracy.">
+                  {nnRisk?.enabled && (
+                    <div style={{ textAlign: "right", minWidth: 135 }} title="Classical NN review priority score. Not a calibrated probability; review is always manual.">
                       <div style={{ fontFamily: "var(--font-display)", fontSize: "0.68rem", fontWeight: 700, color: "var(--text-muted)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "0.2rem" }}>
-                        QNN Review Risk
+                        NN Review Risk
                       </div>
-                      {qnnLoading ? (
+                      {nnLoading ? (
                         <div style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)", fontSize: "0.76rem" }}>SCORING…</div>
-                      ) : qnnRisk.available && qnnRisk.score != null ? (
+                      ) : nnRisk.available && nnRisk.score != null ? (
                         <>
-                          <div style={{ fontFamily: "var(--font-display)", fontSize: "1.45rem", fontWeight: 700, color: qnnRiskColor(qnnRisk.level) }}>
-                            {(qnnRisk.score * 100).toFixed(1)}%
+                          <div style={{ fontFamily: "var(--font-display)", fontSize: "1.45rem", fontWeight: 700, color: nnRiskColor(nnRisk.level) }}>
+                            {(nnRisk.score * 100).toFixed(1)}%
                           </div>
-                          <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", fontWeight: 700, color: qnnRiskColor(qnnRisk.level), textTransform: "uppercase" }}>
-                            {qnnRisk.level} priority · {qnnRisk.n_qubits}Q
+                          <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", fontWeight: 700, color: nnRiskColor(nnRisk.level), textTransform: "uppercase" }}>
+                            {nnRisk.level} priority · MLP
                           </div>
                         </>
                       ) : (
                         <>
                           <div style={{ fontFamily: "var(--font-display)", fontSize: "0.9rem", fontWeight: 700, color: "var(--text-muted)" }}>
-                            {qnnRisk.trained ? "UNAVAILABLE" : "COLLECTING DATA"}
+                            {nnRisk.trained ? "UNAVAILABLE" : "COLLECTING DATA"}
                           </div>
                           <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.62rem", color: "var(--text-muted)", maxWidth: 160 }}>
-                            {qnnRisk.trained ? "Check QNN dependencies/model" : "Train after review labels exist"}
+                            {nnRisk.trained ? "Check NN artifact" : "Train after review labels exist"}
                           </div>
                         </>
                       )}
