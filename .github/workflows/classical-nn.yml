@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install API and dev dependencies
-        run: uv sync --extra api --extra dev
+        run: uv sync --extra api --extra dev --extra vlm --extra kg
       - name: Lint
         run: uv run ruff check mentormind/nn mentormind/backend/app/routers/nn.py tests/nn
       - name: Unit and API tests
