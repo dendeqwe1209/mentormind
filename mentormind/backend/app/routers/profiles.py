@@ -138,9 +138,12 @@ def review_profile(
         )
 
     # Snapshot only AI/evidence-side features before the reviewer outcome is committed.
-    qnn_dataset = ReviewRiskDatasetStore(store.db_path) if get_settings().qnn_enabled else None
-    if qnn_dataset is not None:
-        qnn_dataset.ensure_snapshot(existing)
+    # Share one pre-review snapshot/label dataset with classical NN and the research QNN.
+    # Collect it when classical NN is enabled, even while the QNN runtime stays disabled.
+    settings = get_settings()
+    risk_dataset = ReviewRiskDatasetStore(store.db_path) if (settings.nn_enabled or settings.qnn_enabled) else None
+    if risk_dataset is not None:
+        risk_dataset.ensure_snapshot(existing)
 
     def publish(profile: WorkProfile) -> None:
         if review_req.action == ReviewAction.APPROVE:
@@ -163,6 +166,6 @@ def review_profile(
             detail=str(e),
         )
 
-    if qnn_dataset is not None:
-        qnn_dataset.finalize_review(existing, review_req)
+    if risk_dataset is not None:
+        risk_dataset.finalize_review(existing, review_req)
     return updated
