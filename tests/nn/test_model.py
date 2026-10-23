@@ -5,7 +5,13 @@ import random
 
 import pytest
 
-from mentormind.nn.model import ModelArtifact, ModelUnavailableError, save_model, score_vector, train_model
+from mentormind.nn.model import (
+    ModelArtifact,
+    ModelUnavailableError,
+    save_model,
+    score_vector,
+    train_model,
+)
 from mentormind.qnn.features import FEATURE_NAMES
 
 
