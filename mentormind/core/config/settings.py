@@ -188,6 +188,12 @@ class Settings(BaseSettings):
     eval_llm_base_url: str | None = None
     eval_llm_model: str | None = None
 
+    # --- Classical NN review-risk prioritisation; QNN is a research-only baseline ------------
+    nn_enabled: bool = True
+    nn_model_path: Path = Path("data/work/nn/review_risk_model.json")
+    nn_low_threshold: float = Field(default=0.35, ge=0, le=1)
+    nn_high_threshold: float = Field(default=0.65, ge=0, le=1)
+
     # --- QNN review-risk prioritisation (optional research module) ---------------------------
     qnn_enabled: bool = False
     qnn_model_path: Path = Path("data/work/qnn/review_risk_model.json")
