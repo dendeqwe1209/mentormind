@@ -77,6 +77,24 @@ def client(mock_store, monkeypatch):
     app.dependency_overrides.clear()
 
 
+def test_classical_nn_api_keeps_untrained_model_optional(client):
+    status = client.get("/nn/status")
+    assert status.status_code == 200
+    assert status.json()["backend"] == "classical.python.mlp"
+    risk = client.get("/nn/profiles/WP-PACK01-001/risk")
+    assert risk.status_code == 200
+    assert risk.json()["profile_id"] == "WP-PACK01-001"
+    assert len(risk.json()["features"]) == 8
+    if not risk.json()["trained"]:
+        assert risk.json()["available"] is False
+        assert risk.json()["score"] is None
+
+
+def test_nn_unknown_profile_returns_404(client):
+    response = client.get("/nn/profiles/NO_SUCH_PROFILE/risk")
+    assert response.status_code == 404
+
+
 def test_health_check(client):
     res = client.get("/health")
     assert res.status_code == 200

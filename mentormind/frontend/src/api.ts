@@ -9,6 +9,8 @@ import {
   ProfileDeleteResult,
   ProfilePatchRequest,
   ProfileStatus,
+  NnRiskResponse,
+  NnStatusResponse,
   QnnRiskResponse,
   QnnStatusResponse,
   RcaReport,
@@ -121,6 +123,11 @@ export const api = {
   getProfileDetails: (profileId: string) => {
     return request<{ profile: WorkProfile; reviews: any[] }>(`/profiles/${profileId}`);
   },
+
+  getNnStatus: () => request<NnStatusResponse>("/nn/status"),
+
+  getNnRisk: (profileId: string) =>
+    request<NnRiskResponse>(`/nn/profiles/${encodeURIComponent(profileId)}/risk`),
 
   getQnnStatus: () => request<QnnStatusResponse>("/qnn/status"),
 

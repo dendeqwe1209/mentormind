@@ -9,6 +9,7 @@ from mentormind.capture.ingest.cli import app as ingest_app
 from mentormind.capture.video.cli import app as video_app
 from mentormind.evaluation.cli import app as eval_app
 from mentormind.knowledge_base.kg.cli import app as kg_app
+from mentormind.nn.cli import app as nn_app
 from mentormind.processing.vlm.cli import app as vlm_app
 from mentormind.qnn.cli import app as qnn_app
 
@@ -24,6 +25,7 @@ app.add_typer(vlm_app, name="vlm")
 app.add_typer(kg_app, name="kg")
 app.add_typer(agent_app, name="agent")
 app.add_typer(eval_app, name="eval")
+app.add_typer(nn_app, name="nn")
 app.add_typer(qnn_app, name="qnn")
 
 if __name__ == "__main__":

@@ -234,6 +234,31 @@ export interface DocumentDeleteResult {
 }
 
 
+export type NnRiskLevel = "low" | "medium" | "high" | "unavailable";
+
+export interface NnRiskResponse {
+  profile_id: string;
+  enabled: boolean;
+  trained: boolean;
+  available: boolean;
+  score?: number | null;
+  level: NnRiskLevel;
+  backend: string;
+  features: Record<string, number>;
+  reason?: string | null;
+}
+
+export interface NnStatusResponse {
+  enabled: boolean;
+  trained: boolean;
+  backend: string;
+  samples_total: number;
+  samples_labeled: number;
+  samples_risky: number;
+  samples_clean: number;
+  validation_metrics?: Record<string, number> | null;
+}
+
 export type QnnRiskLevel = "low" | "medium" | "high" | "unavailable";
 
 export interface QnnRiskResponse {

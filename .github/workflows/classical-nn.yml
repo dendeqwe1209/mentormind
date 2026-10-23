@@ -1,0 +1,37 @@
+name: Classical NN checks
+
+on:
+  pull_request:
+    paths:
+      - "mentormind/nn/**"
+      - "mentormind/backend/app/routers/nn.py"
+      - "mentormind/backend/app/routers/profiles.py"
+      - "mentormind/backend/app/main.py"
+      - "mentormind/core/cli.py"
+      - "mentormind/core/config/settings.py"
+      - "mentormind/frontend/**"
+      - "tests/nn/**"
+      - "tests/test_api_endpoints.py"
+      - ".github/workflows/classical-nn.yml"
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.11"
+      - name: Install API and dev dependencies
+        run: uv sync --extra api --extra dev --extra vlm --extra kg
+      - name: Lint
+        run: uv run ruff check mentormind/nn mentormind/backend/app/routers/nn.py tests/nn
+      - name: Unit and API tests
+        run: uv run pytest tests/nn tests/test_api_endpoints.py tests/backend/app/test_main.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Build frontend
+        run: |
+          npm --prefix mentormind/frontend ci
+          npm --prefix mentormind/frontend run build

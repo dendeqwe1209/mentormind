@@ -454,6 +454,7 @@ Remove-Item data\work -Recurse -Force
 
 ## 15. Tài liệu liên quan
 
+- [`docs/classical-nn-review-risk.md`](docs/classical-nn-review-risk.md) — classical NN review risk và QNN research baseline
 - [`docs/setup.md`](docs/setup.md) — full-flow setup + UI test guide
 - [`docs/architecture.md`](docs/architecture.md) — kiến trúc và WorkProfile schema
 - [`docs/01-repo-scaffold.md`](docs/01-repo-scaffold.md) — cấu trúc repository và tooling

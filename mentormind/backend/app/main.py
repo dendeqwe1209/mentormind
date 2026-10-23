@@ -11,6 +11,7 @@ from mentormind.backend.app.routers import (
     ingest,
     jobs,
     media,
+    nn,
     profiles,
     qnn,
     rca,
@@ -37,6 +38,7 @@ app.add_middleware(
 
 app.include_router(health.router)
 app.include_router(profiles.router)
+app.include_router(nn.router)
 app.include_router(qnn.router)
 app.include_router(media.router)
 app.include_router(jobs.router)
