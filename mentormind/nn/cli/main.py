@@ -10,7 +10,10 @@ from mentormind.core.config import get_settings
 from mentormind.nn.model import ModelArtifact, ModelUnavailableError, save_model, train_model
 from mentormind.qnn.snapshot_store import ReviewRiskDatasetStore
 
-app = typer.Typer(help="Classical NN review-risk (QNN remains a separate research baseline).", no_args_is_help=True)
+app = typer.Typer(
+    help="Classical NN review-risk (QNN remains a separate research baseline).",
+    no_args_is_help=True,
+)
 
 
 @app.command("status")
@@ -22,7 +25,8 @@ def status() -> None:
     typer.echo(f"labeled: {counts['labeled']} (risky={counts['risky']}, clean={counts['clean']})")
     if settings.nn_model_path.is_file():
         try:
-            typer.echo(json.dumps(ModelArtifact.load(settings.nn_model_path).validation_metrics, indent=2))
+            metrics = ModelArtifact.load(settings.nn_model_path).validation_metrics
+            typer.echo(json.dumps(metrics, indent=2))
         except ModelUnavailableError as exc:
             typer.echo(f"model_error: {exc}")
 
