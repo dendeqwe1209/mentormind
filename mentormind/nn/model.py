@@ -5,6 +5,7 @@ probability or a robustness certificate. No external numerical dependencies.
 """
 from __future__ import annotations
 
+import copy
 import json
 import math
 import random
@@ -76,8 +77,10 @@ class ModelArtifact:
             if tuple(data.get("feature_names", [])) != FEATURE_NAMES:
                 raise ModelUnavailableError("NN artifact không khớp feature schema hiện tại.")
             artifact = cls(
-                hidden_weights=data["hidden_weights"], hidden_bias=data["hidden_bias"],
-                output_weights=data["output_weights"], output_bias=float(data["output_bias"]),
+                hidden_weights=[[float(v) for v in row] for row in data["hidden_weights"]],
+                hidden_bias=[float(v) for v in data["hidden_bias"]],
+                output_weights=[float(v) for v in data["output_weights"]],
+                output_bias=float(data["output_bias"]),
                 trained_at=str(data["trained_at"]), training_samples=int(data["training_samples"]),
                 validation_samples=int(data["validation_samples"]),
                 risky_samples=int(data["risky_samples"]), clean_samples=int(data["clean_samples"]),
@@ -93,7 +96,10 @@ def _forward(x: list[float], model: ModelArtifact) -> tuple[list[float], list[fl
     pre = [sum(w * v for w, v in zip(row, x, strict=True)) + b
            for row, b in zip(model.hidden_weights, model.hidden_bias, strict=True)]
     hidden = [max(0.0, v) for v in pre]
-    logit = sum(w * h for w, h in zip(model.output_weights, hidden, strict=True)) + model.output_bias
+    logit = (
+        sum(w * h for w, h in zip(model.output_weights, hidden, strict=True))
+        + model.output_bias
+    )
     return pre, hidden, logit
 
 
@@ -106,17 +112,23 @@ def score_vector(features: list[float], model: ModelArtifact) -> float:
     return _sigmoid(_forward(features, model)[2])
 
 
-def _validation_metrics(data: list[tuple[list[float], int]], model: ModelArtifact) -> dict[str, float]:
+def _validation_metrics(
+    data: list[tuple[list[float], int]], model: ModelArtifact
+) -> dict[str, float]:
     tp = fp = fn = tn = 0
     loss = 0.0
     for x, y in data:
         logit = _forward(x, model)[2]
         loss += _bce(logit, y)
         predicted = _sigmoid(logit) >= 0.5
-        if predicted and y: tp += 1
-        elif predicted: fp += 1
-        elif y: fn += 1
-        else: tn += 1
+        if predicted and y:
+            tp += 1
+        elif predicted:
+            fp += 1
+        elif y:
+            fn += 1
+        else:
+            tn += 1
     precision = tp / max(1, tp + fp)
     recall = tp / max(1, tp + fn)
     return {
@@ -166,7 +178,9 @@ def train_model(
     dim = len(FEATURE_NAMES)
     scale = math.sqrt(6.0 / (dim + hidden_units))
     model = ModelArtifact(
-        hidden_weights=[[rng.uniform(-scale, scale) for _ in range(dim)] for _ in range(hidden_units)],
+        hidden_weights=[
+            [rng.uniform(-scale, scale) for _ in range(dim)] for _ in range(hidden_units)
+        ],
         hidden_bias=[0.05] * hidden_units,
         output_weights=[rng.uniform(-scale, scale) for _ in range(hidden_units)],
         output_bias=0.0,
@@ -177,8 +191,6 @@ def train_model(
     best: ModelArtifact | None = None
     best_loss = float("inf")
     stalled = 0
-    import copy
-
     for _ in range(epochs):
         rng.shuffle(train)
         for x, y in train:
